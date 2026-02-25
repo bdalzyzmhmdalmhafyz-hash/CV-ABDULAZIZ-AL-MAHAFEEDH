@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a23">
+    <title>منصة التعلم | تعلم البرمجة خطوة بخطوة</title>
+    <meta name="description"
+        content="تعلم البرمجة خطوة بخطوة مع مشاريع واقعية. مسارات HTML, CSS, JavaScript, Python والمزيد.">
+    <link rel="stylesheet" href="learning.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ═══════════ Navigation ═══════════ -->
+    <nav class="lp-nav">
+        <div class="lp-container lp-nav-inner">
+            <a href="#" class="lp-nav-brand">
+                <i class="fas fa-code"></i>
+                <span>منصة التعلم</span>
+            </a>
+            <ul class="lp-nav-links">
+                <li><a href="#hero">الرئيسية</a></li>
+                <li><a href="#paths">المسارات</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#dashboard">لوحة التقدم</a></li>
+            </ul>
+            <a href="index.html" class="lp-nav-back">
+                <i class="fas fa-arrow-right"></i>
+                العودة للسيرة الذاتية
+            </a>
+        </div>
+    </nav>
+
+    <!-- ═══════════ 1️⃣ Hero Section ═══════════ -->
+    <section id="hero" class="lp-hero">
+        <!-- Floating Code Icons -->
+        <div class="lp-floating-icons">
+            <span class="lp-code-icon">{&nbsp;}</span>
+            <span class="lp-code-icon">&lt;/&gt;</span>
+            <span class="lp-code-icon">( )</span>
+            <span class="lp-code-icon">[ ]</span>
+            <span class="lp-code-icon">#</span>
+            <span class="lp-code-icon">λ</span>
+            <span class="lp-code-icon">&lt;/&gt;</span>
+            <span class="lp-code-icon">{&nbsp;}</span>
+        </div>
+
+        <div class="lp-hero-content">
+            <div class="lp-hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>مجاني 100% — ابدأ رحلتك الآن</span>
+            </div>
+
+            <h1>تعلم البرمجة خطوة بخطوة<br>مع مشاريع واقعية</h1>
+
+            <p class="lp-hero-subtitle">
+                اكتسب مهارات تطوير الويب والبرمجة من الصفر حتى الاحتراف — بمسارات تعليمية مُنظمة ومشاريع عملية حقيقية.
+            </p>
+
+            <!-- Typing Effect -->
+            <div class="lp-typing-container">
+                <span class="lp-typing-label">ستتعلم:</span>
+                <span class="lp-typing-text" id="lp-typing-text"></span>
+            </div>
+
+            <a href="#paths" class="lp-hero-cta">
+                <span>ابدأ الآن</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <div class="lp-hero-stats">
+                <div class="lp-stat">
+                    <span class="lp-stat-number" data-count="6">0</span>
+                    <span class="lp-stat-label">مسارات تعليمية</span>
+                </div>
+                <div class="lp-stat">
+                    <span class="lp-stat-number" data-count="25">0</span>
+                    <span class="lp-stat-label">مشروع عملي</span>
+                </div>
+                <div class="lp-stat">
+                    <span class="lp-stat-number" data-count="150">0</span>
+                    <span class="lp-stat-label">درس تفاعلي</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 2️⃣ Learning Paths ═══════════ -->
+    <section id="paths" class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-header lp-fade">
+                <h2 class="lp-section-title">المسارات التعليمية</h2>
+                <p class="lp-section-subtitle">اختر المسار الذي يناسبك وابدأ رحلة التعلم بخطوات واضحة ومنظمة</p>
+            </div>
+
+            <div class="lp-paths-grid lp-stagger">
+                <!-- Path 1: HTML/CSS -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon html-css">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>HTML & CSS</h3>
+                            <span>12 درس • 4 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">تعلم بناء صفحات الويب من الصفر باستخدام HTML و CSS مع تصميم متجاوب وحديث.
+                    </p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">75%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="75%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">تابع التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Path 2: JavaScript -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon javascript">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>JavaScript</h3>
+                            <span>20 درس • 6 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">أساسيات JavaScript المتقدمة: المتغيرات، الدوال، DOM، الأحداث، والبرمجة غير
+                        المتزامنة.</p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">45%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="45%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">تابع التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Path 3: Python -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>Python</h3>
+                            <span>18 درس • 5 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">تعلم لغة Python من البداية: المتغيرات، الحلقات، الدوال، والمكتبات الأساسية.
+                    </p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">30%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="30%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">ابدأ التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Path 4: React -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon react">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>React.js</h3>
+                            <span>15 درس • 3 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">بناء تطبيقات ويب تفاعلية باستخدام React مع المكونات و Hooks و State
+                        Management.</p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">10%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="10%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">ابدأ التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Path 5: Node.js -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon nodejs">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>Node.js & APIs</h3>
+                            <span>14 درس • 4 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">بناء خوادم وواجهات برمجية احترافية باستخدام Node.js و Express وقواعد
+                        البيانات.</p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">5%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="5%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">ابدأ التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+
+                <!-- Path 6: Data Science -->
+                <div class="lp-path-card lp-fade">
+                    <div class="lp-path-top">
+                        <div class="lp-path-icon data">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="lp-path-info">
+                            <h3>علم البيانات و AI</h3>
+                            <span>22 درس • 3 مشاريع</span>
+                        </div>
+                    </div>
+                    <p class="lp-path-desc">مقدمة في علم البيانات والذكاء الاصطناعي مع Python و Pandas و Machine
+                        Learning.</p>
+                    <div class="lp-path-progress-wrap">
+                        <div class="lp-progress-header">
+                            <span class="lp-progress-label">التقدم</span>
+                            <span class="lp-progress-value">0%</span>
+                        </div>
+                        <div class="lp-progress-track">
+                            <div class="lp-progress-fill" data-width="0%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="lp-path-cta">ابدأ التعلم <i class="fas fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 3️⃣ Projects Section ═══════════ -->
+    <section id="projects" class="lp-section">
+        <div class="lp-container">
+            <div class="lp-section-header lp-fade">
+                <h2 class="lp-section-title">المشاريع العملية</h2>
+                <p class="lp-section-subtitle">طبّق ما تعلمته ببناء مشاريع حقيقية تُضاف لمعرض أعمالك</p>
+            </div>
+
+            <div class="lp-projects-grid lp-stagger">
+                <!-- Project 1 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-1">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>موقع شخصي متجاوب</h3>
+                        <p>بناء Portfolio كامل بـ HTML & CSS مع تصميم Responsive.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">80%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">تابع <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-2">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>تطبيق قائمة المهام</h3>
+                        <p>تطبيق Todo List تفاعلي بـ JavaScript مع Local Storage.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">55%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="55%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">تابع <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-3">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>آلة حاسبة Python</h3>
+                        <p>بناء آلة حاسبة علمية بواجهة رسومية باستخدام Tkinter.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">20%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="20%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">ابدأ <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-4">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>تطبيق حالة الطقس</h3>
+                        <p>تطبيق React يعرض حالة الطقس الحية باستخدام API خارجي.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">0%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="0%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">ابدأ <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-5">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>REST API متكامل</h3>
+                        <p>بناء واجهة برمجية بـ Node.js و Express مع قاعدة بيانات MongoDB.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">0%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="0%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">ابدأ <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="lp-project-card lp-fade">
+                    <div class="lp-project-thumb proj-6">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="lp-project-body">
+                        <h3>لوحة تحليل بيانات</h3>
+                        <p>بناء Dashboard لتحليل البيانات بـ Python و Pandas مع تصور بياني.</p>
+                        <div class="lp-project-footer">
+                            <div class="lp-project-progress-mini">
+                                <span class="lp-progress-pct">0%</span>
+                                <div class="lp-progress-track">
+                                    <div class="lp-progress-fill" data-width="0%"></div>
+                                </div>
+                            </div>
+                            <a href="#" class="lp-project-btn">ابدأ <i class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 4️⃣ Dashboard ═══════════ -->
+    <section id="dashboard" class="lp-section lp-dashboard">
+        <div class="lp-container">
+            <div class="lp-section-header lp-fade">
+                <h2 class="lp-section-title">لوحة التقدم</h2>
+                <p class="lp-section-subtitle">تابع إنجازاتك ومستوى تقدمك في جميع المسارات</p>
+            </div>
+
+            <div class="lp-dashboard-grid">
+                <!-- Left: Progress Overview -->
+                <div class="lp-dash-card lp-fade">
+                    <h3><i class="fas fa-chart-pie"></i> نظرة عامة على التقدم</h3>
+
+                    <div class="lp-overall-progress">
+                        <div class="lp-circle-progress">
+                            <svg viewBox="0 0 130 130">
+                                <defs>
+                                    <linearGradient id="lpGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#31c48d" />
+                                        <stop offset="100%" stop-color="#00b4d8" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="lp-circle-bg" cx="65" cy="65" r="60"></circle>
+                                <circle class="lp-circle-fill" cx="65" cy="65" r="60" id="lp-main-circle"></circle>
+                            </svg>
+                            <div class="lp-circle-text">
+                                <span class="lp-circle-pct" id="lp-circle-pct">0%</span>
+                                <span class="lp-circle-sub">مكتمل</span>
+                            </div>
+                        </div>
+
+                        <div class="lp-overall-details">
+                            <div class="lp-detail-row">
+                                <span class="lp-detail-label">الدروس المكتملة</span>
+                                <span class="lp-detail-val">38 / 150</span>
+                            </div>
+                            <div class="lp-detail-row">
+                                <span class="lp-detail-label">المشاريع المنجزة</span>
+                                <span class="lp-detail-val">3 / 25</span>
+                            </div>
+                            <div class="lp-detail-row">
+                                <span class="lp-detail-label">ساعات التعلم</span>
+                                <span class="lp-detail-val">47 ساعة</span>
+                            </div>
+                            <div class="lp-detail-row">
+                                <span class="lp-detail-label">أيام متتالية</span>
+                                <span class="lp-detail-val">🔥 12 يوم</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Per-Path Progress -->
+                    <div class="lp-dash-paths">
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon html-css"><i class="fab fa-html5"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>HTML & CSS</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-html" data-width="75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon javascript"><i class="fab fa-js-square"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>JavaScript</span>
+                                    <span>45%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-js" data-width="45%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon python"><i class="fab fa-python"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>Python</span>
+                                    <span>30%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-python" data-width="30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon react"><i class="fab fa-react"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>React.js</span>
+                                    <span>10%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-react" data-width="10%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon nodejs"><i class="fab fa-node-js"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>Node.js</span>
+                                    <span>5%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-node" data-width="5%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lp-dash-path-item">
+                            <div class="lp-dash-path-icon data"><i class="fas fa-brain"></i></div>
+                            <div class="lp-dash-path-info">
+                                <div class="lp-dash-path-name">
+                                    <span>علم البيانات</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="lp-dash-path-track">
+                                    <div class="lp-dash-path-fill fill-data" data-width="0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Badges -->
+                <div class="lp-dash-card lp-fade">
+                    <h3><i class="fas fa-trophy"></i> الإنجازات والأوسمة</h3>
+
+                    <div class="lp-badges-grid">
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-gold">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="lp-badge-name">أول درس</span>
+                        </div>
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-green">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="lp-badge-name">مبرمج مبتدئ</span>
+                        </div>
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-blue">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <span class="lp-badge-name">أول مشروع</span>
+                        </div>
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-purple">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <span class="lp-badge-name">7 أيام متتالية</span>
+                        </div>
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-orange">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span class="lp-badge-name">إتمام مسار</span>
+                        </div>
+                        <div class="lp-badge">
+                            <div class="lp-badge-icon badge-pink">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <span class="lp-badge-name">خبير CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ 5️⃣ Footer ═══════════ -->
+    <footer class="lp-footer">
+        <div class="lp-container">
+            <div class="lp-footer-inner">
+                <div class="lp-footer-brand">
+                    <h3><i class="fas fa-code"></i> منصة التعلم</h3>
+                    <p>تعلم البرمجة مجاناً مع مسارات منظمة ومشاريع واقعية. ابنِ مستقبلك في عالم التقنية.</p>
+                    <div class="lp-footer-social">
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div class="lp-footer-col">
+                    <h4>المنصة</h4>
+                    <ul>
+                        <li><a href="#paths">الدروس</a></li>
+                        <li><a href="#projects">المشاريع</a></li>
+                        <li><a href="#dashboard">لوحة التقدم</a></li>
+                        <li><a href="#">الشهادات</a></li>
+                    </ul>
+                </div>
+
+                <div class="lp-footer-col">
+                    <h4>المساعدة</h4>
+                    <ul>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">الدعم الفني</a></li>
+                        <li><a href="#">المجتمع</a></li>
+                        <li><a href="#">ساهم معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="lp-footer-col">
+                    <h4>تواصل</h4>
+                    <ul>
+                        <li><a href="mailto:bdalzyzmhmdalmhafyz@gmail.com">البريد الإلكتروني</a></li>
+                        <li><a href="https://wa.me/967776543245" target="_blank">واتساب</a></li>
+                        <li><a href="index.html">السيرة الذاتية</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lp-footer-bottom">
+                <p>© 2026 منصة التعلم — عبد العزيز المحافيظ. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="learning.js"></script>
+</body>
+
+</html>
