@@ -453,8 +453,8 @@ nav {
 /* Card Lift & Grid */
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
@@ -590,16 +590,16 @@ nav {
    ═══════════════════════════════════════════════════════ */
 
 .edr-section {
-  background: #F5F7F8 !important;
+  background: transparent !important;
   /* Main Background */
-  color: #1F2D2D;
+  color: #E6F7F7;
   /* Primary Text */
-  border-top: 1px solid rgba(0, 165, 165, 0.1);
-  border-bottom: 1px solid rgba(0, 165, 165, 0.1);
+  border-top: 1px solid rgba(0, 165, 165, 0.2);
+  border-bottom: 1px solid rgba(0, 165, 165, 0.2);
 }
 
 .edr-section-title {
-  background-image: linear-gradient(45deg, #00A5A5, #33B7B7) !important;
+  background-image: linear-gradient(45deg, #00E5E5, #88D7D7) !important;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -635,11 +635,11 @@ nav {
   font-size: 2.2rem;
   font-weight: 900;
   letter-spacing: 1px;
-  color: #1F2D2D;
+  color: #E6F7F7;
 }
 
 .edr-logo-subtitle {
-  color: #5F6F6F;
+  color: #B0C4C4;
   /* Secondary Text */
   font-size: 1.1rem;
 }
@@ -655,28 +655,29 @@ nav {
 }
 
 .edr-stat-item {
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
   /* Alternate Background */
-  border: 1px solid rgba(0, 165, 165, 0.1);
+  border: 1px solid rgba(0, 165, 165, 0.3);
   padding: 1.5rem;
   border-radius: 12px;
   display: flex;
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .edr-stat-item:hover {
   transform: translateY(-5px);
-  background: #E6F7F7;
+  background: rgba(0, 165, 165, 0.15);
   /* Soft Teal */
-  box-shadow: 0 8px 20px rgba(0, 165, 165, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 165, 165, 0.3);
 }
 
 .edr-stat-item i {
   font-size: 2.5rem;
-  color: #00A5A5;
+  color: #00E5E5;
   /* Primary Color */
   opacity: 0.9;
 }
@@ -685,39 +686,41 @@ nav {
   display: block;
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1F2D2D;
+  color: #E6F7F7;
 }
 
 .edr-stat-item span {
   font-size: 0.9rem;
-  color: #5F6F6F;
+  color: #B0C4C4;
 }
 
 /* Certification Cards Grid */
 .edr-certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   position: relative;
   z-index: 2;
 }
 
 .edr-cert-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 165, 165, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 165, 165, 0.2);
   border-radius: 8px;
   padding: 1.5rem;
   position: relative;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .edr-cert-card:hover {
-  border-color: #00A5A5;
-  box-shadow: 0 12px 25px rgba(0, 165, 165, 0.08);
+  border-color: #00E5E5;
+  box-shadow: 0 12px 25px rgba(0, 165, 165, 0.3);
   transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .edr-cert-accent {
@@ -766,30 +769,30 @@ nav {
 .edr-cert-icon {
   width: 45px;
   height: 45px;
-  background: rgba(0, 165, 165, 0.08);
+  background: rgba(0, 165, 165, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
   border-radius: 8px;
-  color: #00A5A5;
+  color: #00E5E5;
 }
 
 .edr-icon-special {
-  background: rgba(0, 165, 165, 0.12);
-  color: #00A5A5;
+  background: rgba(0, 165, 165, 0.3);
+  color: #00E5E5;
   font-size: 1.8rem;
 }
 
 .edr-cert-info h3 {
   font-size: 1.1rem;
   margin-bottom: 2px;
-  color: #1F2D2D;
+  color: #E6F7F7;
 }
 
 .edr-cert-info span {
   font-size: 0.8rem;
-  color: #5F6F6F;
+  color: #B0C4C4;
 }
 
 .edr-cert-badge {
@@ -801,20 +804,20 @@ nav {
 }
 
 .edr-badge-verified {
-  background: rgba(0, 165, 165, 0.08);
-  color: #00A5A5;
-  border: 1px solid rgba(0, 165, 165, 0.2);
+  background: rgba(0, 165, 165, 0.2);
+  color: #00E5E5;
+  border: 1px solid rgba(0, 165, 165, 0.4);
 }
 
 .edr-badge-complete {
-  background: rgba(40, 199, 111, 0.1);
+  background: rgba(40, 199, 111, 0.2);
   color: #28C76F;
-  border: 1px solid rgba(40, 199, 111, 0.2);
+  border: 1px solid rgba(40, 199, 111, 0.4);
 }
 
 .edr-cert-desc {
   font-size: 0.9rem;
-  color: #5F6F6F;
+  color: #B0C4C4;
   line-height: 1.6;
   margin-bottom: 1.2rem;
 }
@@ -827,7 +830,7 @@ nav {
 
 .edr-cert-meta span {
   font-size: 0.75rem;
-  color: #5F6F6F;
+  color: #B0C4C4;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -836,7 +839,7 @@ nav {
 /* Special Case: Full Width for Specialist */
 .edr-specialization-card {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, #E6F7F7, #FFFFFF);
+  background: linear-gradient(135deg, rgba(0, 165, 165, 0.1), rgba(255, 255, 255, 0.05));
 }
 
 /* Progress Bar */
@@ -881,8 +884,8 @@ nav {
 }
 
 .edr-btn-outline {
-  border: 1px solid rgba(0, 165, 165, 0.3);
-  color: #00A5A5 !important;
+  border: 1px solid rgba(0, 165, 165, 0.6);
+  color: #00E5E5 !important;
   padding: 8px 20px;
   border-radius: 4px;
   font-size: 0.85rem;
@@ -890,8 +893,8 @@ nav {
 }
 
 .edr-btn-outline:hover {
-  background: #E6F7F7;
-  border-color: #00A5A5;
+  background: rgba(0, 165, 165, 0.2);
+  border-color: #00E5E5;
 }
 
 /* Partners Section */
@@ -899,17 +902,17 @@ nav {
   margin-top: 5rem;
   text-align: center;
   padding: 3rem;
-  background: #E6F7F7;
+  background: rgba(0, 165, 165, 0.05);
   /* Soft Teal Section */
   border-radius: 16px;
   position: relative;
   z-index: 2;
-  border: 1px solid rgba(0, 165, 165, 0.05);
+  border: 1px solid rgba(0, 165, 165, 0.2);
 }
 
 .edr-partners-title {
   font-size: 1.3rem;
-  color: #00A5A5;
+  color: #00E5E5;
   margin-bottom: 2rem;
   font-weight: 800;
 }
@@ -922,19 +925,19 @@ nav {
 }
 
 .edr-partner-tag {
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
   padding: 10px 22px;
   border-radius: 30px;
   font-size: 0.85rem;
-  color: #1F2D2D;
-  border: 1px solid rgba(0, 165, 165, 0.1);
+  color: #E6F7F7;
+  border: 1px solid rgba(0, 165, 165, 0.3);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .edr-partner-tag:hover {
-  background: #00A5A5;
-  border-color: #00A5A5;
+  background: rgba(0, 165, 165, 0.5);
+  border-color: #00E5E5;
   color: #FFFFFF;
   transform: translateY(-3px);
 }
@@ -1097,11 +1100,11 @@ nav {
   background: linear-gradient(135deg, #60a5fa, #c084fc, #ffffff);
   -webkit-background-clip: text;
   background-clip: text;
-  /* Fix for lint warning */
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.4));
   animation: satarTextPulse 3s alternate infinite;
   display: block;
+  text-align: center;
 }
 
 @keyframes satarTextPulse {
@@ -1129,16 +1132,17 @@ nav {
 .satar-logo-item {
   padding: 12px 25px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(30, 27, 75, 0.8), rgba(49, 46, 129, 0.6));
+  background: rgba(255, 255, 255, 0.05);
   font-weight: 700;
   font-size: 1.1rem;
   text-align: center;
-  border: 1px solid rgba(139, 92, 246, 0.4);
-  color: #ffffff;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #e2e8f0;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .satar-logo-item::before {
@@ -1148,7 +1152,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.6), rgba(124, 58, 237, 0.6));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1176,8 +1180,8 @@ nav {
 }
 
 .satar-category-card {
-  background: rgba(17, 24, 39, 0.4);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(139, 92, 246, 0.3);
   border-radius: 16px;
   padding: 30px 20px;
   text-align: center;
@@ -1297,22 +1301,34 @@ nav {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    width: 92%;
+  }
+
   .nav-links {
     display: none;
   }
 
-  /* Could add a hamburger menu later if needed */
-  .timeline::after {
-    left: 31px;
-    right: auto;
-    transform: none;
+  .timeline {
+    margin-right: 15px;
   }
 
-  /* Align to right for RTL on mobile */
+  .timeline::after {
+    right: 0;
+    left: auto;
+    transform: none;
+    width: 3px;
+  }
+
   .timeline-item {
     width: 100%;
+    padding-right: 40px;
     padding-left: 0;
-    padding-right: 70px;
+    margin-bottom: 1.5rem;
   }
 
   .timeline-item:nth-child(even) {
@@ -1320,25 +1336,48 @@ nav {
   }
 
   .timeline-item::after {
-    right: 21px;
-    /* Adjust dot position */
+    right: -9px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
   }
 
   .timeline-item:nth-child(even)::after {
     left: auto;
-    right: 21px;
+    right: -9px;
+  }
+
+  .timeline-content {
+    padding: 15px;
   }
 
   .typewriter {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    border-left-width: 2px;
   }
 
   .subtitle-typewriter {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    min-height: 1.5rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Floating Actions Mobile */
+  .floating-actions {
+    bottom: 20px;
+    right: 15px;
+    gap: 10px;
+  }
+
+  .action-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+    opacity: 0.8;
   }
 
   /* Notion Button Mobile */
@@ -1347,10 +1386,61 @@ nav {
     text-align: center;
     border-radius: 20px;
     padding: 15px;
+    gap: 10px;
   }
 
   .notion-text {
     text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .notion-img-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Other Grids */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .satar-main-logo-new {
+    max-width: 200px;
+  }
+
+  .satar-text-logo {
+    font-size: 2rem;
+  }
+
+  .satar-logo-item {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .fcc-logo-box {
+    padding: 12px 20px;
+  }
+
+  .fcc-logo-text {
+    font-size: 1.4rem;
+  }
+
+  .fcc-logo-fire {
+    font-size: 1.5rem;
+  }
+
+  .say-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .say-logo-academy {
+    font-size: 1rem;
+  }
+
+  .say-stat-item {
+    padding: 10px 16px;
   }
 }
 
@@ -1658,7 +1748,7 @@ nav {
 /* Certification Cards Grid */
 .fcc-certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   position: relative;
   z-index: 2;
@@ -2104,8 +2194,8 @@ nav {
    ═══════════════════════════════════════════════════════ */
 
 #saylor {
-  background: #0a0a23 !important;
-  /* Keep the FCC dark blue atmosphere */
+  background: transparent !important;
+  /* Keep the FCC dark blue atmosphere with transparency */
   margin-top: 40px;
 }
 
@@ -2196,7 +2286,7 @@ nav {
 /* Saylor Cert Cards */
 .say-certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   position: relative;
   z-index: 2;
@@ -2453,13 +2543,13 @@ nav {
    ═══════════════════════════════════════════════════════ */
 
 #coursera {
-  background: #f4f7ff !important;
+  background: transparent !important;
   /* Professional Light Blue Tint */
-  color: #1f1f1f;
+  color: #e1e9ff;
 }
 
 .cour-section-title {
-  color: #0056D2 !important;
+  color: #4A90E2 !important;
   font-weight: 800;
 }
 
@@ -2480,12 +2570,12 @@ nav {
   font-family: 'Inter', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
-  color: #0056D2;
+  color: #4A90E2;
   letter-spacing: -2px;
 }
 
 .cour-logo-plus {
-  background: #0056D2;
+  background: #4A90E2;
   color: #fff;
   padding: 2px 8px;
   border-radius: 4px;
@@ -2495,7 +2585,7 @@ nav {
 }
 
 .cour-logo-subtitle {
-  color: #636363;
+  color: #A0B2C6;
   font-size: 1.1rem;
   margin-top: -5px;
 }
@@ -2515,16 +2605,21 @@ nav {
   min-width: 150px;
   border-bottom: 3px solid transparent;
   transition: 0.3s;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  backdrop-filter: blur(5px);
 }
 
 .cour-stat-item:hover {
-  border-bottom-color: #0056D2;
-  background: #f8f9fa;
+  border-bottom-color: #4A90E2;
+  background: rgba(74, 144, 226, 0.15);
+  transform: translateY(-5px);
 }
 
 .cour-stat-item i {
   font-size: 2rem;
-  color: #0056D2;
+  color: #4A90E2;
   margin-bottom: 10px;
 }
 
@@ -2532,36 +2627,38 @@ nav {
   display: block;
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1f1f1f;
+  color: #e1e9ff;
 }
 
 .cour-stat-item span {
   font-size: 0.9rem;
-  color: #636363;
+  color: #A0B2C6;
 }
 
 /* Coursera Cert Cards */
 .cour-certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .cour-cert-card {
-  background: #fff;
-  border: 1px solid #e1e1e1;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(74, 144, 226, 0.3);
   border-radius: 12px;
   padding: 2rem;
   transition: 0.3s;
   position: relative;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(8px);
 }
 
 .cour-cert-card:hover {
-  box-shadow: 0 15px 35px rgba(0, 86, 210, 0.1);
+  box-shadow: 0 15px 35px rgba(74, 144, 226, 0.2);
   transform: translateY(-5px);
-  border-color: #0056D2;
+  border-color: #4A90E2;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .cour-cert-accent {
@@ -2594,24 +2691,24 @@ nav {
 .cour-cert-info h3 {
   font-size: 1.2rem;
   margin-bottom: 5px;
-  color: #1f1f1f;
+  color: #e1e9ff;
 }
 
 .cour-cert-info span {
   font-size: 0.85rem;
-  color: #0056D2;
+  color: #4A90E2;
   font-weight: 600;
 }
 
 .cour-cert-desc {
   font-size: 0.92rem;
-  color: #636363;
+  color: #A0B2C6;
   margin: 15px 0;
   line-height: 1.5;
 }
 
 .cour-progress-wrap {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
   height: 8px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -2620,13 +2717,13 @@ nav {
 
 .cour-progress-bar {
   height: 100%;
-  background: #0056D2;
+  background: #4A90E2;
   width: 0;
   transition: width 1.5s ease-out;
 }
 
 .cour-btn-main {
-  background: #0056D2;
+  background: #4A90E2;
   color: #fff !important;
   text-align: center;
   padding: 12px;
@@ -2638,19 +2735,20 @@ nav {
 }
 
 .cour-btn-main:hover {
-  background: #00419e;
+  background: #357ABD;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
 }
 
 /* Coursera Partners Section */
 .cour-partners {
   margin-top: 60px;
   text-align: center;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 40px;
 }
 
 .cour-partner-title {
-  color: #636363;
+  color: #A0B2C6;
   font-size: 1.1rem;
   margin-bottom: 30px;
   text-transform: uppercase;
