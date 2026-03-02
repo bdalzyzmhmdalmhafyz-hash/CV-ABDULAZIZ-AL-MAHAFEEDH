@@ -3479,14 +3479,14 @@ nav {
 .orbit-item-inner {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(20, 20, 40, 0.8), rgba(40, 40, 70, 0.8));
+  background: var(--bg-gradient, linear-gradient(135deg, rgba(20, 20, 40, 0.8), rgba(40, 40, 70, 0.8)));
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--clr-gold);
+  color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   animation: orbitCounterRotate 8s linear infinite;
   transition: all 0.3s ease-out;
@@ -3509,22 +3509,15 @@ nav {
 }
 
 .orbit-item:hover .orbit-item-inner {
-  transform: rotate(calc(-1 * var(--angle) - 0deg)) scale(1.15) !important;
-  background: linear-gradient(135deg, var(--clr-purple), var(--clr-pink));
   color: white;
-  box-shadow: 0 0 20px var(--clr-pink);
-  border-color: rgba(255, 255, 255, 0.5);
-  /* Force it upright on hover by overriding animation */
-  animation: none;
+  box-shadow: 0 0 20px var(--glow-color, var(--clr-pink));
+  border-color: rgba(255, 255, 255, 0.8);
+  scale: 1.15;
 }
 
-/* Because removing animation snaps it, a better trick is pausing the animation using animation-play-state: paused on parent */
+/* Pause the animation on hover on the parent to keep items upright */
 .orbit-system:hover .orbit-item-inner {
   animation-play-state: paused;
-}
-
-.orbit-item:hover .orbit-item-inner {
-  transform: scale(1.15) !important;
 }
 
 .orbit-text {
