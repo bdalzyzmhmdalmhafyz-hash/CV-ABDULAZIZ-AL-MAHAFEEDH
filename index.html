@@ -1090,98 +1090,76 @@
 
     </section>
 
-    <!-- Edraak Platform Section (freeCodeCamp Style) -->
-    <section id="edraak" class="container edr-section"
-        style="position: relative; overflow: hidden; border-radius: 15px; background: rgba(10, 10, 30, 0.4) !important; border: 1px solid rgba(0, 165, 165, 0.3);">
-        <!-- Floating Edraak Icons -->
-        <div class="floating-icons" style="border-radius: 15px;">
-            <i class="fas fa-graduation-cap edr-float-icon edr-fi-1"></i>
-            <i class="fas fa-book-open edr-float-icon edr-fi-2"></i>
-            <i class="fas fa-certificate edr-float-icon edr-fi-3"></i>
-            <i class="fas fa-lightbulb edr-float-icon edr-fi-4"></i>
-            <i class="fas fa-microchip edr-float-icon edr-fi-5"></i>
-            <i class="fas fa-brain edr-float-icon edr-fi-6"></i>
-        </div>
+<!-- Edraak Platform Section — Creative Redesign -->
+<section id="edraak" class="edr2-section">
+    <!-- Animated Background Particles -->
+    <div class="edr2-particles">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-        <h2 class="section-title fade-in edr-section-title" style="position: relative; z-index: 2;">
-            إنجازات وشهادات منصة إدراك
-        </h2>
+    <div class="container" style="position:relative; z-index:2;">
 
-        <!-- Edraak Logo Header -->
-        <div class="edr-logo-header fade-in">
-            <div class="edr-logo-box">
-                <img src="منصة ادراك.jfif" alt="Edraak Logo" class="edr-logo-img"
+        <!-- Hero Header -->
+        <div class="edr2-hero fade-in">
+            <div class="edr2-logo-glow">
+                <img src="منصة ادراك.jfif" alt="Edraak Logo" class="edr2-logo-img"
                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/22/Edraak_Logo.svg'">
-                <span class="edr-logo-text">إدراك | Edraak</span>
             </div>
-            <p class="edr-logo-subtitle">أكبر منصة عربية للمساقات الجماعية مفتوحة المصادر</p>
+            <h2 class="edr2-title">إدراك <span class="edr2-title-en">Edraak</span></h2>
+            <p class="edr2-subtitle">أكبر منصة عربية للمساقات الجماعية مفتوحة المصادر</p>
         </div>
 
-        <!-- Edraak Stats Overview -->
-        <div class="edr-stats-bar fade-in">
-            <div class="edr-stat-item">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                    <strong class="edr-stat-num" data-edr-count="2">0</strong>
-                    <span>تخصص كامل</span>
-                </div>
+        <!-- Stats Bar -->
+        <div class="edr2-stats fade-in">
+            <div class="edr2-stat">
+                <div class="edr2-stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                <strong class="edr-stat-num" data-edr-count="2">0</strong>
+                <span>تخصص كامل</span>
             </div>
-            <div class="edr-stat-item">
-                <i class="fas fa-certificate"></i>
-                <div>
-                    <strong class="edr-stat-num" data-edr-count="10">0</strong>
-                    <span>مساقات منجزة</span>
-                </div>
+            <div class="edr2-stat">
+                <div class="edr2-stat-icon"><i class="fas fa-certificate"></i></div>
+                <strong class="edr-stat-num" data-edr-count="10">0</strong>
+                <span>مساقات منجزة</span>
             </div>
-            <div class="edr-stat-item">
-                <i class="fas fa-users"></i>
-                <div>
-                    <strong class="edr-stat-num" data-edr-count="10">0</strong>
-                    <span>شركاء معتمدون</span>
-                </div>
+            <div class="edr2-stat">
+                <div class="edr2-stat-icon"><i class="fas fa-users"></i></div>
+                <strong class="edr-stat-num" data-edr-count="10">0</strong>
+                <span>شركاء معتمدون</span>
             </div>
-            <div class="edr-stat-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <strong class="edr-stat-num" data-edr-count="80">0</strong>
-                    <span>ساعة تعلم</span>
-                </div>
+            <div class="edr2-stat">
+                <div class="edr2-stat-icon"><i class="fas fa-clock"></i></div>
+                <strong class="edr-stat-num" data-edr-count="80">0</strong>
+                <span>ساعة تعلم</span>
             </div>
         </div>
 
-        <!-- Certification Cards Grid -->
-        <div class="edr-certs-grid fade-in">
+        <!-- ══════ SPECIALIZATIONS ══════ -->
+        <h3 class="edr2-category-title fade-in"><i class="fas fa-award"></i> التخصصات المعتمدة</h3>
 
-            <!-- 1. ICDL Specialization -->
-            <div class="edr-cert-card edr-specialization-card">
-                <div class="edr-cert-accent edr-accent-turquoise"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon edr-icon-special">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الرخصة الدولية لقيادة الحاسوب</h3>
-                        <span>ICDL Base Specialization</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-verified">
-                        <i class="fas fa-check-double"></i> تخصص معتمد
-                    </div>
+        <!-- Specialization 1: ICDL -->
+        <div class="edr2-spec fade-in" style="--spec-color: #00A5A5; --spec-glow: rgba(0,165,165,0.4);">
+            <div class="edr2-spec-header" onclick="this.parentElement.classList.toggle('open')">
+                <div class="edr2-spec-icon"><i class="fas fa-laptop"></i></div>
+                <div class="edr2-spec-info">
+                    <h3>الرخصة الدولية لقيادة الحاسوب</h3>
+                    <span>ICDL Base Specialization</span>
                 </div>
-                <p class="edr-cert-desc">تخصص متكامل يشمل المهارات الأساسية لاستخدام الحاسوب والإنترنت والبرامج المكتبية
-                    وفق المعايير الدولية.</p>
-                <div class="edr-cert-meta">
-                    <span><i class="fas fa-layer-group"></i> 4 مساقات</span>
-                    <span><i class="fas fa-calendar-alt"></i> 2025</span>
-                    <span><i class="fas fa-globe"></i> ثنائي اللغة</span>
+                <div class="edr2-spec-meta">
+                    <span class="edr2-badge-verified"><i class="fas fa-check-double"></i> تخصص معتمد</span>
+                    <span class="edr2-meta-tag"><i class="fas fa-layer-group"></i> 4 مساقات</span>
                 </div>
-                <div class="cert-carousel" style="margin-top: 15px;">
+                <div class="edr2-spec-toggle"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="edr2-spec-cert">
+                <div class="cert-carousel">
                     <div class="cert-carousel-inner">
                         <div class="cert-slide active">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/certificate/cdl_certificate/icdl_international_certificate/icdl_international_certificate_front.jpg_result.webp"
                                     class="certificate-link" data-title="شهادة تخصص ICDL - الوجه الأمامي">
                                     <img src="assets/edraak-platform/certificate/cdl_certificate/icdl_international_certificate/icdl_international_certificate_front.jpg_result.webp"
-                                        alt="ICDL Specialization Front" loading="lazy" class="certificate-img-inline">
+                                        alt="ICDL Front" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1191,7 +1169,7 @@
                                 <a href="assets/edraak-platform/certificate/cdl_certificate/icdl_international_certificate/icdl_international_certificate_back.jpg_result.webp"
                                     class="certificate-link" data-title="شهادة تخصص ICDL - الوجه الخلفي">
                                     <img src="assets/edraak-platform/certificate/cdl_certificate/icdl_international_certificate/icdl_international_certificate_back.jpg_result.webp"
-                                        alt="ICDL Specialization Back" loading="lazy" class="certificate-img-inline">
+                                        alt="ICDL Back" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1200,249 +1178,174 @@
                     <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
                     <i class="fas fa-exchange-alt carousel-hint"></i>
                 </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/b8665383cee24ae6a0461eee0914fdc5/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <a href="https://programs.edraak.org/learn/verify-certificate/b8665383cee24ae6a0461eee0914fdc5/?lang=ar"
+                    target="_blank" class="edr2-verify-btn">تحقق <i class="fas fa-external-link-alt"></i></a>
             </div>
-
-            <!-- 2. Computer Basics -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-blue"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>أساسيات الحاسوب</h3>
+            <div class="edr2-spec-body">
+                <div class="edr2-courses-grid">
+                    <!-- Course 1: Computer Essentials -->
+                    <div class="edr2-course-card" style="--course-accent: #33B7B7;">
+                        <div class="edr2-course-icon"><i class="fas fa-desktop"></i></div>
+                        <h4>أساسيات الحاسوب</h4>
                         <span>Computer Essentials</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">فهم مكونات الحاسوب، إدارة الملفات، والتعامل مع نظم التشغيل بكفاءة.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_front.jpg_result.webp"
-                                    class="certificate-link" data-title="أساسيات الحاسوب - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_front.jpg_result.webp"
-                                        alt="Computer Essentials Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_front.jpg_result.webp"
+                                            class="certificate-link" data-title="أساسيات الحاسوب - أمامي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_front.jpg_result.webp"
+                                                alt="CE Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_back.jpg_result.webp"
+                                            class="certificate-link" data-title="أساسيات الحاسوب - خلفي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_back.jpg_result.webp"
+                                                alt="CE Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_back.jpg_result.webp"
-                                    class="certificate-link" data-title="أساسيات الحاسوب - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/computer_essentials/computer_essentials_back.jpg_result.webp"
-                                        alt="Computer Essentials Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/f80c41d8678243f4aebdc6e00c3f1152/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/f80c41d8678243f4aebdc6e00c3f1152/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 3. Online Essentials -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-green"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>أساسيات الإنترنت</h3>
+                    <!-- Course 2: Online Essentials -->
+                    <div class="edr2-course-card" style="--course-accent: #28C76F;">
+                        <div class="edr2-course-icon"><i class="fas fa-wifi"></i></div>
+                        <h4>أساسيات الإنترنت</h4>
                         <span>Online Essentials</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">مهارات التصفح الآمن، البحث المتقدم، وإدارة المراسلات الإلكترونية.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_front.jpg_result.webp"
-                                    class="certificate-link" data-title="أساسيات الإنترنت - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_front.jpg_result.webp"
-                                        alt="Online Essentials Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_front.jpg_result.webp"
+                                            class="certificate-link" data-title="أساسيات الإنترنت - أمامي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_front.jpg_result.webp"
+                                                alt="OE Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_back.jpg_result.webp"
+                                            class="certificate-link" data-title="أساسيات الإنترنت - خلفي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_back.jpg_result.webp"
+                                                alt="OE Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_back.jpg_result.webp"
-                                    class="certificate-link" data-title="أساسيات الإنترنت - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/online_essentials/online_essentials_back.jpg_result.webp"
-                                        alt="Online Essentials Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/b3d1c95094ed4ad28d21f32e3e3fef51/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/b3d1c95094ed4ad28d21f32e3e3fef51/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 4. Word Processing -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-purple"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-file-word"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>معالجة النصوص (Word)</h3>
+                    <!-- Course 3: Word Processing -->
+                    <div class="edr2-course-card" style="--course-accent: #a78bfa;">
+                        <div class="edr2-course-icon"><i class="fas fa-file-word"></i></div>
+                        <h4>معالجة النصوص (Word)</h4>
                         <span>Word Processing</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">إنشاء وتنسيق المستندات الاحترافية وإدارة المخططات والجداول.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_front.jpg_result.webp"
-                                    class="certificate-link" data-title="معالجة النصوص (Word) - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_front.jpg_result.webp"
-                                        alt="Word Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_front.jpg_result.webp"
+                                            class="certificate-link" data-title="معالجة النصوص - أمامي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_front.jpg_result.webp"
+                                                alt="Word Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_back.jpg_result.webp"
+                                            class="certificate-link" data-title="معالجة النصوص - خلفي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_back.jpg_result.webp"
+                                                alt="Word Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_back.jpg_result.webp"
-                                    class="certificate-link" data-title="معالجة النصوص (Word) - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/word_processing/word_processing_back.jpg_result.webp"
-                                        alt="Word Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/d7fc44f552e346bbb301712baedd0eef/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/d7fc44f552e346bbb301712baedd0eef/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 5. Spreadsheets -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-gold"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-file-excel"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الجداول الإلكترونية (Excel)</h3>
+                    <!-- Course 4: Excel -->
+                    <div class="edr2-course-card" style="--course-accent: #ffd700;">
+                        <div class="edr2-course-icon"><i class="fas fa-file-excel"></i></div>
+                        <h4>الجداول الإلكترونية (Excel)</h4>
                         <span>Spreadsheets</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">تحليل البيانات، استخدام المعادلات الحسابية، وعمل الرسوم البيانية.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_front.jpg_result.webp"
-                                    class="certificate-link" data-title="الجداول الإلكترونية (Excel) - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_front.jpg_result.webp"
-                                        alt="Excel Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_front.jpg_result.webp"
+                                            class="certificate-link" data-title="الجداول الإلكترونية - أمامي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_front.jpg_result.webp"
+                                                alt="Excel Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_back.jpg_result.webp"
+                                            class="certificate-link" data-title="الجداول الإلكترونية - خلفي">
+                                            <img src="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_back.jpg_result.webp"
+                                                alt="Excel Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_back.jpg_result.webp"
-                                    class="certificate-link" data-title="الجداول الإلكترونية (Excel) - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/cdl_certificate/excel_spreadsheets/excel_spreadsheets_back.jpg_result.webp"
-                                        alt="Excel Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/78b44bc58fd84891984ffd742339a877/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/78b44bc58fd84891984ffd742339a877/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+        </div>
 
-            <!-- 6. Emotional Intelligence Specialization -->
-            <div class="edr-cert-card edr-specialization-card">
-                <div class="edr-cert-accent edr-accent-purple"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon edr-icon-special">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الذكاء العاطفي</h3>
-                        <span>Emotional Intelligence Specialization</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-verified">
-                        <i class="fas fa-check-double"></i> تخصص معتمد
-                    </div>
+        <!-- Specialization 2: Emotional Intelligence -->
+        <div class="edr2-spec fade-in" style="--spec-color: #a855f7; --spec-glow: rgba(168,85,247,0.4);">
+            <div class="edr2-spec-header" onclick="this.parentElement.classList.toggle('open')">
+                <div class="edr2-spec-icon"><i class="fas fa-heart"></i></div>
+                <div class="edr2-spec-info">
+                    <h3>الذكاء العاطفي</h3>
+                    <span>Emotional Intelligence Specialization</span>
                 </div>
-                <p class="edr-cert-desc">تخصص متكامل يركز على تطوير مهارات الوعي الذاتي، الإدارة الذاتية، الذكاء
-                    الاجتماعي، والقيادة العاطفية.</p>
-                <div class="edr-cert-meta">
-                    <span><i class="fas fa-layer-group"></i> 3 مساقات</span>
-                    <span><i class="fas fa-calendar-alt"></i> 2025</span>
-                    <span><i class="fas fa-globe"></i> ثنائي اللغة</span>
+                <div class="edr2-spec-meta">
+                    <span class="edr2-badge-verified"><i class="fas fa-check-double"></i> تخصص معتمد</span>
+                    <span class="edr2-meta-tag"><i class="fas fa-layer-group"></i> 3 مساقات</span>
                 </div>
-                <div class="cert-carousel" style="margin-top: 15px;">
+                <div class="edr2-spec-toggle"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="edr2-spec-cert">
+                <div class="cert-carousel">
                     <div class="cert-carousel-inner">
                         <div class="cert-slide active">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_specialization/emotional_intelligence_specialization_front.jpg.webp"
-                                    class="certificate-link" data-title="تخصص الذكاء العاطفي - الوجه الأمامي">
+                                    class="certificate-link" data-title="تخصص الذكاء العاطفي - أمامي">
                                     <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_specialization/emotional_intelligence_specialization_front.jpg.webp"
-                                        alt="EM Specialization Front" loading="lazy" class="certificate-img-inline">
+                                        alt="EI Front" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1450,9 +1353,9 @@
                         <div class="cert-slide">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_specialization/emotional_intelligence_specialization_back.jpg.webp"
-                                    class="certificate-link" data-title="تخصص الذكاء العاطفي - الوجه الخلفي">
+                                    class="certificate-link" data-title="تخصص الذكاء العاطفي - خلفي">
                                     <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_specialization/emotional_intelligence_specialization_back.jpg.webp"
-                                        alt="EM Specialization Back" loading="lazy" class="certificate-img-inline">
+                                        alt="EI Back" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1461,192 +1364,136 @@
                     <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
                     <i class="fas fa-exchange-alt carousel-hint"></i>
                 </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/ca7b7392d0994a899134c14cd8d0876f/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <a href="https://programs.edraak.org/learn/verify-certificate/ca7b7392d0994a899134c14cd8d0876f/?lang=ar"
+                    target="_blank" class="edr2-verify-btn">تحقق <i class="fas fa-external-link-alt"></i></a>
             </div>
-
-            <!-- 7. Emotional Intelligence and Self -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-blue"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الذكاء العاطفي و الذات</h3>
+            <div class="edr2-spec-body">
+                <div class="edr2-courses-grid">
+                    <!-- EI Course 1: Self -->
+                    <div class="edr2-course-card" style="--course-accent: #60a5fa;">
+                        <div class="edr2-course-icon"><i class="fas fa-user-circle"></i></div>
+                        <h4>الذكاء العاطفي و الذات</h4>
                         <span>EI and Self</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">فهم الذات والوعي بالمشاعر وكيفية إدارتها بفعالية لتحقيق التوازن الشخصي.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_front.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والذات - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_front.jpg.webp"
-                                        alt="EI and Self Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_front.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والذات - أمامي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_front.jpg.webp"
+                                                alt="EI Self Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_back.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والذات - خلفي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_back.jpg.webp"
+                                                alt="EI Self Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_back.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والذات - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_self/emotional_intelligence_self_back.jpg.webp"
-                                        alt="EI and Self Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/55d7dc7040054027bdb3251584d8cf86/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/55d7dc7040054027bdb3251584d8cf86/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 8. Emotional Intelligence and Leadership -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-green"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الذكاء العاطفي و القيادة</h3>
+                    <!-- EI Course 2: Leadership -->
+                    <div class="edr2-course-card" style="--course-accent: #34d399;">
+                        <div class="edr2-course-icon"><i class="fas fa-users-cog"></i></div>
+                        <h4>الذكاء العاطفي و القيادة</h4>
                         <span>EI and Leadership</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">تطبيق مهارات الذكاء العاطفي في بيئة العمل والقيادة الملهمة للفرق.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_front.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والقيادة - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_front.jpg.webp"
-                                        alt="EI and Leadership Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_front.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والقيادة - أمامي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_front.jpg.webp"
+                                                alt="EI Lead Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_back.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والقيادة - خلفي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_back.jpg.webp"
+                                                alt="EI Lead Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_back.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والقيادة - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_leadership/emotional_intelligence_leadership_back.jpg.webp"
-                                        alt="EI and Leadership Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/440ff7ff911947a4acafbf609e39ef4b/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/440ff7ff911947a4acafbf609e39ef4b/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- 9. Emotional Intelligence and Society -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-gold"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-city"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>الذكاء العاطفي و المجتمع</h3>
+                    <!-- EI Course 3: Society -->
+                    <div class="edr2-course-card" style="--course-accent: #fbbf24;">
+                        <div class="edr2-course-icon"><i class="fas fa-city"></i></div>
+                        <h4>الذكاء العاطفي و المجتمع</h4>
                         <span>EI and Society</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">الوعي الاجتماعي والتعاطف وبناء علاقات متينة قائمة على الفهم المتبادل.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
-                    <div class="cert-carousel-inner">
-                        <div class="cert-slide active">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_front.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والمجتمع - الوجه الأمامي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_front.jpg.webp"
-                                        alt="EI and Society Front" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
+                        <div class="cert-carousel" style="margin-top:10px;">
+                            <div class="cert-carousel-inner">
+                                <div class="cert-slide active">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_front.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والمجتمع - أمامي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_front.jpg.webp"
+                                                alt="EI Soc Front" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cert-slide">
+                                    <div class="inline-certificate">
+                                        <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_back.jpg.webp"
+                                            class="certificate-link" data-title="الذكاء العاطفي والمجتمع - خلفي">
+                                            <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_back.jpg.webp"
+                                                alt="EI Soc Back" loading="lazy" class="certificate-img-inline">
+                                            <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
+                            <i class="fas fa-exchange-alt carousel-hint"></i>
                         </div>
-                        <div class="cert-slide">
-                            <div class="inline-certificate">
-                                <a href="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_back.jpg.webp"
-                                    class="certificate-link" data-title="الذكاء العاطفي والمجتمع - الوجه الخلفي">
-                                    <img src="assets/edraak-platform/certificate/emotional_intelligence_certificate/emotional_intelligence_society/emotional_intelligence_society_back.jpg.webp"
-                                        alt="EI and Society Back" loading="lazy" class="certificate-img-inline">
-                                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://programs.edraak.org/learn/verify-certificate/47337b8b020f4df1b0ab41734dc2ae86/?lang=ar"
+                            target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
                     </div>
-                    <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
-                    <i class="fas fa-exchange-alt carousel-hint"></i>
-                </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/47337b8b020f4df1b0ab41734dc2ae86/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+        </div>
 
-            <!-- 10. Effective Listening -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-orange"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>فن الاستماع الفعال</h3>
-                        <span>Effective Listening</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">تطوير مهارات التواصل الشخصي وفهم لغة الجسد وتحليل الرسائل الصوتية.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
+        <!-- ══════ TRAINING COURSES ══════ -->
+        <h3 class="edr2-category-title fade-in" style="margin-top:4rem;"><i class="fas fa-chalkboard-teacher"></i>
+            الدورات التدريبية</h3>
+
+        <div class="edr2-training-grid fade-in">
+            <!-- Training 1: Effective Listening -->
+            <div class="edr2-training-card" style="--train-color: #f97316;">
+                <div class="edr2-train-num">01</div>
+                <div class="edr2-train-icon"><i class="fas fa-headset"></i></div>
+                <h4>فن الاستماع الفعال</h4>
+                <p>تطوير مهارات التواصل الشخصي وفهم لغة الجسد وتحليل الرسائل الصوتية.</p>
+                <div class="cert-carousel" style="margin-top:10px;">
                     <div class="cert-carousel-inner">
                         <div class="cert-slide active">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/effective_listening/effective_listening_front.jpg_result.webp"
-                                    class="certificate-link" data-title="فن الاستماع الفعال - الوجه الأمامي">
+                                    class="certificate-link" data-title="فن الاستماع الفعال - أمامي">
                                     <img src="assets/edraak-platform/Training Courses/effective_listening/effective_listening_front.jpg_result.webp"
-                                        alt="Effective Listening Front" loading="lazy" class="certificate-img-inline">
+                                        alt="Listening Front" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1654,9 +1501,9 @@
                         <div class="cert-slide">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/effective_listening/effective_listening_back.jpg_result.webp"
-                                    class="certificate-link" data-title="فن الاستماع الفعال - الوجه الخلفي">
+                                    class="certificate-link" data-title="فن الاستماع الفعال - خلفي">
                                     <img src="assets/edraak-platform/Training Courses/effective_listening/effective_listening_back.jpg_result.webp"
-                                        alt="Effective Listening Back" loading="lazy" class="certificate-img-inline">
+                                        alt="Listening Back" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1665,39 +1512,24 @@
                     <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
                     <i class="fas fa-exchange-alt carousel-hint"></i>
                 </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/6a41cc7283a445d785d29bdaaeb0c3bf/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <a href="https://programs.edraak.org/learn/verify-certificate/6a41cc7283a445d785d29bdaaeb0c3bf/?lang=ar"
+                    target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
             </div>
 
-            <!-- 11. Creative Skills for Business Problem Solving -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-blue"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>المهارات الإبداعية في حل المشاكل</h3>
-                        <span>Creative Skills for Business</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">استخدام التفكير الإبداعي والمنهجي لحل التحديات المعقدة في بيئة الأعمال.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
+            <!-- Training 2: Creative Skills -->
+            <div class="edr2-training-card" style="--train-color: #3b82f6;">
+                <div class="edr2-train-num">02</div>
+                <div class="edr2-train-icon"><i class="fas fa-lightbulb"></i></div>
+                <h4>المهارات الإبداعية في حل المشاكل</h4>
+                <p>استخدام التفكير الإبداعي والمنهجي لحل التحديات المعقدة في بيئة الأعمال.</p>
+                <div class="cert-carousel" style="margin-top:10px;">
                     <div class="cert-carousel-inner">
                         <div class="cert-slide active">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/creative_skills_business_problem_solving/creative_skills_business_problem_solving_front.jpg_result.webp"
-                                    class="certificate-link" data-title="المهارات الإبداعية - الوجه الأمامي">
+                                    class="certificate-link" data-title="المهارات الإبداعية - أمامي">
                                     <img src="assets/edraak-platform/Training Courses/creative_skills_business_problem_solving/creative_skills_business_problem_solving_front.jpg_result.webp"
-                                        alt="Creative Skills Front" loading="lazy" class="certificate-img-inline">
+                                        alt="Creative Front" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1705,9 +1537,9 @@
                         <div class="cert-slide">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/creative_skills_business_problem_solving/creative_skills_business_problem_solving_back.jpg_result.webp"
-                                    class="certificate-link" data-title="المهارات الإبداعية - الوجه الخلفي">
+                                    class="certificate-link" data-title="المهارات الإبداعية - خلفي">
                                     <img src="assets/edraak-platform/Training Courses/creative_skills_business_problem_solving/creative_skills_business_problem_solving_back.jpg_result.webp"
-                                        alt="Creative Skills Back" loading="lazy" class="certificate-img-inline">
+                                        alt="Creative Back" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1716,39 +1548,24 @@
                     <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
                     <i class="fas fa-exchange-alt carousel-hint"></i>
                 </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/840e84fe14a14afaa317d08e37d50c12/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
-                </div>
+                <a href="https://programs.edraak.org/learn/verify-certificate/840e84fe14a14afaa317d08e37d50c12/?lang=ar"
+                    target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
             </div>
 
-            <!-- 12. Introduction to Networking -->
-            <div class="edr-cert-card">
-                <div class="edr-cert-accent edr-accent-green"></div>
-                <div class="edr-cert-header">
-                    <div class="edr-cert-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="edr-cert-info">
-                        <h3>مقدمة في عالم الشبكات</h3>
-                        <span>Intro to Networking</span>
-                    </div>
-                    <div class="edr-cert-badge edr-badge-complete">
-                        <i class="fas fa-check"></i> مكتمل
-                    </div>
-                </div>
-                <p class="edr-cert-desc">فهم أساسيات شبكات الحاسوب، البروتوكولات، وطرق توصيل الأجهزة المختلفة.</p>
-                <div class="cert-carousel" style="margin-top: 15px;">
+            <!-- Training 3: Networking -->
+            <div class="edr2-training-card" style="--train-color: #10b981;">
+                <div class="edr2-train-num">03</div>
+                <div class="edr2-train-icon"><i class="fas fa-network-wired"></i></div>
+                <h4>مقدمة في عالم الشبكات</h4>
+                <p>فهم أساسيات شبكات الحاسوب، البروتوكولات، وطرق توصيل الأجهزة المختلفة.</p>
+                <div class="cert-carousel" style="margin-top:10px;">
                     <div class="cert-carousel-inner">
                         <div class="cert-slide active">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/introduction_to_networking/introduction_to_networking_front.jpg_result.webp"
-                                    class="certificate-link" data-title="مقدمة في الشبكات - الوجه الأمامي">
+                                    class="certificate-link" data-title="مقدمة في الشبكات - أمامي">
                                     <img src="assets/edraak-platform/Training Courses/introduction_to_networking/introduction_to_networking_front.jpg_result.webp"
-                                        alt="Networking Front" loading="lazy" class="certificate-img-inline">
+                                        alt="Network Front" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1756,9 +1573,9 @@
                         <div class="cert-slide">
                             <div class="inline-certificate">
                                 <a href="assets/edraak-platform/Training Courses/introduction_to_networking/introduction_to_networking_back.jpg_result.webp"
-                                    class="certificate-link" data-title="مقدمة في الشبكات - الوجه الخلفي">
+                                    class="certificate-link" data-title="مقدمة في الشبكات - خلفي">
                                     <img src="assets/edraak-platform/Training Courses/introduction_to_networking/introduction_to_networking_back.jpg_result.webp"
-                                        alt="Networking Back" loading="lazy" class="certificate-img-inline">
+                                        alt="Network Back" loading="lazy" class="certificate-img-inline">
                                     <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                                 </a>
                             </div>
@@ -1767,29 +1584,36 @@
                     <div class="carousel-nav"><span class="dot active"></span><span class="dot"></span></div>
                     <i class="fas fa-exchange-alt carousel-hint"></i>
                 </div>
-                <div class="edr-progress-wrap">
-                    <div class="edr-progress-bar" data-edr-width="100%"></div>
-                </div>
-                <div class="edr-cert-actions">
-                    <a href="https://programs.edraak.org/learn/verify-certificate/0a9153c84eea43239fcf270836b4fee9/?lang=ar"
-                        target="_blank" class="edr-btn-main">تحقق <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://programs.edraak.org/learn/verify-certificate/0a9153c84eea43239fcf270836b4fee9/?lang=ar"
+                    target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <!-- Partners -->
+        <div class="edr2-partners fade-in">
+            <h3><i class="fas fa-handshake"></i> شركاء الاعتماد والنجاح</h3>
+            <div class="edr2-partners-marquee">
+                <div class="edr2-marquee-track">
+                    <span>مؤسسة الملكة رانيا</span>
+                    <span>Harvard (edX)</span>
+                    <span>MIT</span>
+                    <span>British Council</span>
+                    <span>Google</span>
+                    <span>بيت.كوم</span>
+                    <span>World Bank</span>
+                    <span>مؤسسة الملكة رانيا</span>
+                    <span>Harvard (edX)</span>
+                    <span>MIT</span>
+                    <span>British Council</span>
+                    <span>Google</span>
+                    <span>بيت.كوم</span>
+                    <span>World Bank</span>
                 </div>
             </div>
         </div>
 
-        <!-- Partners Section -->
-        <div class="edr-partners fade-in">
-            <h3 class="edr-partners-title"><i class="fas fa-handshake"></i> شركاء الاعتماد والنجاح</h3>
-            <div class="edr-partners-row">
-                <span class="edr-partner-tag">مؤسسة الملكة رانيا</span>
-                <span class="edr-partner-tag">Harvard (edX)</span>
-                <span class="edr-partner-tag">MIT</span>
-                <span class="edr-partner-tag">British Council</span>
-                <span class="edr-partner-tag">Google</span>
-                <span class="edr-partner-tag">بيت.كوم</span>
-                <span class="edr-partner-tag">World Bank</span>
-            </div>
-        </div>
+    </div>
+</section>
     </section>
 
 
