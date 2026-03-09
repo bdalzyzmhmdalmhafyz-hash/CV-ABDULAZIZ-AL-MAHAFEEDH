@@ -80,6 +80,13 @@
         <h2 class="section-title fade-in">المعلومات الشخصية</h2>
         <div class="glass-card fade-in about-grid">
             <div class="info-item">
+                <i class="fas fa-user info-icon"></i>
+                <div>
+                    <strong>الاسم بالإنجليزية</strong><br>
+                    ABDULAZIZ MOHAMMED ABDULAZIZ AL-MAHAFEEDH
+                </div>
+            </div>
+            <div class="info-item">
                 <i class="fas fa-envelope info-icon"></i>
                 <div>
                     <strong>البريد الإلكتروني</strong><br>
@@ -124,8 +131,14 @@
             <div class="timeline-item fade-in">
                 <div class="timeline-content">
                     <span class="timeline-date">المستوى الرابع</span>
-                    <h3>طالب بكالوريوس تخصص محاسبة</h3>
-                    <h4>جامعة حضرموت</h4>
+                    <h3 id="university-title">طالب بكالوريوس تخصص محاسبة</h3>
+                    <h4 id="university-text">جامعة حضرموت</h4>
+                    <div class="external-issuer-actions">
+                        <button class="btn-open-issuer" data-issuer="hadhramout" data-title="بكالوريوس محاسبة"
+                            data-src="">
+                            <i class="fas fa-scroll"></i> عرض الجهة المانحة
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -136,6 +149,7 @@
                     <h4>ثانوية المكلا النموذجية للبنين</h4>
                     <p>حاصل على تقدير (95.63%)</p>
                     <div class="inline-certificate">
+
                         <a href="assets/education/high-school-diploma.jpg.jpg" class="certificate-link"
                             data-title="شهادة الثانوية العامة">
                             <img src="assets/education/high-school-diploma.jpg.jpg"
@@ -147,6 +161,12 @@
                         </a>
                     </div>
 
+                    <div class="external-issuer-actions">
+                        <button class="btn-open-issuer" data-issuer="mukalla_model" data-title="شهادة الثانوية العامة"
+                            data-src="assets/education/high-school-diploma.jpg.jpg">
+                            <i class="fas fa-scroll"></i> عرض الجهة المانحة
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -295,8 +315,9 @@
     <section id="courses" class="container">
         <h2 class="section-title fade-in">الدورات و الدبلومات</h2>
 
-        <h3 id="courses-accounting" class="fade-in" style="color: var(--clr-light-blue); margin-bottom: 20px;">الدورات
-            المحاسبية</h3>
+        <h3 id="courses-accounting" class="fade-in" style="color: #00d2ff; margin-bottom: 20px;">
+            <i class="fas fa-calculator" style="margin-left: 10px;"></i>قسم الدورات المحاسبية
+        </h3>
         <div class="cards-grid fade-in">
             <div class="card glass-card">
                 <h3>دبلوم المحاسبة والإدارة المالية</h3>
@@ -456,9 +477,9 @@
             </div>
         </div>
 
-        <h3 id="courses-training" class="fade-in"
-            style="color: var(--clr-pink); margin-top: 40px; margin-bottom: 20px;">ثانياً: قسم التطوير
-            والتدريب</h3>
+        <h3 id="courses-training" class="fade-in" style="color: #00c853; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-seedling" style="margin-left: 10px;"></i>قسم التطوير والتدريب
+        </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: OSHA -->
             <div class="card glass-card">
@@ -626,9 +647,9 @@
             </div>
         </div>
 
-        <h3 id="courses-software" class="fade-in"
-            style="color: var(--clr-pink); margin-top: 40px; margin-bottom: 20px;">ثالثاً: قسم الدورات
-            المتعلقة بالبرامج</h3>
+        <h3 id="courses-software" class="fade-in" style="color: #a855f7; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-laptop-code" style="margin-left: 10px;"></i>قسم الدورات المتعلقة بالبرامج
+        </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: ICDL -->
             <div class="card glass-card">
@@ -758,9 +779,9 @@
             </div>
         </div>
 
-        <h3 id="courses-technical" class="fade-in"
-            style="color: var(--clr-pink); margin-top: 40px; margin-bottom: 20px;">رابعاً: قسم الدورات
-            التقنية والإبداعية</h3>
+        <h3 id="courses-technical" class="fade-in" style="color: #ec4899; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-lightbulb" style="margin-left: 10px;"></i>قسم الدورات التقنية والإبداعية
+        </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: Web Development -->
             <div class="card glass-card">
@@ -845,8 +866,8 @@
             </div>
         </div>
 
-        <h3 id="courses-languages" class="fade-in"
-            style="color: var(--clr-gold); margin-top: 40px; margin-bottom: 20px;">خامساً: قسم اللغات
+        <h3 id="courses-languages" class="fade-in" style="color: #eab308; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-language" style="margin-left: 10px;"></i>قسم اللغات
         </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: Advanced English Diploma -->
@@ -918,9 +939,9 @@
             </div>
         </div>
 
-        <h3 id="courses-appreciation" class="fade-in"
-            style="color: var(--clr-gold); margin-top: 40px; margin-bottom: 20px;">سادساً: شهادات الشكر
-            والتقدير</h3>
+        <h3 id="courses-appreciation" class="fade-in" style="color: #3b82f6; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-award" style="margin-left: 10px;"></i>شهادات الشكر والتقدير
+        </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: Secondary Graduation -->
             <div class="card glass-card">
@@ -1054,9 +1075,9 @@
             </div>
         </div>
 
-        <h3 id="courses-achievements" class="fade-in"
-            style="color: var(--clr-gold); margin-top: 40px; margin-bottom: 20px;">سابعاً: الإنجازات
-            والجوائز </h3>
+        <h3 id="courses-achievements" class="fade-in" style="color: #f97316; margin-top: 40px; margin-bottom: 20px;">
+            <i class="fas fa-trophy" style="margin-left: 10px;"></i>الإنجازات والجوائز
+        </h3>
         <div class="cards-grid fade-in">
             <!-- Card 1: Quran Memorization Shield -->
             <div class="card glass-card">
@@ -1607,20 +1628,71 @@
                 <h3><i class="fas fa-handshake"></i> شركاء الاعتماد والنجاح</h3>
                 <div class="edr2-partners-marquee">
                     <div class="edr2-marquee-track">
-                        <span>مؤسسة الملكة رانيا</span>
-                        <span>Harvard (edX)</span>
-                        <span>MIT</span>
-                        <span>British Council</span>
-                        <span>Google</span>
-                        <span>بيت.كوم</span>
-                        <span>World Bank</span>
-                        <span>مؤسسة الملكة رانيا</span>
-                        <span>Harvard (edX)</span>
-                        <span>MIT</span>
-                        <span>British Council</span>
-                        <span>Google</span>
-                        <span>بيت.كوم</span>
-                        <span>World Bank</span>
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-crown"></i>
+                            <span>مؤسسة الملكة رانيا</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/harvard/A51C30" alt="Harvard">
+                            <span>Harvard University</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/mit/A31F34" alt="MIT">
+                            <span>MIT (OpenCourseWare)</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google">
+                            <span>Google Academy</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/microsoft/00A4EF" alt="Microsoft">
+                            <span>Microsoft</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/britishcouncil/003399" alt="British Council">
+                            <span>British Council</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>بيت.كوم (Bayt)</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-globe"></i>
+                            <span>البنك الدولي (World Bank)</span>
+                        </div>
+                        <!-- Duplicate for Seamless Marquee -->
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-crown"></i>
+                            <span>مؤسسة الملكة رانيا</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/harvard/A51C30" alt="Harvard">
+                            <span>Harvard University</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/mit/A31F34" alt="MIT">
+                            <span>MIT</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google">
+                            <span>Google</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/microsoft/00A4EF" alt="Microsoft">
+                            <span>Microsoft</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <img src="https://cdn.simpleicons.org/britishcouncil/003399" alt="British Council">
+                            <span>British Council</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>بيت.كوم</span>
+                        </div>
+                        <div class="edr2-partner-item">
+                            <i class="fas fa-globe"></i>
+                            <span>البنك الدولي</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2372,7 +2444,8 @@
                     <div class="cour-progress-bar" data-cour-width="100%"></div>
                 </div>
                 <div class="cour-cert-actions">
-                    <a href="#" class="cour-btn-main">عرض الشهادة</a>
+                    <a href="assets/coursera/google-data-analytics.jpg" class="cour-btn-main certificate-link"
+                        data-title="Google Data Analytics" data-issuer="google">عرض الشهادة</a>
                 </div>
             </div>
 
@@ -2440,32 +2513,6 @@
     </section>
 
     <div class="floating-actions fade-in">
-        <!-- AI Chatbot Icon -->
-        <div id="chatbot-float" title="المساعد الذكي عبد العزيز">
-            <!-- Chat Bubble -->
-            <div class="chatbot-bubble" id="chatbot-bubble">
-                <span class="chatbot-bubble-text" id="chatbot-bubble-text"></span>
-                <div class="chatbot-bubble-tail"></div>
-            </div>
-            <!-- Pulse Rings -->
-            <div class="chatbot-pulse-ring chatbot-ring-1"></div>
-            <div class="chatbot-pulse-ring chatbot-ring-2"></div>
-            <div class="chatbot-pulse-ring chatbot-ring-3"></div>
-            <!-- Orbiting Particles -->
-            <div class="chatbot-orbit">
-                <span class="chatbot-particle p1"></span>
-                <span class="chatbot-particle p2"></span>
-                <span class="chatbot-particle p3"></span>
-                <span class="chatbot-particle p4"></span>
-            </div>
-            <!-- Image -->
-            <div class="chatbot-img-wrapper">
-                <img src="assets/primary_image/chatbot_main_image.png" alt="المساعد الذكي" class="chatbot-img">
-                <div class="chatbot-scan-line"></div>
-            </div>
-            <!-- Status Indicator -->
-            <span class="chatbot-status-dot"></span>
-        </div>
         <!-- WhatsApp -->
         <a href="https://wa.me/967776543245" class="action-btn whatsapp" target="_blank" title="تواصل عبر واتساب">
             <i class="fab fa-whatsapp"></i>
@@ -2563,6 +2610,58 @@
                 <div class="orbit-item-inner">
                     <i class="fas fa-trophy"></i>
                     <span class="orbit-text">الإنجازات</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Modal for Certificates -->
+    <div id="cert-modal" class="cert-modal-overlay">
+        <div class="cert-modal-container">
+            <div class="cert-modal-header" id="modal-header">
+                <div class="modal-header-content">
+                    <div class="issuer-badge" id="modal-badge"></div>
+                    <h3 id="modal-issuer-name"></h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeCertModal()">&times;</button>
+            </div>
+            <div class="cert-modal-body">
+                <div class="modal-slider" id="modal-slider">
+                    <!-- Slide 1: Certificate Preview -->
+                    <div class="modal-slide" id="slide-cert">
+                        <div class="modal-actions top-actions">
+                            <button class="modal-btn-about prominent-btn" id="btn-show-issuer">
+                                <i class="fas fa-scroll"></i> عرض الجهة المانحة
+                            </button>
+                        </div>
+                        <div class="cert-preview-wrapper">
+                            <img id="modal-cert-img" src="" alt="Certificate Preview">
+                        </div>
+                    </div>
+                    <!-- Slide 2: Issuer Information -->
+                    <div class="modal-slide" id="slide-issuer">
+                        <div class="issuer-info-card">
+                            <div class="issuer-logo-wrapper">
+                                <img id="modal-issuer-logo" src="" alt="Issuer Logo">
+                            </div>
+                            <h4 id="modal-issuer-title"></h4>
+                            <p id="modal-issuer-desc" class="issuer-description"></p>
+                            <div class="issuer-meta">
+                                <span id="modal-issuer-address"></span>
+                            </div>
+                            <div class="issuer-links">
+                                <a id="modal-official-link" href="#" target="_blank" class="modal-btn-official">
+                                    <i class="fas fa-external-link-alt"></i> <span></span>
+                                </a>
+                                <div id="modal-social-links" class="social-links-container"></div>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="modal-btn-back" id="btn-back-to-cert">
+                                <i class="fas fa-arrow-right"></i> العودة للشهادة
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -406,63 +406,184 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach(section => {
     if (section.id) dockObserver.observe(section);
   });
-
-  // ── AI Chatbot: Rotating Welcome Bubbles ──
-  const chatbotBubble = document.getElementById('chatbot-bubble');
-  const chatbotBubbleText = document.getElementById('chatbot-bubble-text');
-  if (chatbotBubble && chatbotBubbleText) {
-    const chatbotMessages = [
-      'هل تريد معرفة مهاراتي؟ 🚀',
-      'أنا المساعد الذكي عبد العزيز، اسألني عن مشاريعه 🤖',
-      'هل يمكنني مساعدتك في تصفح السيرة الذاتية؟ 📄'
-    ];
-    let chatbotMsgIndex = 0;
-
-    function showChatbotBubble() {
-      chatbotBubbleText.textContent = chatbotMessages[chatbotMsgIndex];
-      chatbotBubble.classList.add('show');
-
-      // Hide after 3 seconds
-      setTimeout(() => {
-        chatbotBubble.classList.remove('show');
-        chatbotMsgIndex = (chatbotMsgIndex + 1) % chatbotMessages.length;
-      }, 3000);
-    }
-
-    // First appearance after 2s, then every 5s
-    setTimeout(() => {
-      showChatbotBubble();
-      setInterval(showChatbotBubble, 5000);
-    }, 2000);
-  }
-
 });
 
-// Satar Platform - Learning Path Toggling
-function toggleSatarPath() {
-  const pathCard = document.getElementById('satar-uxui-path');
-  if (!pathCard) return;
+/* ══════════════════════════════════════════════════════════════════════════════
+   Dynamic Certificate Modal Logic
+   ══════════════════════════════════════════════════════════════════════════════ */
 
-  const isHidden = window.getComputedStyle(pathCard).display === 'none';
+const certificateIssuers = {
+  hadhramout: {
+    name: "جامعة حضرموت",
+    title: "Hadhramout University",
+    badge: "صرح أكاديمي رائد",
+    description: "تعد جامعة حضرموت صرحاً أكاديمياً رائعاً في الجمهورية اليمنية، تأسست عام 1993 في مدينة المكلا. تعتبر الجامعة من المؤسسات التعليمية الرائدة التي تلتزم بتقديم برامج بكالوريوس ودراسات عليا معتمدة في تخصصات الهندسة، الحاسوب، والطب. تركز الجامعة على ربط المناهج العلمية باحتياجات سوق العمل والتنمية المستدامة، وهي الجهة التي صقلت خلفيتي العلمية والتقنية.",
+    logo: "https://hu.edu.ye/wp-content/uploads/2021/03/logo.png", // Attempting official logo, will fallback if needed
+    officialLink: "https://hu.edu.ye",
+    btnText: "زيارة الموقع الرسمي للجامعة",
+    mainColor: "#00c853", // Academic Green
+    address: "جامعة حضرموت - Hadhramout University"
+  },
+  mukalla_model: {
+    name: "ثانوية المكلا النموذجية",
+    title: "Mukalla Model Secondary School",
+    badge: "نخبة الطلاب المتفوقين",
+    description: "ثانوية المكلا النموذجية هي صرح تعليمي رائد متخصص في رعاية وتأهيل الطلاب المتفوقين في حضرموت. تأسست بمبادرة نوعية من مجموعة من رجال الأعمال الداعمين للعلم، وفي مقدمتهم الشيخ المهندس عبدالله أحمد بقشان عبر مؤسسة حضرموت للتنمية البشرية. تهدف المدرسة إلى صناعة جيل قيادي متسلح بالعلم والابتكار، وتعتبر من أكثر المدارس تنافسية على مستوى الوطن.",
+    logo: "assets/organization_logos/mukalla_model_boys_secondary_logo.png.jpg",
+    fullLogo: true,
+    officialLink: "https://hadhramout-foundation.org",
+    btnText: "زيارة الموقع الرسمي للمؤسسة الراعية",
+    mainColor: "#A67B5B", // Light Brown / Cinnamon
+    address: "ثانوية المكلا النموذجية - Mukalla Model Secondary School",
+    social: [
+      { icon: "fab fa-facebook", link: "https://www.facebook.com/mmss.mukalla" }
+    ]
+  },
+  google: {
+    name: "Google",
+    title: "Google Career Certificates",
+    badge: "احترافية عالمية",
+    description: "برامج تدريبية احترافية مصممة من قبل خبراء جوجل لتزويد المتعلمين بالمهارات المطلوبة في مجالات التكنولوجيا الصاعدة.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    officialLink: "https://grow.google/certificates/",
+    btnText: "عرض تفاصيل شهادات جوجل",
+    mainColor: "#4285F4", // Google Blue
+    address: "Google LLC - Mountain View, CA"
+  },
+  microsoft: {
+    name: "Microsoft",
+    title: "Microsoft Certified Professional",
+    badge: "خبرات تقنية معتمدة",
+    description: "شهادات مايكروسوفت تثبت الكفاءة في استخدام وتطبيق تقنيات الحوسبة السحابية، تطوير البرمجيات، وإدارة البيانات.",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+    officialLink: "https://learn.microsoft.com/en-us/credentials/",
+    btnText: "استكشاف مسارات مايكروسوفت",
+    mainColor: "#00a4ef", // Microsoft Blue
+    address: "Microsoft Corporation - Redmond, WA"
+  }
+};
 
-  if (isHidden) {
-    // Show
-    pathCard.style.setProperty('display', 'block', 'important');
-    // Trigger reflow for transition
-    pathCard.offsetHeight;
-    pathCard.style.opacity = '1';
-    pathCard.style.transform = 'translateY(0)';
+const modalOverlay = document.getElementById('cert-modal');
+const modalSlider = document.getElementById('modal-slider');
 
-    // Scroll into view
-    setTimeout(() => {
-      pathCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
+function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
+  const issuer = certificateIssuers[issuerKey];
+  if (!issuer) return;
+
+  // Set Theme Color
+  document.documentElement.style.setProperty('--issuer-main-color', issuer.mainColor);
+
+  // Inject Content
+  document.getElementById('modal-issuer-name').textContent = issuer.name;
+  document.getElementById('modal-badge').textContent = issuer.badge;
+  document.getElementById('modal-cert-img').src = certSrc;
+
+  const logoImg = document.getElementById('modal-issuer-logo');
+  const logoWrapper = logoImg.parentElement;
+  logoImg.src = issuer.logo;
+
+  if (issuer.fullLogo) {
+    logoWrapper.classList.add('full-width-logo');
   } else {
-    // Hide
-    pathCard.style.opacity = '0';
-    pathCard.style.transform = 'translateY(20px)';
+    logoWrapper.classList.remove('full-width-logo');
+  }
+
+  document.getElementById('modal-issuer-title').textContent = issuer.title;
+  document.getElementById('modal-issuer-desc').textContent = issuer.description;
+  document.getElementById('modal-issuer-address').textContent = issuer.address;
+
+  const officialBtn = document.getElementById('modal-official-link');
+  officialBtn.href = issuer.officialLink;
+  officialBtn.querySelector('span').textContent = issuer.btnText;
+
+  // Handle Social Links
+  const socialContainer = document.getElementById('modal-social-links');
+  socialContainer.innerHTML = '';
+  if (issuer.social) {
+    issuer.social.forEach(s => {
+      const link = document.createElement('a');
+      link.href = s.link;
+      link.target = "_blank";
+      link.innerHTML = `<i class="${s.icon}"></i>`;
+      socialContainer.appendChild(link);
+    });
+  }
+
+  // Handle Visibility Logic (Internal Button)
+  if (issuerKey === 'mukalla_model' || issuerKey === 'hadhramout') {
+    modalOverlay.classList.add('hide-internal-about');
+  } else {
+    modalOverlay.classList.remove('hide-internal-about');
+  }
+
+  // Set Slide Position
+  if (startAtIssuer) {
+    // Small delay to ensure the modal is 'active' before sliding
     setTimeout(() => {
-      pathCard.style.setProperty('display', 'none', 'important');
-    }, 500);
+      modalSlider.classList.add('show-issuer');
+    }, 10);
+  } else {
+    modalSlider.classList.remove('show-issuer');
+  }
+
+  // Show Modal
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Prevent scroll
+}
+
+function closeCertModal() {
+  modalOverlay.classList.remove('active');
+  document.body.style.overflow = ''; // Restore scroll
+}
+
+// Event Listeners for Slider Toggle
+document.getElementById('btn-show-issuer').addEventListener('click', () => {
+  modalSlider.classList.add('show-issuer');
+});
+
+document.getElementById('btn-back-to-cert').addEventListener('click', () => {
+  modalSlider.classList.remove('show-issuer');
+});
+
+// Close modal on overlay click
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeCertModal();
+});
+
+// Update Certificate Link Click Handler
+document.addEventListener('click', (e) => {
+  const certLink = e.target.closest('.certificate-link');
+  if (certLink && certLink.hasAttribute('data-issuer')) {
+    e.preventDefault();
+    const issuerKey = certLink.getAttribute('data-issuer');
+    const certSrc = certLink.getAttribute('href');
+    const certTitle = certLink.getAttribute('data-title');
+    openCertModal(issuerKey, certSrc, certTitle);
+    return;
+  }
+
+  // External 'About Issuer' Button Handler
+  const externalBtn = e.target.closest('.btn-open-issuer');
+  if (externalBtn) {
+    e.preventDefault();
+    const issuerKey = externalBtn.getAttribute('data-issuer');
+    const certSrc = externalBtn.getAttribute('data-src');
+    const certTitle = externalBtn.getAttribute('data-title');
+    openCertModal(issuerKey, certSrc, certTitle, true); // true = start at issuer slide
+  }
+});
+
+// PWA Service Worker (Previously existed, keeping for safety or re-binding if needed)
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful');
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
   }
 }
