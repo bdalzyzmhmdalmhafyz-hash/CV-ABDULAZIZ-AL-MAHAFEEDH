@@ -1,4 +1,4 @@
-﻿// Typewriter Effect Variables
+// Typewriter Effect Variables
 const nameText = "عبد العزيز محمد المحافيظ";
 const titleText = "محاسب و ملم بالأنظمة المحاسبية";
 const nameElement = document.getElementById("typewriter-name");
@@ -258,47 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.3 });
   edrCounters.forEach(c => edrCounterObserver.observe(c));
-  // â”€â”€ Saylor Academy Section: Progress Bars â”€â”€
-  const sayProgressBars = document.querySelectorAll('.say-progress-bar[data-say-width]');
-  const sayProgressObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        const targetWidth = bar.getAttribute('data-say-width');
-        if (targetWidth) {
-          setTimeout(() => { bar.style.width = targetWidth; }, 400);
-        }
-        observer.unobserve(bar);
-      }
-    });
-  }, { threshold: 0.1 });
-  sayProgressBars.forEach(bar => sayProgressObserver.observe(bar));
-
-  // â”€â”€ Saylor Academy Section: Stats Counter Animation â”€â”€
-  const sayCounters = document.querySelectorAll('.say-stat-num[data-say-count]');
-  const sayCounterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.getAttribute('data-say-count'), 10);
-        const duration = 1800;
-        const startTime = performance.now();
-
-        function updateSayCounter(currentTime) {
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.round(target * eased) + '+';
-          if (progress < 1) {
-            requestAnimationFrame(updateSayCounter);
-          }
-        }
-        requestAnimationFrame(updateSayCounter);
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.3 });
-  sayCounters.forEach(c => sayCounterObserver.observe(c));
 
   // â”€â”€ Coursera Section: Progress Bars â”€â”€
   const courProgressBars = document.querySelectorAll('.cour-progress-bar[data-cour-width]');
@@ -478,6 +437,12 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
   document.getElementById('modal-badge').textContent = issuer.badge;
   document.getElementById('modal-cert-img').src = certSrc;
 
+  // Update internal button text
+  const internalAboutBtn = document.getElementById('btn-show-issuer');
+  if (internalAboutBtn) {
+    internalAboutBtn.innerHTML = `<i class="fas fa-scroll"></i> ${issuer.name}`;
+  }
+
   const logoImg = document.getElementById('modal-issuer-logo');
   const logoWrapper = logoImg.parentElement;
   logoImg.src = issuer.logo;
@@ -572,6 +537,57 @@ document.addEventListener('click', (e) => {
     openCertModal(issuerKey, certSrc, certTitle, true); // true = start at issuer slide
   }
 });
+
+// Function to Toggle Satar UX/UI Path
+function toggleSatarPath() {
+  const path = document.getElementById('satar-uxui-path');
+  if (!path) return;
+  
+  if (path.style.display === 'none' || path.style.display === '') {
+    path.style.display = 'block';
+    // Use a tiny timeout to ensure the browser registers the display change before animating
+    setTimeout(() => {
+      path.style.opacity = '1';
+      path.style.transform = 'translateY(0)';
+    }, 50);
+    
+    // Optional: Scroll into view
+    setTimeout(() => {
+      path.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 300);
+  } else {
+    path.style.opacity = '0';
+    path.style.transform = 'translateY(20px)';
+    // Wait for transition (0.5s) to complete before setting display to none
+    setTimeout(() => {
+      path.style.display = 'none';
+    }, 500);
+  }
+}
+
+// Function to Toggle Satar Training Courses
+function toggleSatarCourses() {
+  const path = document.getElementById('satar-courses-path');
+  if (!path) return;
+  
+  if (path.style.display === 'none' || path.style.display === '') {
+    path.style.display = 'block';
+    setTimeout(() => {
+      path.style.opacity = '1';
+      path.style.transform = 'translateY(0)';
+    }, 50);
+    
+    setTimeout(() => {
+      path.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 300);
+  } else {
+    path.style.opacity = '0';
+    path.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      path.style.display = 'none';
+    }, 500);
+  }
+}
 
 // PWA Service Worker (Previously existed, keeping for safety or re-binding if needed)
 function registerServiceWorker() {
