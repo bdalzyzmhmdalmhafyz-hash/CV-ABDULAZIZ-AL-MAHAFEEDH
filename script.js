@@ -120,32 +120,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Handle clicking on an orbit category item
-    const orbitItems = orbitOverlay.querySelectorAll('.orbit-item');
-    orbitItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const targetId = item.getAttribute('data-target');
+    // Handle clicking on a course square category item
+    const courseSquares = orbitOverlay.querySelectorAll('.course-square');
+    courseSquares.forEach(square => {
+      square.addEventListener('click', () => {
+        const targetId = square.getAttribute('data-target');
         const targetEl = document.getElementById(targetId);
 
-        // Add a visual effect: fade out other items
-        orbitItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.add('fade-out');
+        // Visual feedback: Highlight clicked square and dim others
+        courseSquares.forEach(other => {
+          if (other !== square) {
+            other.style.opacity = '0.2';
+            other.style.transform = 'scale(0.9)';
+            other.style.filter = 'blur(4px)';
+          } else {
+            square.style.transform = 'scale(1.05) translateY(-10px)';
+            square.style.borderColor = 'var(--square-clr)';
+            square.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
           }
         });
 
-        // After a brief delay for a premium feel
+        // Transition to section
         setTimeout(() => {
           closeOrbitOverlay();
 
-          // Reset styles after the closing transition
+          // Reset styles after the overlay closes
           setTimeout(() => {
-            orbitItems.forEach(otherItem => otherItem.classList.remove('fade-out'));
-          }, 300);
+            courseSquares.forEach(s => {
+              s.style.opacity = '';
+              s.style.transform = '';
+              s.style.filter = '';
+              s.style.borderColor = '';
+              s.style.boxShadow = '';
+            });
+          }, 600);
 
           // Smooth scroll to the requested section
           if (targetEl) {
-            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const yOffset = -20; // Slight offset for better visibility
+            const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
           }
         }, 400);
       });
