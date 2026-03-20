@@ -392,10 +392,11 @@ const certificateIssuers = {
     title: "Hadhramout University",
     badge: "صرح أكاديمي رائد",
     description: "تعد جامعة حضرموت صرحاً أكاديمياً رائعاً في الجمهورية اليمنية، تأسست عام 1993 في مدينة المكلا. تعتبر الجامعة من المؤسسات التعليمية الرائدة التي تلتزم بتقديم برامج بكالوريوس ودراسات عليا معتمدة في تخصصات الهندسة، الحاسوب، والطب. تركز الجامعة على ربط المناهج العلمية باحتياجات سوق العمل والتنمية المستدامة، وهي الجهة التي صقلت خلفيتي العلمية والتقنية.",
-    logo: "https://hu.edu.ye/wp-content/uploads/2021/03/logo.png", // Attempting official logo, will fallback if needed
+    logo: "assets/organization_logos/hadhramout_university_logo_result.webp",
+    fullLogo: true,
     officialLink: "https://hu.edu.ye",
     btnText: "زيارة الموقع الرسمي للجامعة",
-    mainColor: "#00c853", // Academic Green
+    mainColor: "#007bff", // Standard Blue
     address: "جامعة حضرموت - Hadhramout University"
   },
   mukalla_model: {
@@ -474,6 +475,10 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
 
   const officialBtn = document.getElementById('modal-official-link');
   officialBtn.href = issuer.officialLink;
+  officialBtn.onclick = (e) => {
+    e.preventDefault();
+    window.open(issuer.officialLink, '_blank');
+  };
   officialBtn.querySelector('span').textContent = issuer.btnText;
 
   // Handle Social Links

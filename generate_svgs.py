@@ -7,7 +7,9 @@ logos = {
     'michigan.svg': 'Michigan',
     'duke.svg': 'Duke',
     'vanderbilt.svg': 'Vanderbilt',
-    'johns_hopkins.svg': 'Johns Hopkins'
+    'johns_hopkins.svg': 'Johns Hopkins',
+    'google.svg': 'Google',
+    'ibm.svg': 'IBM'
 }
 
 svg_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
