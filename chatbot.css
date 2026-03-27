@@ -206,8 +206,8 @@
 
 .chatbot-popup {
   position: fixed;
-  bottom: 120px; /* Align with dock bottom */
-  right: 110px; /* Shift to the left of the dock */
+  bottom: 280px; /* Aligned higher to match the new top position of the Chatbot icon */
+  right: 110px; 
   width: 340px;
   height: 480px;
   background: rgba(10, 8, 30, 0.97);
@@ -495,7 +495,7 @@
   .p4 { transform: translate(-50%,-50%) translateY(-40px); }
 
   .chatbot-popup {
-    bottom: 90px;
+    bottom: 220px;
     right: 8px;
     width: calc(100vw - 20px);
     height: 420px;

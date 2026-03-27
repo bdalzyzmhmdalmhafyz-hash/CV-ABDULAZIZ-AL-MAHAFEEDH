@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#0f0c29">
     <title>عبد العزيز المحافيظ | السيرة الذاتية</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css?v=4">
-    <link rel="stylesheet" href="chatbot.css?v=2">
+    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="chatbot.css?v=4">
 
     <!-- Google Generative AI will be loaded via standard ES Module directly -->
 
@@ -2254,12 +2254,8 @@
     </section>
 
     <div class="floating-actions fade-in">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/967776543245" class="action-btn whatsapp" target="_blank" title="تواصل عبر واتساب">
-            <i class="fab fa-whatsapp"></i>
-        </a>
         <!-- Chatbot Button in Dock -->
-        <div class="chatbot-fab-wrapper" id="chatbot-fab-wrapper">
+        <div class="chatbot-fab-wrapper" id="chatbot-fab-wrapper" style="position: relative !important; bottom: auto !important; right: auto !important; margin-bottom: 25px;">
             <!-- Neon Pulse Rings -->
             <div class="chatbot-pulse-ring ring-1"></div>
             <div class="chatbot-pulse-ring ring-2"></div>
@@ -2282,9 +2278,14 @@
                 <div class="chatbot-active-dot"></div>
             </button>
         </div>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/967776543245" class="action-btn whatsapp" target="_blank" title="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
         <!-- PDF CV -->
-        <a href="https://drive.google.com/open?id=1BSQJLg9zV7dKc552k_2VmaBem1694C1y" class="action-btn pdf-cv"
-            target="_blank" title="تحميل السيرة الذاتية (PDF)">
+        <a href="https://drive.google.com/open?id=1BSQJLg9zV7dKc552k_2VmaBem1694C1y" class="action-btn pdf-cv" target="_blank" title="تحميل السيرة الذاتية (PDF)">
             <i class="fas fa-file-pdf"></i>
         </a>
     </div>
@@ -2466,8 +2467,9 @@
         <!-- Quick Replies -->
         <div class="quick-replies" id="quick-replies">
             <button class="quick-btn">من أنت؟</button>
-            <button class="quick-btn">ما هي مهارات عبد العزيز؟</button>
-            <button class="quick-btn">أريد التواصل به</button>
+            <button class="quick-btn">الخبرات العملية 💼</button>
+            <button class="quick-btn">خبير الذكاء الاصطناعي 🤖</button>
+            <button class="quick-btn">الدورات المحاسبية 📊</button>
         </div>
 
         <!-- Input Area -->
@@ -2482,27 +2484,87 @@
     <!-- Script references -->
     <script src="script.js?v=4"></script>
 
-    <!-- Chatbot Floating Button & Popup Script (Gemini API Integrated) -->
-    <script type="module">
-    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+    <!-- Chatbot Floating Button & Popup Script (JSON Keyword Based) -->
+    <script>
+    // ── DATABASE (Knowledge Base JSON) ──
+    const botKnowledge = [
+        {
+            keywords: ["معلومات", "شخصية", "عمرك", "ميلاد", "عنوان", "تخصص", "ساكن"],
+            response: "أنا عبد العزيز محمد المحافيظ، طالب محاسبة. من مواليد 26/10/2002، وأسكن في (المكلا - فوه - المتضررين حي المستقبل)."
+        },
+        {
+            keywords: ["تعليم", "دراسة", "جامعة", "بكالوريوس", "حضرموت", "uopeople", "إعدادية", "تاسع", "ثانوية", "نموذجية"],
+            response: "أدرس بكالوريوس محاسبة (مستوى رابع) بجامعة حضرموت. تخرجت من ثانوية المكلا النموذجية بنسبة 95.63%، وكنت في المركز الخامس على مستوى مديرية المكلا في الإعدادية بنسبة 99.29%."
+        },
+        {
+            keywords: ["عقيل", "مسلم", "صندوق", "مستحقات", "مقبوضات", "مدفوعات", "سلف"],
+            response: "عملت كأمين صندوق مالي وإدارة مستحقات في شركة عقيل مسلم للتجارة والاستيراد. أدرت المقبوضات والمدفوعات، وضبطت سلف الموظفين، وأجريت المطابقة والرقابة اليومية بنسبة 100%. كما توليت إدارة التدفقات البنكية وصرف المصاريف التشغيلية."
+        },
+        {
+            keywords: ["عمودي", "مطاعم", "مطعم", "كاشير", "مبيعات", "عملت"],
+            response: "عملت ككاشير ونقطة بيع في مطعم وبروست العمودي (2021-2026). قمت بإدارة مئات العمليات النقدية والإلكترونية يومياً، مع الالتزام بالتصفية الختامية للصندوق، والعمل اللبق والاحترافي مع العملاء تحت ضغط ساعات الذروة المزدحمة."
+        },
+        {
+            keywords: ["خبرة", "خبرات", "وظيفة", "وظائف"],
+            response: "أمتلك خبرتين أساسيتين: 1- كاشير ونقطة بيع في مطاعم العمودي لأكثر من 4 سنوات تحت ضغط عالٍ وإدارة مالية. 2- أمين صندوق وإدارة مستحقات في شركة عقيل مسلم للتجارة، حيث أدرت المقبوضات والمدفوعات والمطابقة المالية اليومية والإيداعات البنكية."
+        },
+        {
+            keywords: ["مهارة", "مهارات", "قدرات", "تتقن", "تعامل", "ضغط", "أمانة"],
+            response: "تتضمن مهاراتي: تحمل الضغط العالي، التواصل الفعال مع الجمهور، الأمانة والموثوقية، إجادة أنظمة (POS Systems)، المطابقة المالية اليومية، إدارة النقدية والشيكات، إصدار سندات القبض والصرف، إدارة السلف، وإعداد التقارير عبر نظام Onyx Pro."
+        },
+        {
+            keywords: ["ذكاء", "اصطناعي", "ai", "prompt", "هندسة الأوامر", "توليدي", "llm", "خبير"],
+            response: "بجانب تخصصي المحاسبي، أنا خبير في أوامر الذكاء الاصطناعي (AI Prompt Expert)! أتقن تقنيات هندسة الأوامر المتقدمة، وتصميم استراتيجيات الذكاء التوليدي (Generative AI) لأتمتة المهام اليومية، وأجيد استخدام الـ LLMs لرفع مستوى كفاءة العمليات المؤسسية."
+        },
+        {
+            keywords: ["دورات", "محاسبة", "مالية", "شهادات", "دبلوم", "يمن سوفت", "اونكس", "onyx", "أمين", "ميزان", "odoo", "erp"],
+            response: "حصلت على عدة دبلومات ودورات محاسبية بتقدير (ممتاز) معتمدة، أبرزها: دبلوم المحاسبة من جامعة حضرموت والأكاديمية الدولية، كما احترفت أنظمة ERP (يمن سوفت، أونكس برو، Odoo، الأمين، والميزان للمستودعات)."
+        },
+        {
+            keywords: ["حاسوب", "تقنية", "كمبيوتر", "icdl", "اكسل", "excel", "باوربوينت", "spss", "احصائي", "برمجة", "أمن", "سيبراني", "شبكات"],
+            response: "إلى جانب تفوقي المحاسبي ومجال الذكاء الاصطناعي، حصلت على رخصة الحاسوب ICDL بتقدير ممتاز، ودورات Excel المالي، ودورة SPSS للتحليل، ودبلوم برمجة، بالإضافة للأمن السيبراني والشبكات!"
+        },
+        {
+            keywords: ["تطوير", "نجاح", "تنمية", "ريادة", "اعمال", "إدارة", "استراتيجية", "osha", "سلامة"],
+            response: "حصلت على دبلوم إدارة الأعمال (96.5%)، التنمية البشرية، ريادة الأعمال، ودورة OSHA الأمريكية لسلامة المهنية، والإدارة الاستراتيجية والمراسلات التجارية والتجارة الدولية بتقديرات ممتاز."
+        },
+        {
+            keywords: ["لغة", "لغات", "انجليزي", "english", "duolingo", "ديولينجو", "متقدم"],
+            response: "حاصل على دبلوم لغة إنجليزية متقدم من جامعة النخبة الدولية بتقدير 99%. ومهتم بالتعلم الذاتي المستمر على منصة Duolingo بسلسلة تتجاوز 1100 يوماً (أكثر من 3 سنوات)."
+        },
+        {
+            keywords: ["انجاز", "إنجازات", "جوائز", "تكريم", "درع", "تفوق", "مركز", "قرآن", "قران"],
+            response: "تشمل إنجازاتي: درع التفوق للمركز الخامس مديرية المكلا، شهادات شكر وتقدير من ثانوية المكلا النموذجية، ودروع تكريم ومختلف الشهادات التقديرية لحفظ القرآن الكريم."
 
-    // Initialize Gemini (Obfuscated Key to prevent GitHub Secret Scanning Revocation)
-    const PART_1 = "AIzaSyDmVXAzwIfUY";
-    const PART_2 = "snFaR_wPpX4HdDgzMFxC4A";
-    const API_KEY = PART_1 + PART_2;
-    
-    const genAI = new GoogleGenerativeAI(API_KEY);
-    const model = genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-        systemInstruction: "أنت المساعد الذكي لعبد العزيز المحافيظ. أجب عن خبراته في شركة عقيل مسلم ومطاعم العمودي، ودراسته في جامعة حضرموت وUoPeople. كن ودوداً ومختصراً."
-    });
+        },
+        {
+            keywords: ["تواصل", "رقم", "هاتف", "ايميل", "بريد", "واتساب", "واتس", "اكلمك"],
+            response: "يمكنك التواصل معي مباشرة عبر الهاتف/واتس: 967776543245+، أو بالبريد الإلكتروني: bdalzyzmhmdalmhafyz@gmail.com"
+        },
+        {
+            keywords: ["سلام", "مرحبا", "هلا", "اهلا", "كيفك", "من انت", "أنت", "اسمك"],
+            response: "أهلاً بك! أنا المساعد الذكي الخاص بالمحاسب (عبد العزيز المحافيظ) 🌟. اسألني عن دراساته الجامعية، خبراته بـ(مطاعم العمودي)، دوراته المحاسبية وأنظمة ERP، أو لغاته ومهاراته الحاسوبية الاحترافية!"
+        }
+    ];
+
+    function getBotResponse(userText) {
+        const text = userText.toLowerCase();
+        
+        for (let item of botKnowledge) {
+            if (item.keywords.some(kw => text.includes(kw))) {
+                return item.response;
+            }
+        }
+        
+        return "هذا سؤال رائع! لكن معلوماتي تتركز حول السيرة الذاتية لعبد العزيز (تعليمه، خبرته ككاشير، دورات ERP، مهاراته وتواصله). هل جربت سؤالي عن أحدها؟ المرجو التوضيح أكثر 😊";
+    }
 
     const messages = [
-        "هل تريد معرفة مهاراتي؟ 🤔",
-        "أنا المساعد الذكي عبد العزيز، اسألني عن مشاريعي! 🤖",
-        "هل يمكنني مساعدتك في تصفح السيرة الذاتية؟ 📄",
-        "اكتشف خبراتي المالية والتقنية! ✨",
-        "تصفح شهاداتي ودوراتي التدريبية 🏆"
+        "هل تريد استكشاف سيرتي الذاتية؟ 📄",
+        "حاصل على دبلومات ERP وأنظمة أونكس برو 📈",
+        "اسألني عن مهاراتي المحاسبية والحاسوبية! 💻",
+        "لدي خبرة تزيد عن 4 سنوات ككاشير ومبيعات 💼",
+        "سلسلة تعلم متواصل 1100 يوم على Duolingo! 🦉✨"
     ];
     let msgIndex = 0;
     const bubbleText = document.getElementById('bubble-text');
@@ -2510,7 +2572,6 @@
 
     function showNextMessage() {
         if (!chatbotBubble) return;
-        // fade out
         chatbotBubble.classList.add('bubble-hide');
         setTimeout(() => {
             msgIndex = (msgIndex + 1) % messages.length;
@@ -2521,7 +2582,7 @@
         }, 400);
     }
 
-    setInterval(showNextMessage, 5000);
+    setInterval(showNextMessage, 4000);
 
     /* ── POPUP LOGIC ── */
     const chatbotFab = document.getElementById('chatbot-fab');
@@ -2545,51 +2606,56 @@
     }
 
     /* ── CHAT LOGIC ── */
-    window.sendMessage = async function() {
+    window.sendMessage = function() {
         const input = document.querySelector('.chatbot-input');
         const chatMessages = document.querySelector('.chatbot-messages');
         const text = input.value.trim();
         if (!text) return;
 
-        // إضافة رسالة المستخدم
+        // 1. إضافة رسالة المستخدم
         const userDiv = document.createElement('div');
         userDiv.className = 'msg msg-user';
         userDiv.textContent = text;
         chatMessages.appendChild(userDiv);
         input.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        // إعداد البوت
-        const botDiv = document.createElement('div');
-        botDiv.className = 'msg msg-bot';
-        botDiv.textContent = 'جاري التفكير...';
-        chatMessages.appendChild(botDiv);
+        // 2. إظهار مؤشر الكتابة (Typing Indicator)
+        const typingId = 'typing-' + Date.now();
+        const typingIndicator = document.createElement('div');
+        typingIndicator.id = typingId;
+        typingIndicator.className = 'typing-indicator';
+        typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+        chatMessages.appendChild(typingIndicator);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        try {
-            const result = await model.generateContentStream(text);
-            botDiv.textContent = '';
-            for await (const chunk of result.stream) {
-                botDiv.textContent += chunk.text();
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-        } catch (err) {
-            botDiv.textContent = 'خطأ: المفتاح معطل أو محظور. تأكد من إعدادات Google AI Studio.';
-            console.error(err);
-        }
+        // 3. تأخير زمني لمحاكاة التفكير ثم الرد
+        setTimeout(() => {
+            // إزالة مؤشر الكتابة
+            const typInd = document.getElementById(typingId);
+            if(typInd) typInd.remove();
+
+            // إضافة رد البوت
+            const botDiv = document.createElement('div');
+            botDiv.className = 'msg msg-bot';
+            botDiv.textContent = getBotResponse(text);
+            chatMessages.appendChild(botDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        }, 1000 + Math.random() * 800); // تأخير بين 1 إلى 1.8 ثانية
     };
 
-    // للردود السريعة، نتيح دالة مساعدة
     window.sendQuickReply = function(text) {
         const input = document.querySelector('.chatbot-input');
         if (input) input.value = text;
         window.sendMessage();
     };
 
-    // ربط إرسال الرسالة بزر الـ Enter
     window.handleEnter = function(e) {
         if (e.key === 'Enter') window.sendMessage();
     };
 
-    // ربط الأحداث برمجياً لتجنب مشاكل (CSP) التي تمنع onclick في GitHub Pages
+    // ربط الأحداث برمجياً لتجنب مشاكل (CSP) في GitHub Pages
     setTimeout(() => {
         const sendBtn = document.getElementById('chatbot-send-btn');
         if (sendBtn) sendBtn.addEventListener('click', window.sendMessage);
@@ -2597,12 +2663,10 @@
         const chatInputBox = document.querySelector('.chatbot-input');
         if (chatInputBox) chatInputBox.addEventListener('keypress', window.handleEnter);
 
-        // ربط أزرار الردود السريعة برمجياً
         const quickBtns = document.querySelectorAll('.quick-btn');
         quickBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                const text = this.textContent.trim();
-                window.sendQuickReply(text);
+                window.sendQuickReply(this.textContent.trim());
             });
         });
     }, 100);
