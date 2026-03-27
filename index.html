@@ -2548,93 +2548,52 @@
     }
 
     /* ── CHAT LOGIC ── */
-    const chatMessages = document.getElementById('chatbot-messages');
-    const chatInput = document.getElementById('chatbot-input');
-    const sendBtn = document.getElementById('chatbot-send-btn');
+    // هذه الدالة هي التي يجب أن يتم استدعاؤها عند الضغط على زر الإرسال
+    window.sendMessage = async function() {
+        const input = document.getElementById('chatbot-input'); // تم المطابقة
+        const chatMessages = document.getElementById('chatbot-messages'); // تم المطابقة
+        const userText = input.value.trim();
 
-    function scrollToBottom() {
-        if(chatMessages) chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
+        if (!userText) return;
 
-    // Attach to global scope for quick-reply inline onclick attributes
-    window.sendQuickReply = function(text) {
-        if(chatInput) Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set.call(chatInput, text);
-        chatInput.value = text;
-        triggerSendMessage();
-    };
+        // إضافة رسالة المستخدم
+        const userDiv = document.createElement('div');
+        userDiv.className = 'msg msg-user';
+        userDiv.textContent = userText;
+        chatMessages.appendChild(userDiv);
+        input.value = '';
 
-    window.triggerSendMessage = async function() {
-        if (!chatInput || !chatMessages) return;
-        const text = chatInput.value.trim();
-        if (!text) return;
-
-        // 1. Add User Message
-        const userMsg = document.createElement('div');
-        userMsg.className = 'msg msg-user';
-        userMsg.textContent = text;
-        chatMessages.appendChild(userMsg);
-
-        chatInput.value = '';
-        scrollToBottom();
-
-        // 2. Add Typing Indicator
-        const typingId = 'typing-' + Date.now();
-        const typingIndicator = document.createElement('div');
-        typingIndicator.id = typingId;
-        typingIndicator.className = 'typing-indicator';
-        typingIndicator.innerHTML = '<span></span><span></span><span></span>';
-        chatMessages.appendChild(typingIndicator);
-        scrollToBottom();
+        // إنشاء عنصر لرد البوت
+        const botDiv = document.createElement('div');
+        botDiv.className = 'msg msg-bot';
+        botDiv.textContent = "..."; // علامة انتظار
+        chatMessages.appendChild(botDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
-            // Start Gemini Stream
-            const chatSession = model.startChat({ history: [] }); // using startChat for session if needed, or generateContentStream direct
-            const result = await model.generateContentStream(text);
+            const result = await model.generateContentStream(userText);
+            botDiv.textContent = ""; // مسح علامة الانتظار
             
-            // Remove typing indicator as soon as stream starts
-            const typInd = document.getElementById(typingId);
-            if(typInd) typInd.remove();
-
-            // Create Bot Message container
-            const botMsg = document.createElement('div');
-            botMsg.className = 'msg msg-bot';
-            chatMessages.appendChild(botMsg);
-
-            // Stream processing
             for await (const chunk of result.stream) {
-                const chunkText = chunk.text();
-                botMsg.textContent += chunkText;
-                scrollToBottom();
+                botDiv.textContent += chunk.text();
+                chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-        } catch(error) {
-            console.error("Gemini Error:", error);
-            const typInd = document.getElementById(typingId);
-            if(typInd) typInd.remove();
-
-            const errorMsg = document.createElement('div');
-            errorMsg.className = 'msg msg-bot';
-            errorMsg.textContent = "عذراً، حدث خطأ في الاتصال بالمساعد. يرجى المحاولة لاحقاً.";
-            chatMessages.appendChild(errorMsg);
-            scrollToBottom();
+        } catch (error) {
+            botDiv.textContent = "عذراً، هناك مشكلة في الاتصال بالذكاء الاصطناعي. تأكد من إعدادات المفتاح.";
+            console.error(error);
         }
     };
 
-    if (chatInput) {
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') window.triggerSendMessage();
-        });
-    }
-    
-    // Bind send button
-    if (sendBtn) {
-        sendBtn.addEventListener('click', window.triggerSendMessage);
-    }
-    
-    // Overriding the inline onclick functions from HTML
-    // since module scripts don't expose normal functions to the global scope automatically.
-    window.sendMessage = window.triggerSendMessage;
+    // للردود السريعة، نتيح دالة مساعدة
+    window.sendQuickReply = function(text) {
+        const input = document.getElementById('chatbot-input');
+        if (input) input.value = text;
+        window.sendMessage();
+    };
+
+    // ربط إرسال الرسالة بزر الـ Enter
     window.handleEnter = function(e) {
-        if (e.key === 'Enter') window.triggerSendMessage();
+        if (e.key === 'Enter') window.sendMessage();
     };
     </script>
 </body>
