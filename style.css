@@ -4961,3 +4961,111 @@ nav {
   font-size: 0.9rem;
 }
 
+
+/* ══════════════════════════════════════════
+   COURSES OVERLAY — MOBILE FIX (v2)
+   ══════════════════════════════════════════ */
+#courses-orbit-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(5, 5, 20, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    /* Enable scrolling on the overlay itself on mobile */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#courses-orbit-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Container: scrollable column on all screens */
+.courses-dropdown-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Allow it to grow and be scrollable inside the overlay */
+    margin: auto;
+}
+
+/* Mobile — full-width, scrollable, no clipping */
+@media (max-width: 768px) {
+    #courses-orbit-overlay {
+        align-items: flex-start;   /* prevents content from being pushed out */
+        padding: 20px 0;
+    }
+
+    .courses-dropdown-container {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        padding: 30px 16px 40px;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .courses-grid-squares {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    .course-square {
+        padding: 18px 10px !important;
+        min-height: 110px;
+    }
+
+    .square-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .square-label {
+        font-size: 0.92rem !important;
+    }
+
+    .courses-dropdown-header h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .courses-dropdown-header p {
+        font-size: 0.9rem !important;
+    }
+
+    .close-dropdown-btn {
+        margin-top: 24px !important;
+        padding: 13px 28px !important;
+        font-size: 0.95rem !important;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .course-square {
+        padding: 14px 8px !important;
+        min-height: 95px;
+    }
+
+    .square-icon {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1.2rem !important;
+    }
+
+    .square-label {
+        font-size: 0.82rem !important;
+    }
+}
