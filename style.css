@@ -5069,3 +5069,109 @@ nav {
         font-size: 0.82rem !important;
     }
 }
+
+/* โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•
+   CERTIFICATE MODAL & ISSUER INFO โ€” MOBILE FIX
+   โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ•โ• */
+@media (max-width: 768px) {
+    .cert-modal-overlay {
+        padding: 0;
+        align-items: flex-end; 
+    }
+    .cert-modal-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 92vh !important;
+        max-height: 92vh !important;
+        margin: 0 !important;
+        border-radius: 25px 25px 0 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .cert-modal-body {
+        flex: 1 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .modal-slider {
+        height: auto !important;
+        align-items: flex-start !important;
+    }
+    .modal-slide {
+        padding: 20px 15px 40px !important;
+        height: auto !important;
+        overflow-y: visible !important;
+    }
+    
+    /* Fixing the Hadhramout image layout and padding */
+    .issuer-logo-wrapper.full-width-logo {
+        width: calc(100% + 30px) !important;
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+        margin-top: -5px !important;
+        height: 200px !important;
+        border-radius: 0 !important;
+    }
+    
+    .issuer-info-card {
+        padding-bottom: 30px !important;
+    }
+
+    .issuer-info-card h4 {
+        margin-top: 20px !important;
+        font-size: 1.4rem !important;
+    }
+
+    .issuer-description {
+        font-size: 0.95rem !important;
+        line-height: 1.8 !important;
+        padding: 0 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .issuer-links {
+        margin-top: 20px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .modal-btn-official {
+        padding: 14px 24px !important;
+        font-size: 1rem !important;
+        width: 90% !important;
+        justify-content: center !important;
+    }
+
+    .modal-actions {
+        margin-top: 15px !important;
+        padding-bottom: 20px !important;
+    }
+}
+  
+/* ออออออออออออออออออออออออออออออออออออออออออ */  
+/*   CERTIFICATE MODAL & ISSUER INFO - MOBILE FIX   */  
+/* ออออออออออออออออออออออออออออออออออออออออออ */  
+@media (max-width: 768px) {  
+    .cert-modal-overlay { padding: 0; align-items: flex-end; }  
+    .cert-modal-container { width: 100% !important; max-width: 100% !important; height: 92vh !important; max-height: 92vh !important; margin: 0 !important; border-radius: 25px 25px 0 0 !important; display: flex !important; flex-direction: column !important; }  
+    .cert-modal-body { flex: 1 !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; padding-bottom: 20px !important; }  
+    .modal-slider { height: auto !important; align-items: flex-start !important; }  
+    .modal-slide { padding: 5px 15px 40px !important; height: auto !important; overflow-y: visible !important; }  
+    .issuer-logo-wrapper.full-width-logo { width: calc(100% + 30px) !important; margin-left: -15px !important; margin-right: -15px !important; margin-top: -5px !important; height: 180px !important; border-radius: 0 !important; }  
+    .issuer-info-card { padding-bottom: 30px !important; }  
+    .issuer-info-card h4 { margin-top: 20px !important; font-size: 1.4rem !important; }  
+    .issuer-description { font-size: 0.95rem !important; line-height: 1.8 !important; padding: 0 10px !important; margin-bottom: 20px !important; }  
+    .issuer-links { margin-top: 20px !important; display: flex; flex-direction: column; align-items: center; gap: 15px; }  
+    .modal-btn-official { padding: 14px 24px !important; font-size: 1rem !important; width: 90% !important; justify-content: center !important; }  
+    .modal-actions { margin-top: 15px !important; padding-bottom: 20px !important; }  
+} 
+  
+@media (max-width: 768px) {  
+    .modal-slide { padding-top: 5px !important; }  
+    .issuer-logo-wrapper.full-width-logo { margin-top: 0px !important; height: 160px !important; }  
+    .issuer-info-card h4 { margin-top: 15px !important; margin-bottom: 10px !important; font-size: 1.35rem !important; }  
+    .issuer-description { margin-bottom: 15px !important; line-height: 1.6 !important; }  
+    .cert-modal-container { height: 95vh !important; max-height: 95vh !important; }  
+} 

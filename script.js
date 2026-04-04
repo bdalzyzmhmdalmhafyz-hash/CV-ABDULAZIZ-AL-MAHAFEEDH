@@ -429,7 +429,10 @@ const certificateIssuers = {
 const modalOverlay = document.getElementById('cert-modal');
 const modalSlider = document.getElementById('modal-slider');
 
+let currentModalNoCert = false;
+
 function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
+  currentModalNoCert = startAtIssuer || (!certSrc || certSrc === '');
   const issuer = certificateIssuers[issuerKey];
   if (!issuer) return;
 
@@ -500,6 +503,13 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
   }
 
   // Show Modal
+  const backBtn = document.getElementById('btn-back-to-cert');
+  if (currentModalNoCert) {
+    backBtn.innerHTML = '<i class="fas fa-times"></i> إغلاق النافذة';
+  } else {
+    backBtn.innerHTML = '<i class="fas fa-arrow-right"></i> العودة للشهادة';
+  }
+
   modalOverlay.classList.add('active');
   document.body.style.overflow = 'hidden'; // Prevent scroll
 }
@@ -515,7 +525,11 @@ document.getElementById('btn-show-issuer').addEventListener('click', () => {
 });
 
 document.getElementById('btn-back-to-cert').addEventListener('click', () => {
-  modalSlider.classList.remove('show-issuer');
+  if (currentModalNoCert) {
+    closeCertModal();
+  } else {
+    modalSlider.classList.remove('show-issuer');
+  }
 });
 
 // Close modal on overlay click

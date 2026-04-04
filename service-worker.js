@@ -7,6 +7,8 @@ const ASSETS_TO_CACHE = [
   './chatbot.css',
   './manifest.json',
   './assets/primary_image/Gemini_Generated_Image_3osoi73osoi73oso.png',
+  './assets/primary_image/profile.png',
+  './offline.html',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.4.0/luminous-basic.min.css'
 ];
@@ -39,7 +41,7 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch Event - Strategic Caching (Stale-While-Revalidate)
+// Fetch Event - Strategic Caching (Stale-While-Revalidate) with Offline Fallback
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
@@ -52,7 +54,14 @@ self.addEventListener('fetch', (event) => {
         }).catch(() => {}); // Offline or error, just ignore
         return response;
       }
-      return fetch(event.request);
+      
+      // Try network if not in cache
+      return fetch(event.request).catch(() => {
+        // If network fails (offline) and it's a page navigation request, show offline.html
+        if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
+          return caches.match('./offline.html');
+        }
+      });
     })
   );
 });
