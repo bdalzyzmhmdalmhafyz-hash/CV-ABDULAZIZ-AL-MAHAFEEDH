@@ -2345,6 +2345,11 @@
                 <span class="bubble-text" id="bubble-text">هل تريد استكشاف سيرتي الذاتية؟ 📄</span>
                 <div class="bubble-tail"></div>
             </div>
+            <!-- Floating Update Icon (Always Visible) -->
+            <button class="pwa-update-floating-btn" id="pwa-update-floating-btn" aria-label="تحديث التطبيق" title="تحديث التطبيق">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+
             <!-- Main Icon Button -->
             <button class="chatbot-fab" id="chatbot-fab" aria-label="المساعد الذكي">
                 <img src="assets/primary_image/chatbot_main_image.png" alt="AI Chatbot" class="chatbot-img">
@@ -2560,10 +2565,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.4.0/Luminous.min.js"></script>
     <!-- Script references -->
     <!-- PWA UI Components -->
-    <div id="pwa-update-toast" class="glass-card">
-        <span>تحديث جديد متوفر في سيرة عبد العزيز!</span>
-        <button id="pwa-refresh-btn" onclick="window.location.reload()">تحديث الآن</button>
-    </div>
+    <!-- Chatbot Floating Button & Popup Script -->
 
     <div id="pwa-install-prompt" class="modal-overlay">
         <div class="prompt-card glass-card">

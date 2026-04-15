@@ -656,6 +656,51 @@ function initPWAFeatures() {
     }, 5000); // Show after 5 seconds of browsing
   });
 
+  // Handle Update Button Click
+  const btnUpdateFloat = document.getElementById('pwa-update-floating-btn');
+  if (btnUpdateFloat) {
+    // Check if dismissed in this session
+    if (sessionStorage.getItem('pwa_update_dismissed')) {
+      btnUpdateFloat.style.display = 'none';
+    }
+
+    btnUpdateFloat.addEventListener('click', () => {
+      // 1. Mark as dismissed for this session
+      sessionStorage.setItem('pwa_update_dismissed', 'true');
+      
+      // 2. Force Cache Clearing (The most important part for GitHub Pages)
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          Promise.all(names.map(name => caches.delete(name)))
+            .then(() => {
+              console.log('All caches cleared for update');
+              
+              // 3. Unregister Service Workers (Optional but safer for Hard Refresh)
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then((registrations) => {
+                  for (let registration of registrations) {
+                    registration.unregister();
+                  }
+                });
+              }
+
+              // 4. Visual feedback & Reload
+              btnUpdateFloat.style.opacity = '0';
+              btnUpdateFloat.style.transform = 'scale(0.5)';
+              const icon = btnUpdateFloat.querySelector('i');
+              if (icon) icon.style.transform = 'rotate(360deg)';
+              
+              setTimeout(() => {
+                window.location.reload(true);
+              }, 300);
+            });
+        });
+      } else {
+        window.location.reload(true);
+      }
+    });
+  }
+
   // Handle Install Button Click
   const btnInstall = document.getElementById('btn-pwa-install');
   if (btnInstall) {
@@ -681,8 +726,11 @@ function initPWAFeatures() {
 }
 
 function showUpdateToast() {
-  const toast = document.getElementById('pwa-update-toast');
-  if (toast) toast.classList.add('show');
+  const updateBtn = document.getElementById('pwa-update-floating-btn');
+  if (updateBtn) {
+    updateBtn.classList.add('pulse-alert');
+    updateBtn.title = "تحديث جديد متوفر! اضغط للتحديث";
+  }
 }
 
 function hideInstallPrompt() {

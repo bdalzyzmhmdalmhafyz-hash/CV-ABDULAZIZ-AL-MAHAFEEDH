@@ -9,8 +9,67 @@
   height: 60px;
   z-index: 9999;
   display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* ── Floating Update Icon ── */
+.pwa-update-floating-btn {
+  position: absolute;
+  top: -65px; /* Adjusted for smaller size */
+  right: 5px;  /* Slight offset for a more organic look */
+  width: 50px; /* Slightly smaller than robot */
+  height: 50px;
+  background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 
+    0 0 20px rgba(255, 8, 68, 0.7),
+    0 0 45px rgba(255, 8, 68, 0.4);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: update-float 3.5s ease-in-out infinite;
+}
+
+.pwa-update-floating-btn i {
+  font-size: 1.4rem; /* Larger icon */
+  transition: transform 0.3s ease;
+}
+
+.pwa-update-floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 
+    0 0 30px rgba(255, 8, 68, 0.9),
+    0 0 60px rgba(255, 8, 68, 0.6);
+}
+
+.pwa-update-floating-btn:active {
+  transform: scale(0.9);
+}
+
+/* Pulsing alert state when update is found */
+.pwa-update-floating-btn.pulse-alert {
+  animation: update-flash-pulse 1.2s infinite, update-float 3s ease-in-out infinite;
+  background: #ff0000;
+  border-color: #fff;
+  z-index: 100;
+}
+
+@keyframes update-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes update-flash-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0px 0px rgba(255, 0, 0, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 20px 15px rgba(255, 0, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0px 0px rgba(255, 0, 0, 0); }
 }
 
 /* ── Main Button ── */
