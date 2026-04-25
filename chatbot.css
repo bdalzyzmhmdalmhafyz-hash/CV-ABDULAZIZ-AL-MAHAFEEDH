@@ -439,11 +439,28 @@
 /* ── Quick Reply Buttons ── */
 .quick-replies {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 7px;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-self: stretch;
-  padding: 0 2px;
+  padding: 8px 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,242,254,0.3) transparent;
+  max-height: 45px;
+  direction: rtl;
+}
+.quick-replies::-webkit-scrollbar {
+  height: 4px;
+}
+.quick-replies::-webkit-scrollbar-track {
+  background: transparent;
+}
+.quick-replies::-webkit-scrollbar-thumb {
+  background: rgba(0,242,254,0.3);
+  border-radius: 4px;
 }
 .quick-btn {
   background: rgba(0,242,254,0.07);
@@ -456,6 +473,8 @@
   cursor: pointer;
   direction: rtl;
   transition: all 0.2s;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .quick-btn:hover {
   background: rgba(0,242,254,0.18);
