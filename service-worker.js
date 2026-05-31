@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abdulaziz-cv-v2';
+const CACHE_NAME = 'abdulaziz-cv-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
