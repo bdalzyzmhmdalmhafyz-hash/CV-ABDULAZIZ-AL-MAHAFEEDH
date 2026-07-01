@@ -69,19 +69,7 @@
             <h1 class="typewriter" id="typewriter-name"></h1>
             <h2 class="subtitle-typewriter" id="typewriter-title"></h2>
 
-            <div class="hero-notion-container fade-in notion-locked">
-                <div class="notion-lock-icon">
-                    <i class="fas fa-lock"></i>
-                </div>
-                <a href="#" onclick="return false;" class="notion-action-btn">
-                    <div class="notion-img-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png"
-                            alt="Notion Logo" class="notion-logo">
-                    </div>
-                    <span class="notion-text">يمكنك استعراض السيرة الذاتية من خلال هذا الموقع او من<br>خلال مساحة عملي
-                        على موقع <strong>Notion</strong></span>
-                </a>
-            </div>
+
         </div>
     </header>
 
@@ -214,7 +202,7 @@
                 <div class="timeline-content">
                     <span class="timeline-date">من 25/1/2026 إلى الآن</span>
                     <h3>أمين صندوق مالي وإدارة مستحقات</h3>
-                    <h4>شركة عقيل مسلم للتجارة والاستيراد</h4>
+                    <h4>شركة مسلم التجارية</h4>
                     <ul class="experience-list">
                         <li>إدارة دورة المقبوضات والمدفوعات: تنفيذ وإصدار سندات القبض والصرف الرسمية، وضمان التوثيق
                             المحاسبي الفوري لكافة الحركات النقدية داخل النظام.</li>
@@ -396,7 +384,7 @@
                 <!-- New HUSA Details Button -->
                 <a href="husa_center.html?course=acc" class="husa-details-btn" title="عرض تفاصيل الجهة المنظمة">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="HUSA Logo">
-                    <span>مركز جامعة حضرموت لتدريب الطلاب</span>
+                    <span>مركز جامعة حضرموت</span>
                 </a>
                 <div class="inline-certificate">
                     <a href="assets/accounting-courses/accounting-and-financial-management-diploma.jpg_result.webp"
@@ -715,7 +703,7 @@
                 <!-- New HUSA Details Button -->
                 <a href="husa_center.html?course=ei" class="husa-details-btn" title="عرض تفاصيل الجهة المنظمة">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="HUSA Logo">
-                    <span>مركز جامعة حضرموت لتدريب الطلاب</span>
+                    <span>مركز جامعة حضرموت</span>
                 </a>
 
                 <div class="inline-certificate">
@@ -825,7 +813,7 @@
                 <!-- New HUSA Details Button -->
                 <a href="husa_center.html?course=excel" class="husa-details-btn" title="عرض تفاصيل الجهة المنظمة">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="HUSA Logo">
-                    <span>مركز جامعة حضرموت لتدريب الطلاب</span>
+                    <span>مركز جامعة حضرموت</span>
                 </a>
 
                 <div class="inline-certificate">
@@ -879,7 +867,7 @@
                 <!-- New HUSA Details Button -->
                 <a href="husa_center.html?course=spss" class="husa-details-btn" title="عرض تفاصيل الجهة المنظمة">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="HUSA Logo">
-                    <span>مركز جامعة حضرموت لتدريب الطلاب</span>
+                    <span>مركز جامعة حضرموت</span>
                 </a>
 
                 <div class="inline-certificate">
@@ -901,7 +889,7 @@
                 <!-- New HUSA Details Button -->
                 <a href="husa_center.html?course=pbi" class="husa-details-btn" title="عرض تفاصيل الجهة المنظمة">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="HUSA Logo">
-                    <span>مركز جامعة حضرموت لتدريب الطلاب</span>
+                    <span>مركز جامعة حضرموت</span>
                 </a>
 
                 <div class="inline-certificate">
@@ -2729,6 +2717,20 @@
     <!-- PWA UI Components -->
     <!-- Chatbot Floating Button & Popup Script -->
 
+    <!-- ══════ Welcome & Update Modal ══════ -->
+    <div id="welcome-update-prompt" class="modal-overlay">
+        <div class="prompt-card glass-card">
+            <div class="prompt-header">
+                <img src="assets/primary_image/Gemini_Generated_Image_3osoi73osoi73oso.png" alt="Abdulaziz" class="prompt-icon">
+                <h3>مرحباً بك في سيرتي الذاتية!</h3>
+                <p>لضمان عرض أحدث البيانات والخبرات والدورات المحدثة، يرجى الضغط على زر التحديث أدناه لتحديث الصفحة.</p>
+            </div>
+            <div class="prompt-actions">
+                <button id="btn-welcome-update" class="install-main" style="background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); width: 100%;"><i class="fas fa-sync-alt"></i> تحديث الصفحة الآن</button>
+            </div>
+        </div>
+    </div>
+
     <div id="pwa-install-prompt" class="modal-overlay">
         <div class="prompt-card glass-card">
             <div class="prompt-header">
@@ -2758,8 +2760,8 @@
             response: "🎓 المؤهلات العلمية:\n• بكالوريوس محاسبة (مستوى رابع) - جامعة حضرموت\n• ثانوية المكلا النموذجية للبنين - 95.63%\n• المرحلة الإعدادية (مدرسة عثمان بن عفان) - المركز الخامس على المديرية بنسبة 99.29%\n• طالب في برنامج أسس اللغة الإنجليزية - جامعة الشعب الأمريكية UoPeople"
         },
         {
-            keywords: ["عقيل", "مسلم", "صندوق", "مستحقات", "مقبوضات", "مدفوعات", "سلف"],
-            response: "💼 شركة عقيل مسلم للتجارة والاستيراد (من 25/1/2026 إلى الآن):\nأمين صندوق مالي وإدارة مستحقات:\n• إدارة دورة المقبوضات والمدفوعات وإصدار سندات القبض والصرف\n• ضبط حسابات وسلف الموظفين\n• المطابقة والرقابة اليومية بنسبة 100%\n• إدارة التدفقات البنكية والإيداعات\n• صرف المصاريف التشغيلية"
+            keywords: ["عقيل", "مسلم", "صندوق", "مستحقات", "مقبوضات", "مدفوعات", "سلف", "التجارية"],
+            response: "💼 شركة مسلم التجارية (من 25/1/2026 إلى الآن):\nأمين صندوق مالي وإدارة مستحقات:\n• إدارة دورة المقبوضات والمدفوعات وإصدار سندات القبض والصرف\n• ضبط حسابات وسلف الموظفين\n• المطابقة والرقابة اليومية بنسبة 100%\n• إدارة التدفقات البنكية والإيداعات\n• صرف المصاريف التشغيلية"
         },
         {
             keywords: ["عمودي", "مطاعم", "مطعم", "كاشير", "مبيعات", "عملت"],
@@ -2767,7 +2769,7 @@
         },
         {
             keywords: ["خبرة", "خبرات", "وظيفة", "وظائف", "عملية"],
-            response: "💼 أمتلك خبرتين أساسيتين:\n1️⃣ أمين صندوق وإدارة مستحقات - شركة عقيل مسلم للتجارة (2026-حالياً)\n2️⃣ كاشير ونقطة بيع - مطاعم العمودي (2021-2026) لأكثر من 4 سنوات\nاسألني عن أي منهما للتفاصيل!"
+            response: "💼 أمتلك خبرتين أساسيتين:\n1️⃣ أمين صندوق وإدارة مستحقات - شركة مسلم التجارية (2026-حالياً)\n2️⃣ كاشير ونقطة بيع - مطاعم العمودي (2021-2026) لأكثر من 4 سنوات\nاسألني عن أي منهما للتفاصيل!"
         },
         {
             keywords: ["مهارة", "مهارات", "قدرات", "تتقن", "تعامل", "ضغط", "أمانة"],

@@ -723,6 +723,52 @@ function initPWAFeatures() {
   if (btnClose) {
     btnClose.addEventListener('click', hideInstallPrompt);
   }
+
+  // 3. Welcome & Update Modal Logic (Shows on every load if not updated yet in this session)
+  if (!sessionStorage.getItem('pwa_welcome_updated')) {
+    setTimeout(() => {
+      const welcomePrompt = document.getElementById('welcome-update-prompt');
+      if (welcomePrompt) {
+        welcomePrompt.classList.add('show');
+      }
+    }, 1000); // Show after 1 second
+  }
+
+  const btnWelcomeUpdate = document.getElementById('btn-welcome-update');
+  if (btnWelcomeUpdate) {
+    btnWelcomeUpdate.addEventListener('click', () => {
+      // Set updated flag for the session
+      sessionStorage.setItem('pwa_welcome_updated', 'true');
+      
+      // Clear Cache & Reload (Same update logic)
+      if ('caches' in window) {
+        caches.keys().then((names) => {
+          Promise.all(names.map(name => caches.delete(name)))
+            .then(() => {
+              console.log('All caches cleared for update via welcome modal');
+              
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then((registrations) => {
+                  for (let registration of registrations) {
+                    registration.unregister();
+                  }
+                });
+              }
+
+              // Visual feedback
+              btnWelcomeUpdate.style.opacity = '0.5';
+              btnWelcomeUpdate.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحديث...';
+              
+              setTimeout(() => {
+                window.location.reload(true);
+              }, 500);
+            });
+        });
+      } else {
+        window.location.reload(true);
+      }
+    });
+  }
 }
 
 function showUpdateToast() {
