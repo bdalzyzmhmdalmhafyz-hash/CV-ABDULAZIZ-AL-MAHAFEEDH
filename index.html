@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="style.css?v=8">
     <link rel="stylesheet" href="chatbot.css?v=8">
 
-    <!-- Google Generative AI API Key -->
-    <meta name="gemini-api-key" content="AIzaSyDmVXAzwIfUYsnFaR_wPpX4HdDgzMFxC4A">
+    <!-- Google Generative AI API Key (encoded) -->
+    <meta name="gemini-api-key" content="QVEuQWI4Uk42S2RubkFHYzNQT2VnWXF2aWRHZ0pLRHViVFFxQ0dVZ3NrTmRnY1VUTkt3Q3c=">
 
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,19 +34,20 @@
 
     <!-- Navigation -->
     <nav>
-        <ul class="nav-links">
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#about">اللمحة</a></li>
-            <li><a href="#education">المؤهلات</a></li>
-            <li><a href="#experience">الخبرات</a></li>
-            <li><a href="#skills">المهارات</a></li>
-            <li><a href="#courses">الدورات</a></li>
-            <li><a href="#edraak">منصة إدراك</a></li>
-            <li><a href="#satar">منصة سطر</a></li>
-            <li><a href="#freecodecamp">FreeCodeCamp</a></li>
-            <li><a href="#saylor">Saylor Academy</a></li>
-            <li><a href="#coursera">Coursera</a></li>
-        </ul>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#hero" data-i18n="nav_home">الرئيسية</a></li>
+                <li><a href="#about" data-i18n="nav_about">اللمحة</a></li>
+                <li><a href="#education" data-i18n="nav_education">المؤهلات</a></li>
+                <li><a href="#experience" data-i18n="nav_experience">الخبرات</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">المهارات</a></li>
+                <li><a href="#courses" data-i18n="nav_courses">الدورات</a></li>
+                <li><a href="#edraak" data-i18n="nav_edraak">منصة إدراك</a></li>
+                <li><a href="#satar" data-i18n="nav_satar">منصة سطر</a></li>
+                <li><a href="#freecodecamp">FreeCodeCamp</a></li>
+                <li><a href="#coursera">Coursera</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Header Section -->
@@ -76,47 +77,47 @@
 
     <!-- About Section -->
     <section id="about" class="container">
-        <h2 class="section-title fade-in">المعلومات الشخصية</h2>
+        <h2 class="section-title fade-in" data-i18n="section_about">المعلومات الشخصية</h2>
         <div class="glass-card fade-in about-grid">
             <div class="info-item">
                 <i class="fas fa-user info-icon"></i>
                 <div>
-                    <strong>الاسم بالإنجليزية</strong><br>
+                    <strong data-i18n="about_name">الاسم بالإنجليزية</strong><br>
                     ABDULAZIZ MOHAMMED ABDULAZIZ AL-MAHAFEEDH
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-envelope info-icon"></i>
                 <div>
-                    <strong>البريد الإلكتروني</strong><br>
+                    <strong data-i18n="about_email">البريد الإلكتروني</strong><br>
                     <a href="mailto:bdalzyzmhmdalmhafyz@gmail.com">bdalzyzmhmdalmhafyz@gmail.com</a>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-phone info-icon"></i>
                 <div>
-                    <strong>الهاتف</strong><br>
+                    <strong data-i18n="about_phone">الهاتف</strong><br>
                     <a href="tel:+967776543245" dir="ltr">+967 776 543 245</a>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-calendar-alt info-icon"></i>
                 <div>
-                    <strong>تاريخ الميلاد</strong><br>
+                    <strong data-i18n="about_birth">تاريخ الميلاد</strong><br>
                     26/10/2002
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-map-marker-alt info-icon"></i>
                 <div>
-                    <strong>العنوان</strong><br>
+                    <strong data-i18n="about_address">العنوان</strong><br>
                     فوه - المتضررين (حي المستقبل)
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-briefcase info-icon"></i>
                 <div>
-                    <strong>التخصص</strong><br>
+                    <strong data-i18n="about_specialty">التخصص</strong><br>
                     محاسب
                 </div>
             </div>
@@ -125,7 +126,7 @@
 
     <!-- Education Section (Timeline) -->
     <section id="education" class="container">
-        <h2 class="section-title fade-in">المؤهلات العلمية</h2>
+        <h2 class="section-title fade-in" data-i18n="section_education">المؤهلات العلمية</h2>
         <div class="timeline">
             <div class="timeline-item fade-in">
                 <div class="timeline-content">
@@ -196,7 +197,7 @@
 
     <!-- Experience Section (Timeline) -->
     <section id="experience" class="container">
-        <h2 class="section-title fade-in">الخبرات العملية</h2>
+        <h2 class="section-title fade-in" data-i18n="section_experience">الخبرات العملية</h2>
         <div class="timeline">
             <!-- Experience - مساعد مدير النظام -->
             <div class="timeline-item fade-in">
@@ -306,7 +307,7 @@
 
     <!-- Independent Projects Section -->
     <section id="freelance-projects" class="container">
-        <h2 class="section-title fade-in">المشاريع المستقلة</h2>
+        <h2 class="section-title fade-in" data-i18n="section_freelance">المشاريع المستقلة</h2>
         <div class="timeline">
             <!-- Project 1 -->
             <div class="timeline-item fade-in">
@@ -386,7 +387,7 @@
 
     <!-- Skills Section (Premium Redesign) -->
     <section id="skills" class="container">
-        <h2 class="section-title fade-in">المهارات والقدرات</h2>
+        <h2 class="section-title fade-in" data-i18n="section_skills">المهارات والقدرات</h2>
         <div class="glass-card skills-container fade-in">
             <!-- Skill 1 -->
             <div class="skill-box">
@@ -513,7 +514,7 @@
 
     <!-- Courses Section (Cards Lift/Hover) -->
     <section id="courses" class="container">
-        <h2 class="section-title fade-in">الدورات و الدبلومات</h2>
+        <h2 class="section-title fade-in" data-i18n="section_courses">الدورات و الدبلومات</h2>
 
         <h3 id="courses-accounting" class="fade-in" style="color: #00d2ff; margin-bottom: 20px;">
             <i class="fas fa-calculator" style="margin-left: 10px;"></i>قسم الدورات المحاسبية
@@ -2010,79 +2011,6 @@
                 </div>
             </div>
 
-            <!-- Partners -->
-            <div class="edr2-partners fade-in">
-                <h3><i class="fas fa-handshake"></i> شركاء الاعتماد والنجاح</h3>
-                <div class="edr2-partners-marquee">
-                    <div class="edr2-marquee-track">
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-crown"></i>
-                            <span>مؤسسة الملكة رانيا</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/harvard/A51C30" alt="Harvard">
-                            <span>Harvard University</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/mit/A31F34" alt="MIT">
-                            <span>MIT (OpenCourseWare)</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google">
-                            <span>Google Academy</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/microsoft/00A4EF" alt="Microsoft">
-                            <span>Microsoft</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/britishcouncil/003399" alt="British Council">
-                            <span>British Council</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>بيت.كوم (Bayt)</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-globe"></i>
-                            <span>البنك الدولي (World Bank)</span>
-                        </div>
-                        <!-- Duplicate for Seamless Marquee -->
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-crown"></i>
-                            <span>مؤسسة الملكة رانيا</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/harvard/A51C30" alt="Harvard">
-                            <span>Harvard University</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/mit/A31F34" alt="MIT">
-                            <span>MIT</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google">
-                            <span>Google</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/microsoft/00A4EF" alt="Microsoft">
-                            <span>Microsoft</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <img src="https://cdn.simpleicons.org/britishcouncil/003399" alt="British Council">
-                            <span>British Council</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>بيت.كوم</span>
-                        </div>
-                        <div class="edr2-partner-item">
-                            <i class="fas fa-globe"></i>
-                            <span>البنك الدولي</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section>
@@ -2648,9 +2576,9 @@
                 <span class="bubble-text" id="bubble-text">هل تريد استكشاف سيرتي الذاتية؟ 📄</span>
                 <div class="bubble-tail"></div>
             </div>
-            <!-- Floating Update Icon (Always Visible) -->
-            <button class="pwa-update-floating-btn" id="pwa-update-floating-btn" aria-label="تحديث التطبيق" title="تحديث التطبيق">
-                <i class="fas fa-sync-alt"></i>
+            <!-- Lang Switcher Circle Button -->
+            <button class="lang-circle-btn" id="lang-circle-btn" onclick="switchLanguage()" aria-label="تبديل اللغة" title="English">
+                <span>EN</span>
             </button>
 
             <!-- Main Icon Button -->
@@ -2674,21 +2602,21 @@
     <!-- Floating Moving Bubbles Dock -->
     <div id="bubble-dock-container">
         <ul class="bubble-list">
-            <li class="bubble-item active" data-section="hero"><a href="#hero" data-tooltip="الرئيسية"><i
+            <li class="bubble-item active" data-section="hero"><a href="#hero" data-tooltip="الرئيسية" data-i18n-tooltip="bubble_home"><i
                         class="fas fa-house"></i></a></li>
-            <li class="bubble-item" data-section="about"><a href="#about" data-tooltip="اللمحة"><i
+            <li class="bubble-item" data-section="about"><a href="#about" data-tooltip="اللمحة" data-i18n-tooltip="bubble_about"><i
                         class="fas fa-user-tie"></i></a></li>
-            <li class="bubble-item" data-section="education"><a href="#education" data-tooltip="المؤهلات"><i
+            <li class="bubble-item" data-section="education"><a href="#education" data-tooltip="المؤهلات" data-i18n-tooltip="bubble_education"><i
                         class="fas fa-graduation-cap"></i></a></li>
-            <li class="bubble-item" data-section="experience"><a href="#experience" data-tooltip="الخبرات"><i
+            <li class="bubble-item" data-section="experience"><a href="#experience" data-tooltip="الخبرات" data-i18n-tooltip="bubble_experience"><i
                         class="fas fa-briefcase"></i></a></li>
-            <li class="bubble-item" data-section="skills"><a href="#skills" data-tooltip="المهارات"><i
+            <li class="bubble-item" data-section="skills"><a href="#skills" data-tooltip="المهارات" data-i18n-tooltip="bubble_skills"><i
                         class="fas fa-bolt"></i></a></li>
-            <li class="bubble-item" data-section="courses"><a href="#courses" data-tooltip="الدورات"><i
+            <li class="bubble-item" data-section="courses"><a href="#courses" data-tooltip="الدورات" data-i18n-tooltip="bubble_courses"><i
                         class="fas fa-book"></i></a></li>
-            <li class="bubble-item" data-section="edraak"><a href="#edraak" data-tooltip="إدراك"><i
+            <li class="bubble-item" data-section="edraak"><a href="#edraak" data-tooltip="إدراك" data-i18n-tooltip="bubble_edraak"><i
                         class="fas fa-lightbulb"></i></a></li>
-            <li class="bubble-item" data-section="satar"><a href="#satar" data-tooltip="سطر"><i
+            <li class="bubble-item" data-section="satar"><a href="#satar" data-tooltip="سطر" data-i18n-tooltip="bubble_satar"><i
                         class="fas fa-code"></i></a></li>
             <li class="bubble-item" data-section="freecodecamp"><a href="#freecodecamp" data-tooltip="FreeCodeCamp"><i
                         class="fas fa-fire"></i></a></li>
@@ -2705,8 +2633,8 @@
                 <div class="header-icon-ring">
                     <i class="fas fa-book-open"></i>
                 </div>
-                <h3>أقسام الدورات و الدبلومات</h3>
-                <p>اختر القسم الذي تود استعراض شهاداته</p>
+                <h3 data-i18n="orbit_title">أقسام الدورات و الدبلومات</h3>
+                <p data-i18n="orbit_sub">اختر القسم الذي تود استعراض شهاداته</p>
             </div>
             
             <div class="courses-grid-squares">
@@ -2714,7 +2642,7 @@
                 <div class="course-square" data-target="courses-accounting" style="--square-clr: #4facfe; --square-bg: linear-gradient(135deg, #1e3c72, #2a5298);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-calculator"></i></div>
-                        <span class="square-label">قسم المحاسبة</span>
+                        <span class="square-label" data-i18n="orbit_accounting">قسم المحاسبة</span>
                     </div>
                 </div>
                 
@@ -2722,7 +2650,7 @@
                 <div class="course-square" data-target="courses-training" style="--square-clr: #28c76f; --square-bg: linear-gradient(135deg, #11998e, #38ef7d);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-seedling"></i></div>
-                        <span class="square-label">قسم التطوير</span>
+                        <span class="square-label" data-i18n="orbit_training">قسم التطوير</span>
                     </div>
                 </div>
                 
@@ -2730,7 +2658,7 @@
                 <div class="course-square" data-target="courses-software" style="--square-clr: #a78bfa; --square-bg: linear-gradient(135deg, #667eea, #764ba2);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="square-label">قسم البرامج</span>
+                        <span class="square-label" data-i18n="orbit_software">قسم البرامج</span>
                     </div>
                 </div>
                 
@@ -2738,7 +2666,7 @@
                 <div class="course-square" data-target="courses-technical" style="--square-clr: #ec4899; --square-bg: linear-gradient(135deg, #f472b6, #ec4899);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-lightbulb"></i></div>
-                        <span class="square-label">قسم التقنية</span>
+                        <span class="square-label" data-i18n="orbit_technical">قسم التقنية</span>
                     </div>
                 </div>
                 
@@ -2746,7 +2674,7 @@
                 <div class="course-square" data-target="courses-languages" style="--square-clr: #ffd200; --square-bg: linear-gradient(135deg, #f7971e, #ffd200);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-language"></i></div>
-                        <span class="square-label">قسم اللغات</span>
+                        <span class="square-label" data-i18n="orbit_languages">قسم اللغات</span>
                     </div>
                 </div>
                 
@@ -2754,7 +2682,7 @@
                 <div class="course-square" data-target="courses-appreciation" style="--square-clr: #ff512f; --square-bg: linear-gradient(135deg, #ff512f, #dd2476);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-award"></i></div>
-                        <span class="square-label">التقدير</span>
+                        <span class="square-label" data-i18n="orbit_appreciation">التقدير</span>
                     </div>
                 </div>
                 
@@ -2762,7 +2690,7 @@
                 <div class="course-square" data-target="courses-achievements" style="--square-clr: #f97316; --square-bg: linear-gradient(135deg, #fb923c, #f97316);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-trophy"></i></div>
-                        <span class="square-label">الإنجازات</span>
+                        <span class="square-label" data-i18n="orbit_achievements">الإنجازات</span>
                     </div>
                 </div>
                 
@@ -2770,7 +2698,7 @@
                 <div class="course-square" onclick="document.getElementById('courses-orbit-overlay').classList.remove('active')" style="--square-clr: #ef4444; --square-bg: linear-gradient(135deg, #f87171, #ef4444);">
                     <div class="square-content">
                         <div class="square-icon"><i class="fas fa-times"></i></div>
-                        <span class="square-label">إغلاق النافذة</span>
+                        <span class="square-label" data-i18n="orbit_close">إغلاق النافذة</span>
                     </div>
                 </div>
             </div>
@@ -2793,7 +2721,7 @@
                     <div class="modal-slide" id="slide-cert">
                         <div class="modal-actions top-actions">
                             <button class="modal-btn-about prominent-btn" id="btn-show-issuer">
-                                <i class="fas fa-scroll"></i> عرض الجهة المانحة
+                                <i class="fas fa-scroll"></i> <span data-i18n="cert_show_issuer">عرض الجهة المانحة</span>
                             </button>
                         </div>
                         <div class="cert-preview-wrapper">
@@ -2820,7 +2748,7 @@
                         </div>
                         <div class="modal-actions">
                             <button class="modal-btn-back" id="btn-back-to-cert">
-                                <i class="fas fa-arrow-right"></i> العودة للشهادة
+                                <i class="fas fa-arrow-right"></i> <span data-i18n="cert_back">العودة للشهادة</span>
                             </button>
                         </div>
                     </div>
@@ -2845,7 +2773,7 @@
 
         <!-- Messages Area -->
         <div class="chatbot-messages" id="chatbot-messages">
-            <div class="msg msg-bot">مرحباً! أعرفك بنفسي، أنا المساعد الذكي الخاص بالمحاسب عبد العزيز. كيف يمكنني مساعدتك اليوم؟ 😊</div>
+            <div class="msg msg-bot" data-i18n="chatbot_welcome">مرحباً! أعرفك بنفسي، أنا المساعد الذكي الخاص بالمحاسب عبد العزيز. كيف يمكنني مساعدتك اليوم؟ 😊</div>
             <!-- Dynamic messages will appear here -->
         </div>
 
@@ -2889,11 +2817,11 @@
         <div class="prompt-card glass-card">
             <div class="prompt-header">
                 <img src="assets/primary_image/Gemini_Generated_Image_3osoi73osoi73oso.png" alt="Abdulaziz" class="prompt-icon">
-                <h3>مرحباً بك في سيرتي الذاتية!</h3>
-                <p>لضمان عرض أحدث البيانات والخبرات والدورات المحدثة، يرجى الضغط على زر التحديث أدناه لتحديث الصفحة.</p>
+                <h3 data-i18n="pwa_welcome">مرحباً بك في سيرتي الذاتية!</h3>
+                <p data-i18n="pwa_welcome_desc">لضمان عرض أحدث البيانات والخبرات والدورات المحدثة، يرجى الضغط على زر التحديث أدناه لتحديث الصفحة.</p>
             </div>
             <div class="prompt-actions">
-                <button id="btn-welcome-update" class="install-main" style="background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); width: 100%;"><i class="fas fa-sync-alt"></i> تحديث الصفحة الآن</button>
+                <button id="btn-welcome-update" class="install-main" style="background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%); box-shadow: 0 4px 15px rgba(255, 8, 68, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); width: 100%;"><i class="fas fa-sync-alt"></i> <span data-i18n="btn_update">تحديث الصفحة الآن</span></button>
             </div>
         </div>
     </div>
@@ -2902,12 +2830,12 @@
         <div class="prompt-card glass-card">
             <div class="prompt-header">
                 <img src="assets/primary_image/Gemini_Generated_Image_3osoi73osoi73oso.png" alt="Abdulaziz" class="prompt-icon">
-                <h3>أهلاً بك في سيرتي الذاتية!</h3>
-                <p>هل تود إضافة السيرة الذاتية لشاشة الجوال للوصول السريع لخبراتي ودوراتي؟</p>
+                <h3 data-i18n="pwa_install_title">أهلاً بك في سيرتي الذاتية!</h3>
+                <p data-i18n="pwa_install_desc">هل تود إضافة السيرة الذاتية لشاشة الجوال للوصول السريع لخبراتي ودوراتي؟</p>
             </div>
             <div class="prompt-actions">
-                <button id="btn-pwa-install" class="install-main">تثبيت التطبيق الآن</button>
-                <button id="btn-pwa-close" class="install-close">لاحقاً، شكراً لك</button>
+                <button id="btn-pwa-install" class="install-main" data-i18n="pwa_install_btn">تثبيت التطبيق الآن</button>
+                <button id="btn-pwa-close" class="install-close" data-i18n="pwa_install_later">لاحقاً، شكراً لك</button>
             </div>
         </div>
     </div>
@@ -3119,7 +3047,7 @@ Coursera: Google Data Analytics، IBM Software Engineering
 • درع التفوق - المركز الخامس مديرية المكلا (99.29%)
 • شهادات تقديرية من مساجد متعددة`;
 
-    const API_KEY = document.querySelector('meta[name="gemini-api-key"]').getAttribute('content');
+    const API_KEY = atob(document.querySelector('meta[name="gemini-api-key"]').getAttribute('content'));
     const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
 
     let isProcessing = false;
@@ -3266,7 +3194,7 @@ Coursera: Google Data Analytics، IBM Software Engineering
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         // 3. تأخير زمني لمحاكاة التفكير ثم الرد
-        setTimeout(() => {
+        setTimeout(async () => {
             // إزالة مؤشر الكتابة
             const typInd = document.getElementById(typingId);
             if(typInd) typInd.remove();
@@ -3274,7 +3202,7 @@ Coursera: Google Data Analytics، IBM Software Engineering
             // إضافة رد البوت
             const botDiv = document.createElement('div');
             botDiv.className = 'msg msg-bot';
-            botDiv.textContent = getBotResponse(text);
+            botDiv.textContent = await getBotResponse(text);
             chatMessages.appendChild(botDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
@@ -3306,6 +3234,19 @@ Coursera: Google Data Analytics، IBM Software Engineering
             });
         });
     }, 100);
+
+    // ── Listen for language changes ──
+    document.addEventListener('languageChanged', (e) => {
+      const lang = e.detail.lang;
+      const welcomeMsg = document.querySelector('.msg.msg-bot:first-child');
+      if (welcomeMsg && window.i18n && window.i18n[lang]) {
+        welcomeMsg.textContent = window.i18n[lang].chatbot_welcome;
+      }
+      const input = document.querySelector('.chatbot-input');
+      if (input && window.i18n && window.i18n[lang]) {
+        input.placeholder = window.i18n[lang].chatbot_placeholder;
+      }
+    });
     </script>
 </body>
 

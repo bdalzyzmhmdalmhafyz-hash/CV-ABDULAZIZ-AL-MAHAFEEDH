@@ -1,20 +1,151 @@
+// ── i18n Language Switcher ──
+const i18n = {
+  ar: {
+    nav_home: 'الرئيسية', nav_about: 'اللمحة', nav_education: 'المؤهلات',
+    nav_experience: 'الخبرات', nav_skills: 'المهارات', nav_courses: 'الدورات',
+    nav_edraak: 'منصة إدراك', nav_satar: 'منصة سطر',
+    section_about: 'المعلومات الشخصية', section_education: 'المؤهلات العلمية',
+    section_experience: 'الخبرات العملية', section_freelance: 'المشاريع المستقلة',
+    section_skills: 'المهارات والقدرات', section_courses: 'الدورات و الدبلومات',
+    section_edraak: 'منصة إدراك', section_satar: 'منصة سطر',
+    section_fcc: 'شهادات و إنجازات FreeCodeCamp', section_coursera: 'شهادات واحترافية Coursera',
+    about_name: 'الاسم بالإنجليزية', about_email: 'البريد الإلكتروني',
+    about_phone: 'الهاتف', about_birth: 'تاريخ الميلاد',
+    about_address: 'العنوان', about_specialty: 'التخصص',
+    cert_show_issuer: 'عرض الجهة المانحة', cert_back: 'العودة للشهادة',
+    orbit_title: 'أقسام الدورات و الدبلومات', orbit_sub: 'اختر القسم الذي تود استعراض شهاداته',
+    orbit_accounting: 'قسم المحاسبة', orbit_training: 'قسم التطوير',
+    orbit_software: 'قسم البرامج', orbit_technical: 'قسم التقنية',
+    orbit_languages: 'قسم اللغات', orbit_appreciation: 'التقدير',
+    orbit_achievements: 'الإنجازات', orbit_close: 'إغلاق النافذة',
+    bubble_home: 'الرئيسية', bubble_about: 'اللمحة', bubble_education: 'المؤهلات',
+    bubble_experience: 'الخبرات', bubble_skills: 'المهارات', bubble_courses: 'الدورات',
+    bubble_edraak: 'إدراك', bubble_satar: 'سطر',
+    btn_update: 'تحديث الصفحة الآن',
+    pwa_welcome: 'مرحباً بك في سيرتي الذاتية!',
+    pwa_welcome_desc: 'لضمان عرض أحدث البيانات والخبرات والدورات المحدثة، يرجى الضغط على زر التحديث أدناه لتحديث الصفحة.',
+    pwa_install_title: 'أهلاً بك في سيرتي الذاتية!',
+    pwa_install_desc: 'هل تود إضافة السيرة الذاتية لشاشة الجوال للوصول السريع لخبراتي ودوراتي؟',
+    pwa_install_btn: 'تثبيت التطبيق الآن',
+    pwa_install_later: 'لاحقاً، شكراً لك',
+    chatbot_placeholder: 'اكتب رسالتك هنا...',
+    chatbot_welcome: 'مرحباً! أعرفك بنفسي، أنا المساعد الذكي الخاص بالمحاسب عبد العزيز. كيف يمكنني مساعدتك اليوم؟ 😊',
+  },
+  en: {
+    nav_home: 'Home', nav_about: 'About', nav_education: 'Education',
+    nav_experience: 'Experience', nav_skills: 'Skills', nav_courses: 'Courses',
+    nav_edraak: 'Edraak', nav_satar: 'Satar',
+    section_about: 'Personal Information', section_education: 'Education',
+    section_experience: 'Experience', section_freelance: 'Freelance Projects',
+    section_skills: 'Skills & Abilities', section_courses: 'Courses & Diplomas',
+    section_edraak: 'Edraak Platform', section_satar: 'Satar Platform',
+    section_fcc: 'FreeCodeCamp Certifications', section_coursera: 'Coursera Certifications',
+    about_name: 'Full Name (EN)', about_email: 'Email',
+    about_phone: 'Phone', about_birth: 'Date of Birth',
+    about_address: 'Address', about_specialty: 'Specialty',
+    cert_show_issuer: 'View Issuer', cert_back: 'Back to Certificate',
+    orbit_title: 'Course Categories', orbit_sub: 'Choose a category to view certificates',
+    orbit_accounting: 'Accounting', orbit_training: 'Training',
+    orbit_software: 'Software', orbit_technical: 'Technical',
+    orbit_languages: 'Languages', orbit_appreciation: 'Appreciation',
+    orbit_achievements: 'Achievements', orbit_close: 'Close',
+    bubble_home: 'Home', bubble_about: 'About', bubble_education: 'Education',
+    bubble_experience: 'Experience', bubble_skills: 'Skills', bubble_courses: 'Courses',
+    bubble_edraak: 'Edraak', bubble_satar: 'Satar',
+    btn_update: 'Update Page Now',
+    pwa_welcome: 'Welcome to My CV!',
+    pwa_welcome_desc: 'To ensure the latest data is displayed, please click the update button below to refresh the page.',
+    pwa_install_title: 'Welcome to My CV!',
+    pwa_install_desc: 'Would you like to install this CV on your home screen for quick access?',
+    pwa_install_btn: 'Install Now',
+    pwa_install_later: 'Later, Thanks',
+    chatbot_placeholder: 'Type your message here...',
+    chatbot_welcome: 'Hello! I am the smart assistant for accountant Abdulaziz. How can I help you today? 😊',
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'ar';
+
+// Expose i18n globally for other scripts
+window.i18n = i18n;
+window.currentLang = currentLang;
+
+function switchLanguage(lang) {
+  const newLang = lang || (currentLang === 'ar' ? 'en' : 'ar');
+  currentLang = newLang;
+  window.currentLang = newLang;
+  localStorage.setItem('lang', newLang);
+
+  const html = document.documentElement;
+  html.lang = newLang;
+  html.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+
+  // Update all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (i18n[newLang][key]) {
+      el.textContent = i18n[newLang][key];
+    }
+  });
+
+  // Update data-i18n-tooltip elements
+  document.querySelectorAll('[data-i18n-tooltip]').forEach(el => {
+    const key = el.getAttribute('data-i18n-tooltip');
+    if (i18n[newLang][key]) {
+      el.setAttribute('data-tooltip', i18n[newLang][key]);
+    }
+  });
+
+  // Update lang switcher buttons
+  const circleBtn = document.getElementById('lang-circle-btn');
+  if (circleBtn) {
+    const span = circleBtn.querySelector('span');
+    if (span) span.textContent = newLang === 'ar' ? 'EN' : 'AR';
+    circleBtn.title = newLang === 'ar' ? 'English' : 'العربية';
+    circleBtn.setAttribute('aria-label', newLang === 'ar' ? 'تبديل إلى الإنجليزية' : 'Switch to Arabic');
+  }
+
+  // Update chatbot placeholder
+  const chatInput = document.querySelector('.chatbot-input');
+  if (chatInput) chatInput.placeholder = i18n[newLang].chatbot_placeholder;
+
+  // Update title tag
+  const titleEl = document.querySelector('title');
+  if (titleEl) {
+    titleEl.textContent = newLang === 'ar'
+      ? 'عبد العزيز المحافيظ | السيرة الذاتية'
+      : 'Abdulaziz Al-Mahafeedh | Resume';
+  }
+
+  // Update typewriter text
+  nameText = newLang === 'ar' ? 'عبد العزيز محمد المحافيظ' : 'Abdulaziz M. Al-Mahafeedh';
+  titleText = newLang === 'ar' ? 'محاسب و ملم بالأنظمة المحاسبية' : 'Accountant & ERP Systems Specialist';
+
+  // Restart typewriter if it's done or running
+  if (typeof restartTypewriter === 'function') restartTypewriter();
+
+  // Dispatch event for other scripts
+  document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
+}
+
 // Typewriter Effect Variables
-const nameText = "عبد العزيز محمد المحافيظ";
-const titleText = "محاسب و ملم بالأنظمة المحاسبية";
+let nameText = "عبد العزيز محمد المحافيظ";
+let titleText = "محاسب و ملم بالأنظمة المحاسبية";
 const nameElement = document.getElementById("typewriter-name");
 const titleElement = document.getElementById("typewriter-title");
 
 let nameIndex = 0;
 let titleIndex = 0;
+let typewriterTimer = null;
 
 function typeWriterName() {
   if (nameIndex < nameText.length) {
     nameElement.innerHTML += nameText.charAt(nameIndex);
     nameIndex++;
-    setTimeout(typeWriterName, 100);
+    typewriterTimer = setTimeout(typeWriterName, 100);
   } else {
-    nameElement.style.borderRight = "none"; // remove cursor
-    setTimeout(typeWriterTitle, 300); // Start title
+    nameElement.style.borderRight = "none";
+    typewriterTimer = setTimeout(typeWriterTitle, 300);
   }
 }
 
@@ -22,10 +153,24 @@ function typeWriterTitle() {
   if (titleIndex < titleText.length) {
     titleElement.innerHTML += titleText.charAt(titleIndex);
     titleIndex++;
-    setTimeout(typeWriterTitle, 75);
+    typewriterTimer = setTimeout(typeWriterTitle, 75);
   } else {
     titleElement.style.borderRight = "none";
   }
+}
+
+function restartTypewriter() {
+  if (typewriterTimer) {
+    clearTimeout(typewriterTimer);
+    typewriterTimer = null;
+  }
+  nameIndex = 0;
+  titleIndex = 0;
+  nameElement.innerHTML = '';
+  titleElement.innerHTML = '';
+  nameElement.style.borderRight = '';
+  titleElement.style.borderRight = '';
+  typeWriterName();
 }
 
 // Fade-in Animation on Scroll
@@ -75,6 +220,9 @@ function initAccordions() {
 
 // Initialization on DOM Load
 document.addEventListener("DOMContentLoaded", () => {
+  // ── Apply saved language on load ──
+  if (currentLang !== 'ar') switchLanguage('en');
+
   // ── Courses Orbit Overlay Logic ──
   const coursesDockBtn = document.querySelector('.bubble-item[data-section="courses"] a');
   const orbitOverlay = document.getElementById('courses-orbit-overlay');
