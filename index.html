@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="style.css?v=8">
     <link rel="stylesheet" href="chatbot.css?v=8">
 
-    <!-- Google Generative AI API Key (encoded) -->
-    <meta name="gemini-api-key" content="QVEuQWI4Uk42S2RubkFHYzNQT2VnWXF2aWRHZ0pLRHViVFFxQ0dVZ3NrTmRnY1VUTkt3Q3c=">
+    <!-- Google Generative AI will be loaded via standard ES Module directly -->
 
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2765,8 +2764,8 @@
         <div class="chatbot-popup-header">
             <img src="assets/primary_image/chatbot_main_image.png" alt="Bot Avatar" class="popup-header-avatar">
             <div class="popup-header-info">
-                <span class="popup-header-name">المساعد الذكي - عبدالعزيز</span>
-                <span class="popup-header-status">متاح الآن</span>
+                <span class="popup-header-name" data-i18n="chatbot_header_name">المساعد الذكي - عبدالعزيز</span>
+                <span class="popup-header-status" data-i18n="chatbot_header_status">متاح الآن</span>
             </div>
             <button class="popup-close-btn" id="popup-close-btn" aria-label="إغلاق المحادثة"><i class="fas fa-times"></i></button>
         </div>
@@ -2779,24 +2778,24 @@
 
         <!-- Quick Replies -->
         <div class="quick-replies" id="quick-replies">
-            <button class="quick-btn">من أنت؟ 👋</button>
-            <button class="quick-btn">المؤهلات العلمية 🎓</button>
-            <button class="quick-btn">الخبرات العملية 💼</button>
-            <button class="quick-btn">مساعد مدير النظام ⚙️</button>
-            <button class="quick-btn">المشاريع المستقلة 🚀</button>
-            <button class="quick-btn">المهارات 💪</button>
-            <button class="quick-btn">الدورات المحاسبية 📊</button>
-            <button class="quick-btn">دورات التطوير 🌱</button>
-            <button class="quick-btn">دورات البرامج 💻</button>
-            <button class="quick-btn">الدورات التقنية 🔧</button>
-            <button class="quick-btn">اللغات 🌍</button>
-            <button class="quick-btn">منصة إدراك 📘</button>
-            <button class="quick-btn">منصة سطر 💜</button>
+            <button class="quick-btn" data-i18n="quick_intro">من أنت؟ 👋</button>
+            <button class="quick-btn" data-i18n="quick_education">المؤهلات العلمية 🎓</button>
+            <button class="quick-btn" data-i18n="quick_experience">الخبرات العملية 💼</button>
+            <button class="quick-btn" data-i18n="quick_system_mgr">مساعد مدير النظام ⚙️</button>
+            <button class="quick-btn" data-i18n="quick_freelance">المشاريع المستقلة 🚀</button>
+            <button class="quick-btn" data-i18n="quick_skills">المهارات 💪</button>
+            <button class="quick-btn" data-i18n="quick_accounting">الدورات المحاسبية 📊</button>
+            <button class="quick-btn" data-i18n="quick_training">دورات التطوير 🌱</button>
+            <button class="quick-btn" data-i18n="quick_software">دورات البرامج 💻</button>
+            <button class="quick-btn" data-i18n="quick_technical">الدورات التقنية 🔧</button>
+            <button class="quick-btn" data-i18n="quick_languages">اللغات 🌍</button>
+            <button class="quick-btn" data-i18n="quick_edraak">منصة إدراك 📘</button>
+            <button class="quick-btn" data-i18n="quick_satar">منصة سطر 💜</button>
             <button class="quick-btn">FreeCodeCamp 🔥</button>
             <button class="quick-btn">Coursera 🎯</button>
-            <button class="quick-btn">خبير الذكاء الاصطناعي 🤖</button>
-            <button class="quick-btn">الإنجازات 🏆</button>
-            <button class="quick-btn">التواصل 📞</button>
+            <button class="quick-btn" data-i18n="quick_ai">خبير الذكاء الاصطناعي 🤖</button>
+            <button class="quick-btn" data-i18n="quick_achievements">الإنجازات 🏆</button>
+            <button class="quick-btn" data-i18n="quick_contact">التواصل 📞</button>
         </div>
 
         <!-- Input Area -->
@@ -2847,263 +2846,128 @@
     // ── DATABASE (Knowledge Base JSON) ──
     const botKnowledge = [
         {
-            keywords: ["معلومات", "شخصية", "عمرك", "ميلاد", "عنوان", "تخصص", "ساكن"],
-            response: "أنا عبد العزيز محمد المحافيظ، طالب محاسبة. من مواليد 26/10/2002، وأسكن في (المكلا - فوه - المتضررين حي المستقبل). بريدي: bdalzyzmhmdalmhafyz@gmail.com، هاتفي: +967776543245"
+            keywords: ["معلومات", "شخصية", "عمرك", "ميلاد", "عنوان", "تخصص", "ساكن", "personal", "info", "age", "birth", "address"],
+            response: "أنا عبد العزيز محمد المحافيظ، طالب محاسبة. من مواليد 26/10/2002، وأسكن في (المكلا - فوه - المتضررين حي المستقبل). بريدي: bdalzyzmhmdalmhafyz@gmail.com، هاتفي: +967776543245",
+            responseEn: "I am Abdulaziz Mohammed Al-Mahafeedh, an Accounting student. Born 26/10/2002, living in (Mukalla - Fow - Al-Mutadarreen). Email: bdalzyzmhmdalmhafyz@gmail.com, Phone: +967776543245"
         },
         {
-            keywords: ["مؤهلات", "تعليم", "دراسة", "جامعة", "بكالوريوس", "حضرموت", "uopeople", "إعدادية", "تاسع", "ثانوية", "نموذجية", "علمية"],
-            response: "🎓 المؤهلات العلمية:\n• بكالوريوس محاسبة - جامعة حضرموت\n• ثانوية المكلا النموذجية للبنين - 95.63%\n• المرحلة الإعدادية (مدرسة عثمان بن عفان) - المركز الخامس على المديرية بنسبة 99.29%\n• طالب في برنامج أسس اللغة الإنجليزية - جامعة الشعب الأمريكية UoPeople"
+            keywords: ["مؤهلات", "تعليم", "دراسة", "جامعة", "بكالوريوس", "حضرموت", "uopeople", "إعدادية", "تاسع", "ثانوية", "نموذجية", "علمية", "education", "qualifications", "university", "bachelor", "high school"],
+            response: "🎓 المؤهلات العلمية:\n• بكالوريوس محاسبة - جامعة حضرموت\n• ثانوية المكلا النموذجية للبنين - 95.63%\n• المرحلة الإعدادية (مدرسة عثمان بن عفان) - المركز الخامس على المديرية بنسبة 99.29%\n• طالب في برنامج أسس اللغة الإنجليزية - جامعة الشعب الأمريكية UoPeople",
+            responseEn: "🎓 Education:\n• Bachelor of Accounting - Hadhramout University\n• Mukalla Model Secondary School for Boys - 95.63%\n• Preparatory Stage (Osman bin Affan School) - 5th place in district (99.29%)\n• Student in English Foundations Program - UoPeople"
         },
         {
-            keywords: ["عقيل", "مسلم", "صندوق", "مستحقات", "مقبوضات", "مدفوعات", "سلف", "التجارية"],
-            response: "💼 شركة مسلم التجارية (من 25/1/2026 إلى الآن):\nأمين صندوق مالي وإدارة مستحقات:\n• إدارة دورة المقبوضات والمدفوعات وإصدار سندات القبض والصرف\n• ضبط حسابات وسلف الموظفين\n• المطابقة والرقابة اليومية بنسبة 100%\n• إدارة التدفقات البنكية والإيداعات\n• صرف المصاريف التشغيلية"
+            keywords: ["عقيل", "مسلم", "صندوق", "مستحقات", "مقبوضات", "مدفوعات", "سلف", "التجارية", "muslim", "treasurer", "cashier"],
+            response: "💼 شركة مسلم التجارية (من 25/1/2026 إلى الآن):\nأمين صندوق مالي وإدارة مستحقات:\n• إدارة دورة المقبوضات والمدفوعات وإصدار سندات القبض والصرف\n• ضبط حسابات وسلف الموظفين\n• المطابقة والرقابة اليومية بنسبة 100%\n• إدارة التدفقات البنكية والإيداعات\n• صرف المصاريف التشغيلية",
+            responseEn: "💼 Muslim Trading Company (Jan 2026 - Present):\nFinancial Treasurer & Dues Management:\n• Managed receipts/payments cycle and issued official vouchers\n• Controlled employee accounts and advances\n• Daily reconciliation with 100% accuracy\n• Managed bank flows and deposits\n• Disbursed operational expenses"
         },
         {
-            keywords: ["عمودي", "مطاعم", "مطعم", "كاشير", "مبيعات", "عملت"],
-            response: "💼 مطعم وبروست العمودي (من 21/10/2021 إلى 23/1/2026):\nكاشير - نقطة بيع:\n• إدارة مئات العمليات النقدية والإلكترونية يومياً لأكثر من 4 سنوات\n• التصفية الختامية للصندوق ومطابقة الإيرادات مع نظام POS\n• العمل بكفاءة تحت ضغط ساعات الذروة\n• التعامل الاحترافي مع العملاء وحل مشكلات الدفع"
+            keywords: ["عمودي", "مطاعم", "مطعم", "كاشير", "مبيعات", "عملت", "amoudi", "restaurant", "pos", "sales"],
+            response: "💼 مطعم وبروست العمودي (من 21/10/2021 إلى 23/1/2026):\nكاشير - نقطة بيع:\n• إدارة مئات العمليات النقدية والإلكترونية يومياً لأكثر من 4 سنوات\n• التصفية الختامية للصندوق ومطابقة الإيرادات مع نظام POS\n• العمل بكفاءة تحت ضغط ساعات الذروة\n• التعامل الاحترافي مع العملاء وحل مشكلات الدفع",
+            responseEn: "💼 Amoudi Restaurant & Broast (Oct 2021 - Jan 2026):\nCashier - POS:\n• Managed hundreds of daily cash/electronic transactions for 4+ years\n• Daily cash closure and revenue reconciliation with POS system\n• Worked efficiently under peak-hour pressure\n• Professional customer handling and payment issue resolution"
         },
         {
-            keywords: ["خبرة", "خبرات", "وظيفة", "وظائف", "عملية"],
-            response: "💼 أمتلك ثلاث خبرات:\n1️⃣ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات (المجموعة القابضة) - يونيو 2026\n2️⃣ أمين صندوق وإدارة مستحقات - شركة مسلم التجارية (2026-حالياً)\n3️⃣ كاشير ونقطة بيع - مطاعم العمودي (2021-2026) لأكثر من 4 سنوات\nاسألني عن أي منها للتفاصيل!"
+            keywords: ["خبرة", "خبرات", "وظيفة", "وظائف", "عملية", "experience", "job", "work"],
+            response: "💼 أمتلك ثلاث خبرات:\n1️⃣ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات (المجموعة القابضة) - يونيو 2026\n2️⃣ أمين صندوق وإدارة مستحقات - شركة مسلم التجارية (2026-حالياً)\n3️⃣ كاشير ونقطة بيع - مطاعم العمودي (2021-2026) لأكثر من 4 سنوات\nاسألني عن أي منها للتفاصيل!",
+            responseEn: "💼 I have three experiences:\n1️⃣ Assistant System Manager - Bin Dol Group Holding - June 2026\n2️⃣ Financial Treasurer - Muslim Trading (2026-Present)\n3️⃣ Cashier/POS - Amoudi Restaurants (2021-2026) for 4+ years\nAsk me about any for details!"
         },
         {
-            keywords: ["مساعد مدير", "بن دول", "مدير النظام", "اونكس برو", "يمن سوفت", "نسخ احتياطي", "المجموعة القابضة"],
-            response: "⚙️ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:\n• إدارة بنية وهيكل النظام على نظام اونكس برو (يمن سوفت)\n• إدارة صلاحيات المستخدمين وأمن المعلومات\n• الإشراف على النسخ الاحتياطي الدوري لقواعد البيانات\n• مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية\n• دعم المستخدمين في حل المشكلات التشغيلية والمحاسبية\n• التنسيق مع المطور الخارجي (يمن سوفت) لمتابعة التحديثات وحل المشكلات البرمجية"
+            keywords: ["مساعد مدير", "بن دول", "مدير النظام", "اونكس برو", "يمن سوفت", "نسخ احتياطي", "المجموعة القابضة", "assistant manager", "bin dol", "system manager", "bindol"],
+            response: "⚙️ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:\n• إدارة بنية وهيكل النظام على نظام اونكس برو (يمن سوفت)\n• إدارة صلاحيات المستخدمين وأمن المعلومات\n• الإشراف على النسخ الاحتياطي الدوري لقواعد البيانات\n• مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية\n• دعم المستخدمين في حل المشكلات التشغيلية والمحاسبية\n• التنسيق مع المطور الخارجي (يمن سوفت) لمتابعة التحديثات وحل المشكلات البرمجية",
+            responseEn: "⚙️ Assistant System Manager - Bin Dol Group Holding - June 2026:\n• Managed system structure on Onyx Pro (YemenSoft)\n• Managed user permissions and information security\n• Supervised periodic database backups\n• Reviewed purchase/sales invoices and financial operations\n• Supported users with operational and accounting issues\n• Coordinated with external developer (YemenSoft) for updates"
         },
         {
-            keywords: ["مشاريع مستقلة", "مشروع مستقل", "المشاريع المستقلة", "المشروع المستقل", "حضرموت للمحاسبة", "حضرموت للمراجعة", "odoo", "أودو", "موقع تعريفي", "تصميم مواقع", "مشروع حضرموت"],
-            response: "🚀 المشاريع المستقلة:\n\nتصميم وتطوير الموقع التعريفي لشركة حضرموت للمحاسبة والمراجعة:\n• بناء وتنسيق الواجهة الأمامية باستخدام Odoo CMS\n• تنظيم عرض الخدمات المحاسبية والباقات السعرية\n• إعداد المحتوى التعريفي والهيكل الإداري\n• تحسين الأداء وتجربة المستخدم (UX/UI) لمختلف الأجهزة"
+            keywords: ["مشاريع مستقلة", "مشروع مستقل", "المشاريع المستقلة", "المشروع المستقل", "حضرموت للمحاسبة", "حضرموت للمراجعة", "odoo", "أودو", "موقع تعريفي", "تصميم مواقع", "freelance", "project"],
+            response: "🚀 المشاريع المستقلة:\n\nتصميم وتطوير الموقع التعريفي لشركة حضرموت للمحاسبة والمراجعة:\n• بناء وتنسيق الواجهة الأمامية باستخدام Odoo CMS\n• تنظيم عرض الخدمات المحاسبية والباقات السعرية\n• إعداد المحتوى التعريفي والهيكل الإداري\n• تحسين الأداء وتجربة المستخدم (UX/UI) لمختلف الأجهزة",
+            responseEn: "🚀 Freelance Projects:\n\nDesigned & developed the promotional website for Hadhramout Accounting:\n• Built frontend using Odoo CMS\n• Organized accounting services and pricing packages\n• Prepared promotional content and admin structure\n• Optimized UX/UI for all devices"
         },
         {
-            keywords: ["مهارة", "مهارات", "قدرات", "تتقن", "تعامل", "ضغط", "أمانة"],
-            response: "💪 المهارات والقدرات:\n• تحمل الضغط العالي (95%)\n• التواصل الفعال مع الجمهور (90%)\n• الأمانة والموثوقية (100%)\n• إجادة أنظمة POS (95%)\n• إدارة النقدية والعهد المالية (98%)\n• المطابقة المالية اليومية (98%)\n• إصدار سندات القبض والصرف (99%)\n• نظام Onyx Pro (95%)\n• إعداد التقارير المالية (98%)\n• الرقابة المالية وتنظيم السجلات (100%)\n• خبير أوامر الذكاء الاصطناعي AI (100%)"
+            keywords: ["مهارة", "مهارات", "قدرات", "تتقن", "تعامل", "ضغط", "أمانة", "skills", "abilities"],
+            response: "💪 المهارات والقدرات:\n• تحمل الضغط العالي (95%)\n• التواصل الفعال مع الجمهور (90%)\n• الأمانة والموثوقية (100%)\n• إجادة أنظمة POS (95%)\n• إدارة النقدية والعهد المالية (98%)\n• المطابقة المالية اليومية (98%)\n• إصدار سندات القبض والصرف (99%)\n• نظام Onyx Pro (95%)\n• إعداد التقارير المالية (98%)\n• الرقابة المالية وتنظيم السجلات (100%)\n• خبير أوامر الذكاء الاصطناعي AI (100%)",
+            responseEn: "💪 Skills & Abilities:\n• High Pressure Tolerance (95%)\n• Effective Communication (90%)\n• Integrity & Reliability (100%)\n• POS Systems Proficiency (95%)\n• Cash & Financial Custody Management (98%)\n• Daily Financial Reconciliation (98%)\n• Issuing Receipt/Payment Vouchers (99%)\n• Onyx Pro System (95%)\n• Financial Reporting (98%)\n• Financial Control & Record Keeping (100%)\n• AI Prompt Expert (100%)"
         },
         {
-            keywords: ["ذكاء", "اصطناعي", "ai", "prompt", "هندسة الأوامر", "توليدي", "llm", "خبير"],
-            response: "🤖 خبير أوامر الذكاء الاصطناعي (AI Prompt Expert):\n• إتقان تقنيات هندسة الأوامر المتقدمة (Prompt Engineering)\n• تصميم استراتيجيات الذكاء التوليدي (Generative AI)\n• استخدام أدوات AI لحل المشكلات المعقدة وأتمتة المهام\n• تطبيق أفضل الممارسات مع نماذج اللغة الكبيرة (LLMs)\n• حاصل على شهادة 'مليون خبير لأوامر الذكاء الاصطناعي' من مؤسسة دبي للمستقبل"
+            keywords: ["ذكاء", "اصطناعي", "ai", "prompt", "هندسة الأوامر", "توليدي", "llm", "خبير", "artificial", "intelligence"],
+            response: "🤖 خبير أوامر الذكاء الاصطناعي (AI Prompt Expert):\n• إتقان تقنيات هندسة الأوامر المتقدمة (Prompt Engineering)\n• تصميم استراتيجيات الذكاء التوليدي (Generative AI)\n• استخدام أدوات AI لحل المشكلات المعقدة وأتمتة المهام\n• تطبيق أفضل الممارسات مع نماذج اللغة الكبيرة (LLMs)\n• حاصل على شهادة 'مليون خبير لأوامر الذكاء الاصطناعي' من مؤسسة دبي للمستقبل",
+            responseEn: "🤖 AI Prompt Expert:\n• Mastery of advanced Prompt Engineering techniques\n• Designed Generative AI strategies\n• Used AI tools for complex problem-solving and automation\n• Applied best practices with Large Language Models (LLMs)\n• Certified 'Million AI Prompt Expert' - Dubai Future Foundation"
         },
         {
-            keywords: ["دورات محاسب", "محاسبة", "مالية", "دبلوم", "يمن سوفت", "اونكس", "onyx", "أمين", "ميزان", "odoo", "erp", "محاسبية"],
-            response: "📊 الدورات المحاسبية:\n• دبلوم المحاسبة والإدارة المالية - جامعة حضرموت (ممتاز)\n• دبلوم المحاسبة - الأكاديمية الدولية\n• دبلوم النظام المحاسبي المتكامل (يمن سوفت/أونكس برو) - ممتاز\n• دورة نظام أونكس برو - مركز بحوث حضرموت (جيد جداً)\n• دورة نظام Odoo السحابي - شركة سنود\n• دورة نظام الميزان للمحاسبة والمستودعات (ممتاز 90%)\n• دورة نظام الأمين للمحاسبة والمستودعات (جيد جداً)"
+            keywords: ["دورات محاسب", "محاسبة", "مالية", "دبلوم", "يمن سوفت", "اونكس", "onyx", "أمين", "ميزان", "odoo", "erp", "محاسبية", "accounting", "courses"],
+            response: "📊 الدورات المحاسبية:\n• دبلوم المحاسبة والإدارة المالية - جامعة حضرموت (ممتاز)\n• دبلوم المحاسبة - الأكاديمية الدولية\n• دبلوم النظام المحاسبي المتكامل (يمن سوفت/أونكس برو) - ممتاز\n• دورة نظام أونكس برو - مركز بحوث حضرموت (جيد جداً)\n• دورة نظام Odoo السحابي - شركة سنود\n• دورة نظام الميزان للمحاسبة والمستودعات (ممتاز 90%)\n• دورة نظام الأمين للمحاسبة والمستودعات (جيد جداً)",
+            responseEn: "📊 Accounting Courses:\n• Diploma in Accounting & Financial Management - Hadhramout Univ. (Excellent)\n• Diploma in Accounting - International Academy\n• Integrated Accounting System Diploma (YemenSoft/Onyx Pro) - Excellent\n• Onyx Pro System Course - Hadhramout Research Center (Very Good)\n• Odoo Cloud System Course - Snow Company\n• Al-Meezan System Course (Excellent 90%)\n• Al-Ameen System Course (Very Good)"
         },
         {
-            keywords: ["تطوير", "نجاح", "تنمية", "ريادة", "اعمال", "إدارة", "استراتيجية", "osha", "سلامة", "مراسلات", "عاطفي", "mckinsey", "forward"],
-            response: "🌱 دورات التطوير والتدريب:\n• برنامج McKinsey Forward - McKinsey.org (يونيو 2026)\n• إدارة السلامة والصحة المهنية OSHA - نقابة المهندسين (ممتاز 90%)\n• دبلوم إدارة الأعمال - الأكاديمية الدولية (ممتاز 96.5%)\n• دبلوم التنمية البشرية - جامعة النخبة (ممتاز)\n• دورة ريادة الأعمال - جامعة النخبة (ممتاز)\n• دورة الإدارة الاستراتيجية (ممتاز)\n• دورة المراسلات التجارية والتجارة الدولية (ممتاز)\n• الذكاء العاطفي والاجتماعي - جامعة حضرموت"
+            keywords: ["تطوير", "نجاح", "تنمية", "ريادة", "اعمال", "إدارة", "استراتيجية", "osha", "سلامة", "مراسلات", "عاطفي", "mckinsey", "forward", "training", "development"],
+            response: "🌱 دورات التطوير والتدريب:\n• برنامج McKinsey Forward - McKinsey.org (يونيو 2026)\n• إدارة السلامة والصحة المهنية OSHA - نقابة المهندسين (ممتاز 90%)\n• دبلوم إدارة الأعمال - الأكاديمية الدولية (ممتاز 96.5%)\n• دبلوم التنمية البشرية - جامعة النخبة (ممتاز)\n• دورة ريادة الأعمال - جامعة النخبة (ممتاز)\n• دورة الإدارة الاستراتيجية (ممتاز)\n• دورة المراسلات التجارية والتجارة الدولية (ممتاز)\n• الذكاء العاطفي والاجتماعي - جامعة حضرموت",
+            responseEn: "🌱 Training & Development:\n• McKinsey Forward Program - McKinsey.org (June 2026)\n• OSHA Occupational Safety & Health - Engineers Syndicate (Excellent 90%)\n• Business Administration Diploma - International Academy (Excellent 96.5%)\n• Human Development Diploma - Elite University (Excellent)\n• Entrepreneurship Course - Elite University (Excellent)\n• Strategic Management Course (Excellent)\n• Business Correspondence & International Trade (Excellent)\n• Emotional & Social Intelligence - Hadhramout Univ."
         },
         {
-            keywords: ["برامج", "حاسوب", "كمبيوتر", "icdl", "اكسل", "excel", "باوربوينت", "spss", "احصائي", "power bi", "تحليل بيانات"],
-            response: "💻 دورات البرامج:\n• دبلوم ICDL الرخصة الدولية لقيادة الحاسوب - جامعة النخبة (ممتاز)\n• دورة الباوربوينت المتقدم (ممتاز)\n• دورة أساسيات الإكسل - جامعة حضرموت\n• دورة الإكسل المتقدم - جامعة النخبة (ممتاز)\n• دورة الإكسل المحاسبي (ممتاز)\n• أساسيات التحليل الإحصائي SPSS - جامعة حضرموت\n• تحليل البيانات وإعداد التقارير Power BI - جامعة حضرموت"
+            keywords: ["برامج", "حاسوب", "كمبيوتر", "icdl", "اكسل", "excel", "باوربوينت", "spss", "احصائي", "power bi", "تحليل بيانات", "software", "computer"],
+            response: "💻 دورات البرامج:\n• دبلوم ICDL الرخصة الدولية لقيادة الحاسوب - جامعة النخبة (ممتاز)\n• دورة الباوربوينت المتقدم (ممتاز)\n• دورة أساسيات الإكسل - جامعة حضرموت\n• دورة الإكسل المتقدم - جامعة النخبة (ممتاز)\n• دورة الإكسل المحاسبي (ممتاز)\n• أساسيات التحليل الإحصائي SPSS - جامعة حضرموت\n• تحليل البيانات وإعداد التقارير Power BI - جامعة حضرموت",
+            responseEn: "💻 Software Courses:\n• ICDL Diploma - Elite University (Excellent)\n• Advanced PowerPoint Course (Excellent)\n• Excel Basics - Hadhramout Univ.\n• Advanced Excel - Elite University (Excellent)\n• Accounting Excel (Excellent)\n• SPSS Statistical Analysis Basics - Hadhramout Univ.\n• Power BI Data Analysis & Reporting - Hadhramout Univ."
         },
         {
-            keywords: ["تقنية", "تقنيه", "برمجة", "أمن", "سيبراني", "شبكات", "جرافيك", "جرافكس", "تصميم مواقع", "إبداعية"],
-            response: "🔧 الدورات التقنية والإبداعية:\n• دبلوم برمجة وتصميم المواقع الإلكترونية - الأكاديمية الدولية (ممتاز)\n• دورة أساسيات الشبكات الاحترافية - مؤسسة سالم (ممتاز)\n• دورة الأمن السيبراني - جامعة النخبة (ممتاز)\n• دورة الأمن السيبراني وحماية الهواتف الذكية من الاختراق - المركز العربي الإرشادي ونقابة تكنولوجيا المعلومات والاتصالات اليمنية\n• دبلوم الجرافيكس - مركز بحوث حضرموت (جيد جداً)\n• دورة مليون خبير لأوامر الذكاء الاصطناعي - مؤسسة دبي للمستقبل"
+            keywords: ["تقنية", "تقنيه", "برمجة", "أمن", "سيبراني", "شبكات", "جرافيك", "جرافكس", "تصميم مواقع", "إبداعية", "technical", "programming", "cyber", "network"],
+            response: "🔧 الدورات التقنية والإبداعية:\n• دبلوم برمجة وتصميم المواقع الإلكترونية - الأكاديمية الدولية (ممتاز)\n• دورة أساسيات الشبكات الاحترافية - مؤسسة سالم (ممتاز)\n• دورة الأمن السيبراني - جامعة النخبة (ممتاز)\n• دورة الأمن السيبراني وحماية الهواتف الذكية من الاختراق - المركز العربي الإرشادي ونقابة تكنولوجيا المعلومات والاتصالات اليمنية\n• دبلوم الجرافيكس - مركز بحوث حضرموت (جيد جداً)\n• دورة مليون خبير لأوامر الذكاء الاصطناعي - مؤسسة دبي للمستقبل",
+            responseEn: "🔧 Technical & Creative Courses:\n• Web Programming & Design Diploma - International Academy (Excellent)\n• Professional Networking Basics - Salim Foundation (Excellent)\n• Cybersecurity Course - Elite University (Excellent)\n• Cybersecurity & Smart Phone Protection - Arab Guidance Center & Yemen ICT Union\n• Graphics Diploma - Hadhramout Research Center (Very Good)\n• Million AI Prompt Expert - Dubai Future Foundation"
         },
         {
-            keywords: ["لغة", "لغات", "انجليزي", "english", "duolingo", "ديولينجو", "متقدم"],
-            response: "🌍 اللغات:\n• دبلوم اللغة الإنجليزية - الأكاديمية الدولية (ممتاز)\n• دبلوم اللغة الإنجليزية المتقدم - جامعة النخبة (ممتاز)\n• دورة اللغة الإنجليزية - المعهد الدولي الحديث (جيد جداً)\n• تعلم ذاتي على Duolingo - سلسلة متواصلة +1100 يوم (3 سنوات!)\n• طالب في برنامج أسس الإنجليزية - جامعة الشعب الأمريكية UoPeople"
+            keywords: ["لغة", "لغات", "انجليزي", "english", "duolingo", "ديولينجو", "متقدم", "language", "languages"],
+            response: "🌍 اللغات:\n• دبلوم اللغة الإنجليزية - الأكاديمية الدولية (ممتاز)\n• دبلوم اللغة الإنجليزية المتقدم - جامعة النخبة (ممتاز)\n• دورة اللغة الإنجليزية - المعهد الدولي الحديث (جيد جداً)\n• تعلم ذاتي على Duolingo - سلسلة متواصلة +1100 يوم (3 سنوات!)\n• طالب في برنامج أسس الإنجليزية - جامعة الشعب الأمريكية UoPeople",
+            responseEn: "🌍 Languages:\n• English Diploma - International Academy (Excellent)\n• Advanced English Diploma - Elite University (Excellent)\n• English Course - Modern International Institute (Very Good)\n• Self-learning on Duolingo - 1100+ day streak (3 years!)\n• Student in English Foundations Program - UoPeople"
         },
         {
             keywords: ["إدراك", "edraak", "منصة إدراك"],
-            response: "📘 منصة إدراك - 10 مساقات و2 تخصص معتمد و80 ساعة تعلم:\n\n🏆 التخصصات المعتمدة:\n1️⃣ الرخصة الدولية ICDL (4 مساقات): أساسيات الحاسوب، أساسيات الإنترنت، معالجة النصوص Word، الجداول الإلكترونية Excel\n2️⃣ الذكاء العاطفي (3 مساقات): الذكاء العاطفي والذات، والقيادة، والمجتمع\n\n📚 الدورات التدريبية:\n• فن الاستماع الفعال\n• المهارات الإبداعية في حل المشاكل\n• مقدمة في عالم الشبكات\n\nشركاء المنصة: Harvard، MIT، Google، Microsoft، British Council، البنك الدولي"
+            response: "📘 منصة إدراك - 10 مساقات و2 تخصص معتمد و80 ساعة تعلم:\n\n🏆 التخصصات المعتمدة:\n1️⃣ الرخصة الدولية ICDL (4 مساقات): أساسيات الحاسوب، أساسيات الإنترنت، معالجة النصوص Word، الجداول الإلكترونية Excel\n2️⃣ الذكاء العاطفي (3 مساقات): الذكاء العاطفي والذات، والقيادة، والمجتمع\n\n📚 الدورات التدريبية:\n• فن الاستماع الفعال\n• المهارات الإبداعية في حل المشاكل\n• مقدمة في عالم الشبكات",
+            responseEn: "📘 Edraak Platform - 10 courses, 2 specializations, 80 learning hours:\n\n🏆 Certified Specializations:\n1️⃣ ICDL (4 courses): Computer Basics, Internet Basics, Word Processing, Excel\n2️⃣ Emotional Intelligence (3 courses): EI & Self, EI & Leadership, EI & Society\n\n📚 Training Courses:\n• The Art of Effective Listening\n• Creative Problem Solving Skills\n• Introduction to Networking"
         },
         {
             keywords: ["سطر", "satr", "طويق", "منصة سطر"],
-            response: "💜 منصة سطر (أكاديمية طويق):\n\n🔐 التهديدات والثغرات في الأمن السيبراني\n\n🎨 مسار تصميم UX/UI:\n• دورة تصميم تجربة واجهة المستخدم\n• البحث والتخطيط في UX\n• تصميم النماذج الأولية UI Prototyping\n• مشروع تطبيقي"
+            response: "💜 منصة سطر (أكاديمية طويق):\n\n🔐 التهديدات والثغرات في الأمن السيبراني\n\n🎨 مسار تصميم UX/UI:\n• دورة تصميم تجربة واجهة المستخدم\n• البحث والتخطيط في UX\n• تصميم النماذج الأولية UI Prototyping\n• مشروع تطبيقي",
+            responseEn: "💜 Satr Platform (Tuwaiq Academy):\n\n🔐 Cyber Security Threats & Vulnerabilities\n\n🎨 UX/UI Design Path:\n• User Experience Design Course\n• UX Research & Planning\n• UI Prototyping\n• Practical Project"
         },
         {
             keywords: ["freecodecamp", "fcc", "فري كود"],
-            response: "🔥 FreeCodeCamp - مقفل حالياً 🚫"
+            response: "🔥 FreeCodeCamp - مقفل حالياً 🚫",
+            responseEn: "🔥 FreeCodeCamp - Currently Locked 🚫"
         },
         {
             keywords: ["coursera", "كورسيرا", "جوجل", "google data", "ibm"],
-            response: "🎯 شهادات Coursera:\n\n📊 Google Data Analytics:\n• Foundations: Data, Data, Everywhere\n• Ask Questions to Make Data-Driven Decisions\n\n💻 IBM Software Engineering:\n• Introduction to Software Engineering\n(SDLC, Agile, Scrum)"
+            response: "🎯 شهادات Coursera:\n\n📊 Google Data Analytics:\n• Foundations: Data, Data, Everywhere\n• Ask Questions to Make Data-Driven Decisions\n\n💻 IBM Software Engineering:\n• Introduction to Software Engineering (SDLC, Agile, Scrum)",
+            responseEn: "🎯 Coursera Certifications:\n\n📊 Google Data Analytics:\n• Foundations: Data, Data, Everywhere\n• Ask Questions to Make Data-Driven Decisions\n\n💻 IBM Software Engineering:\n• Introduction to Software Engineering (SDLC, Agile, Scrum)"
         },
         {
-            keywords: ["انجاز", "إنجازات", "جوائز", "تكريم", "درع", "تفوق", "مركز", "قرآن", "قران"],
-            response: "🏆 الإنجازات والجوائز:\n• درع حفظ القرآن الكريم - مسجد الإمام أحمد بن حنبل\n• درع التفوق والنجاح - المركز الخامس مديرية المكلا (99.29%)\n• شهادة تخرج من ثانوية المكلا النموذجية\n• شهادة شكر وعرفان لإنجاح الدورة القرآنية\n• 8 شهادات تقديرية من مساجد متعددة"
+            keywords: ["انجاز", "إنجازات", "جوائز", "تكريم", "درع", "تفوق", "مركز", "قرآن", "قران", "achievements", "awards"],
+            response: "🏆 الإنجازات والجوائز:\n• درع حفظ القرآن الكريم - مسجد الإمام أحمد بن حنبل\n• درع التفوق والنجاح - المركز الخامس مديرية المكلا (99.29%)\n• شهادة تخرج من ثانوية المكلا النموذجية\n• شهادة شكر وعرفان لإنجاح الدورة القرآنية\n• 8 شهادات تقديرية من مساجد متعددة",
+            responseEn: "🏆 Achievements & Awards:\n• Holy Quran Memorization Shield - Imam Ahmad bin Hanbal Mosque\n• Excellence & Success Shield - 5th place in Mukalla District (99.29%)\n• Graduation Certificate - Mukalla Model Secondary School\n• Certificate of Appreciation for Quranic Course\n• 8 appreciation certificates from various mosques"
         },
         {
-            keywords: ["تواصل", "رقم", "هاتف", "ايميل", "بريد", "واتساب", "واتس", "اكلمك"],
-            response: "📞 التواصل:\n• الهاتف/واتساب: +967776543245\n• البريد الإلكتروني: bdalzyzmhmdalmhafyz@gmail.com\n• يمكنك أيضاً تحميل السيرة الذاتية PDF من زر PDF أسفل الشاشة!"
+            keywords: ["تواصل", "رقم", "هاتف", "ايميل", "بريد", "واتساب", "واتس", "اكلمك", "contact", "phone", "email", "whatsapp"],
+            response: "📞 التواصل:\n• الهاتف/واتساب: +967776543245\n• البريد الإلكتروني: bdalzyzmhmdalmhafyz@gmail.com\n• يمكنك أيضاً تحميل السيرة الذاتية PDF من زر PDF أسفل الشاشة!",
+            responseEn: "📞 Contact:\n• Phone/WhatsApp: +967776543245\n• Email: bdalzyzmhmdalmhafyz@gmail.com\n• You can also download my CV PDF from the PDF button below!"
         },
         {
-            keywords: ["سلام", "مرحبا", "هلا", "اهلا", "كيفك", "من انت", "أنت", "اسمك"],
-            response: "أهلاً بك! 👋 أنا المساعد الذكي الخاص بالمحاسب عبد العزيز المحافيظ 🌟\n\nيمكنني مساعدتك في استكشاف:\n📋 المعلومات الشخصية والمؤهلات\n💼 الخبرات العملية\n⚙️ مساعد مدير النظام - بن دول\n🚀 المشاريع المستقلة\n💪 المهارات والقدرات\n📊 الدورات المحاسبية وأنظمة ERP\n🌱 دورات التطوير والتدريب (McKinsey Forward)\n💻 دورات البرامج والتقنية\n🌍 اللغات\n📘 منصة إدراك | 💜 منصة سطر\n🔥 FreeCodeCamp | 🎯 Coursera\n🤖 خبرة الذكاء الاصطناعي\n🏆 الإنجازات والجوائز\n\nاختر من الأزرار أدناه أو اكتب سؤالك!"
+            keywords: ["سلام", "مرحبا", "هلا", "اهلا", "كيفك", "من انت", "أنت", "اسمك", "hello", "hi", "hey", "who are you", "your name"],
+            response: "أهلاً بك! 👋 أنا المساعد الذكي الخاص بالمحاسب عبد العزيز المحافيظ 🌟\n\nيمكنني مساعدتك في استكشاف:\n📋 المعلومات الشخصية والمؤهلات\n💼 الخبرات العملية\n⚙️ مساعد مدير النظام - بن دول\n🚀 المشاريع المستقلة\n💪 المهارات والقدرات\n📊 الدورات المحاسبية وأنظمة ERP\n🌱 دورات التطوير والتدريب (McKinsey Forward)\n💻 دورات البرامج والتقنية\n🌍 اللغات\n📘 منصة إدراك | 💜 منصة سطر\n🔥 FreeCodeCamp | 🎯 Coursera\n🤖 خبرة الذكاء الاصطناعي\n🏆 الإنجازات والجوائز\n\nاختر من الأزرار أدناه أو اكتب سؤالك!",
+            responseEn: "Welcome! 👋 I am the smart assistant for accountant Abdulaziz Al-Mahafeedh 🌟\n\nI can help you explore:\n📋 Personal Info & Education\n💼 Work Experience\n⚙️ Assistant System Manager - Bin Dol\n🚀 Freelance Projects\n💪 Skills & Abilities\n📊 Accounting Courses & ERP Systems\n🌱 Training & Development (McKinsey Forward)\n💻 Software & Technical Courses\n🌍 Languages\n📘 Edraak | 💜 Satar\n🔥 FreeCodeCamp | 🎯 Coursera\n🤖 AI Expertise\n🏆 Achievements & Awards\n\nChoose from the buttons below or type your question!"
         }
     ];
 
-    // ── SYSTEM CONTEXT for AI ──
-    const SYSTEM_CONTEXT = `أنت مساعد ذكي خاص بالسيرة الذاتية للمحاسب عبد العزيز محمد المحافيظ. 
-مهمتك هي الإجابة عن أي سؤال يتعلق بسيرته الذاتية فقط. كن دقيقاً ومختصراً ومفيداً.
-
-معلومات شخصية:
-- الاسم: عبد العزيز محمد المحافيظ
-- تاريخ الميلاد: 26/10/2002
-- العنوان: المكلا - فوه - المتضررين حي المستقبل
-- البريد: bdalzyzmhmdalmhafyz@gmail.com
-- الهاتف: +967776543245
-
-المؤهلات العلمية:
-- بكالوريوس محاسبة - جامعة حضرموت
-- ثانوية المكلا النموذجية للبنين - 95.63%
-- المرحلة الإعدادية (مدرسة عثمان بن عفان) - المركز الخامس على المديرية بنسبة 99.29%
-- طالب في برنامج أسس اللغة الإنجليزية - جامعة الشعب الأمريكية UoPeople
-
-الخبرات العملية:
-1- مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:
-• إدارة بنية وهيكل النظام على نظام اونكس برو (يمن سوفت)
-• إدارة صلاحيات المستخدمين وأمن المعلومات
-• الإشراف على النسخ الاحتياطي الدوري لقواعد البيانات
-• مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية
-• دعم المستخدمين في حل المشكلات التشغيلية والمحاسبية
-• التنسيق مع المطور الخارجي (يمن سوفت) لمتابعة التحديثات
-
-2- أمين صندوق مالي وإدارة مستحقات - شركة مسلم التجارية (من 25/1/2026 إلى الآن):
-• إدارة دورة المقبوضات والمدفوعات وإصدار سندات القبض والصرف
-• ضبط حسابات وسلف الموظفين
-• المطابقة والرقابة اليومية بنسبة 100%
-• إدارة التدفقات البنكية والإيداعات
-• صرف المصاريف التشغيلية
-
-3- كاشير - نقطة بيع - مطعم وبروست العمودي (من 21/10/2021 إلى 23/1/2026):
-• إدارة مئات العمليات النقدية والإلكترونية يومياً لأكثر من 4 سنوات
-• التصفية الختامية للصندوق ومطابقة الإيرادات مع نظام POS
-• العمل بكفاءة تحت ضغط ساعات الذروة
-• التعامل الاحترافي مع العملاء
-
-المشاريع المستقلة:
-- تصميم وتطوير الموقع التعريفي لشركة حضرموت للمحاسبة والمراجعة باستخدام Odoo ERP
-• بناء وتنسيق الواجهة الأمامية باستخدام Odoo CMS
-• تنظيم عرض الخدمات المحاسبية والباقات السعرية
-• إعداد المحتوى التعريفي والهيكل الإداري
-• تحسين الأداء وتجربة المستخدم (UX/UI)
-
-المهارات:
-• تحمل الضغط العالي (95%)
-• التواصل الفعال (90%)
-• الأمانة والموثوقية (100%)
-• إجادة أنظمة POS (95%)
-• إدارة النقدية والعهد المالية (98%)
-• المطابقة المالية اليومية (98%)
-• إصدار سندات القبض والصرف (99%)
-• نظام Onyx Pro (95%)
-• إعداد التقارير المالية (98%)
-• خبير أوامر الذكاء الاصطناعي AI (100%)
-
-الدورات المحاسبية:
-• دبلوم المحاسبة والإدارة المالية - جامعة حضرموت (ممتاز)
-• دبلوم المحاسبة - الأكاديمية الدولية
-• دبلوم النظام المحاسبي المتكامل (يمن سوفت/أونكس برو) - ممتاز
-• دورة نظام أونكس برو - مركز بحوث حضرموت (جيد جداً)
-• دورة نظام Odoo السحابي - شركة سنود
-• دورة نظام الميزان (ممتاز 90%)
-• دورة نظام الأمين (جيد جداً)
-
-دورات التطوير والتدريب:
-• برنامج McKinsey Forward - McKinsey.org (يونيو 2026)
-• إدارة السلامة والصحة المهنية OSHA - نقابة المهندسين (ممتاز 90%)
-• دبلوم إدارة الأعمال - الأكاديمية الدولية (ممتاز 96.5%)
-• دبلوم التنمية البشرية - جامعة النخبة (ممتاز)
-• دورة ريادة الأعمال (ممتاز)
-• دورة الإدارة الاستراتيجية (ممتاز)
-• دورة المراسلات التجارية والتجارة الدولية (ممتاز)
-• الذكاء العاطفي والاجتماعي - جامعة حضرموت
-
-دورات البرامج:
-• دبلوم ICDL - جامعة النخبة (ممتاز)
-• دورة الباوربوينت المتقدم (ممتاز)
-• دورة أساسيات الإكسل - جامعة حضرموت
-• دورة الإكسل المتقدم - جامعة النخبة (ممتاز)
-• دورة الإكسل المحاسبي (ممتاز)
-• أساسيات SPSS - جامعة حضرموت
-• Power BI - جامعة حضرموت
-
-الدورات التقنية والإبداعية:
-• دبلوم برمجة وتصميم المواقع - الأكاديمية الدولية (ممتاز)
-• أساسيات الشبكات الاحترافية (ممتاز)
-• الأمن السيبراني - جامعة النخبة (ممتاز)
-• دبلوم الجرافيكس - مركز بحوث حضرموت (جيد جداً)
-• مليون خبير أوامر الذكاء الاصطناعي - مؤسسة دبي للمستقبل
-
-اللغات:
-• دبلوم اللغة الإنجليزية - الأكاديمية الدولية (ممتاز)
-• دبلوم اللغة الإنجليزية المتقدم - جامعة النخبة (ممتاز)
-• دورة اللغة الإنجليزية - المعهد الدولي الحديث (جيد جداً)
-• تعلم ذاتي على Duolingo - سلسلة متواصلة +1100 يوم
-• طالب في برنامج أسس الإنجليزية - جامعة الشعب الأمريكية UoPeople
-
-منصة إدراك: 10 مساقات و2 تخصص معتمد و80 ساعة تعلم (ICDL، الذكاء العاطفي)
-منصة سطر: التهديدات والثغرات في الأمن السيبراني، مسار UX/UI
-FreeCodeCamp: مقفل حالياً
-Coursera: Google Data Analytics، IBM Software Engineering
-
-خبير الذكاء الاصطناعي:
-• إتقان هندسة الأوامر المتقدمة (Prompt Engineering)
-• تصميم استراتيجيات الذكاء التوليدي (Generative AI)
-• شهادة مليون خبير لأوامر الذكاء الاصطناعي من مؤسسة دبي للمستقبل
-
-الإنجازات:
-• درع حفظ القرآن الكريم
-• درع التفوق - المركز الخامس مديرية المكلا (99.29%)
-• شهادات تقديرية من مساجد متعددة`;
-
-    const API_KEY = atob(document.querySelector('meta[name="gemini-api-key"]').getAttribute('content'));
-    const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
-
-    let isProcessing = false;
-
-    async function getBotResponse(userText) {
-        const text = userText.trim();
-        if (!text) return "الرجاء كتابة سؤال 😊";
-
-        // Prevent duplicate processing
-        if (isProcessing) return "جارٍ المعالجة... لحظة من فضلك ⏳";
-        isProcessing = true;
-
-        try {
-            const response = await fetch(`${API_URL}?key=${API_KEY}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{
-                        role: 'user',
-                        parts: [{ text: `${SYSTEM_CONTEXT}\n\nالسؤال: ${text}\n\nأجب باللغة العربية مع استخدام الايموجي المناسب، وكن مختصراً ومفيداً.` }]
-                    }],
-                    generationConfig: {
-                        temperature: 0.7,
-                        maxOutputTokens: 500,
-                        topP: 0.9
-                    }
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error(`API Error: ${response.status}`);
+    function getBotResponse(userText) {
+        const text = userText.toLowerCase();
+        const lang = (typeof currentLang !== 'undefined' ? currentLang : 'ar') || 'ar';
+        
+        for (let item of botKnowledge) {
+            if (item.keywords.some(kw => text.includes(kw))) {
+                return lang === 'en' && item.responseEn ? item.responseEn : item.response;
             }
-
-            const data = await response.json();
-            const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-            
-            if (reply) {
-                return reply;
-            }
-            throw new Error("No response content");
-        } catch (error) {
-            console.error("Gemini API error:", error);
-            // Fallback to keyword matching
-            const lowerText = text.toLowerCase();
-            for (let item of botKnowledge) {
-                if (item.keywords.some(kw => lowerText.includes(kw))) {
-                    return item.response;
-                }
-            }
-            return "عذراً، حدث خطأ في الاتصال. لكن يمكنك سؤالي عن معلوماتي المتاحة من الأزرار أعلاه 😊";
-        } finally {
-            isProcessing = false;
         }
+        
+        return lang === 'en'
+            ? "Great question! My knowledge focuses on Abdulaziz's CV (education, experience as Assistant System Manager and Treasurer, freelance projects, ERP & McKinsey Forward courses, skills, and contact info). Try asking about any of these! 😊"
+            : "هذا سؤال رائع! لكن معلوماتي تتركز حول السيرة الذاتية لعبد العزيز (تعليمه، خبراته في مساعد مدير النظام وأمين الصندوق، المشاريع المستقلة، دورات ERP وMcKinsey Forward، مهاراته وتواصله). هل جربت سؤالي عن أحدها؟ المرجو التوضيح أكثر 😊";
     }
 
-    const messages = [
+    const messagesAr = [
         "هل تريد استكشاف سيرتي الذاتية؟ 📄",
         "مساعد مدير النظام في شركة بن دول للتجارة (المجموعة القابضة) ⚙️",
         "حاصل على دبلومات ERP وأنظمة أونكس برو 📈",
@@ -3117,6 +2981,23 @@ Coursera: Google Data Analytics، IBM Software Engineering
         "حاصل على شهادات Google وIBM من Coursera 🎯",
         "خبير أوامر الذكاء الاصطناعي - مؤسسة دبي 🤖"
     ];
+
+    const messagesEn = [
+        "Want to explore my CV? 📄",
+        "Assistant System Manager at Bin Dol Group Holding ⚙️",
+        "Certified in ERP & Onyx Pro systems 📈",
+        "Freelance: Website for Hadhramout Accounting 🚀",
+        "McKinsey Forward Program from McKinsey.org 🌟",
+        "Ask me about my accounting & IT skills! 💻",
+        "4+ years experience as Cashier & Sales 💼",
+        "1100+ day Duolingo streak! 🦉✨",
+        "Completed 10 courses on Edraak Platform 📘",
+        "+300 coding challenges on FreeCodeCamp! 🔥",
+        "Google & IBM certifications from Coursera 🎯",
+        "AI Prompt Expert - Dubai Future Foundation 🤖"
+    ];
+
+    let currentMessages = messagesAr;
     let msgIndex = -1; 
     const bubbleText = document.getElementById('bubble-text');
     const chatbotBubble = document.getElementById('chatbot-bubble');
@@ -3125,8 +3006,8 @@ Coursera: Google Data Analytics، IBM Software Engineering
         if (!chatbotBubble) return;
         
         // 1. استخراج الرسالة التالية
-        msgIndex = (msgIndex + 1) % messages.length;
-        if(bubbleText) bubbleText.textContent = messages[msgIndex];
+        msgIndex = (msgIndex + 1) % currentMessages.length;
+        if(bubbleText) bubbleText.textContent = currentMessages[msgIndex];
         
         // 2. إظهار الفقاعة (إزالة الإخفاء وإضافة تأثير الظهور)
         chatbotBubble.classList.remove('bubble-hide');
@@ -3194,7 +3075,7 @@ Coursera: Google Data Analytics، IBM Software Engineering
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         // 3. تأخير زمني لمحاكاة التفكير ثم الرد
-        setTimeout(async () => {
+        setTimeout(() => {
             // إزالة مؤشر الكتابة
             const typInd = document.getElementById(typingId);
             if(typInd) typInd.remove();
@@ -3202,7 +3083,7 @@ Coursera: Google Data Analytics، IBM Software Engineering
             // إضافة رد البوت
             const botDiv = document.createElement('div');
             botDiv.className = 'msg msg-bot';
-            botDiv.textContent = await getBotResponse(text);
+            botDiv.textContent = getBotResponse(text);
             chatMessages.appendChild(botDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
@@ -3238,10 +3119,19 @@ Coursera: Google Data Analytics، IBM Software Engineering
     // ── Listen for language changes ──
     document.addEventListener('languageChanged', (e) => {
       const lang = e.detail.lang;
+      currentMessages = lang === 'en' ? messagesEn : messagesAr;
+      // Update bubble if currently showing
+      const bubbleTextEl = document.getElementById('bubble-text');
+      if (bubbleTextEl && currentMessages.length > 0) {
+        const idx = msgIndex >= 0 ? msgIndex : 0;
+        bubbleTextEl.textContent = currentMessages[idx % currentMessages.length];
+      }
+      // Update welcome message
       const welcomeMsg = document.querySelector('.msg.msg-bot:first-child');
       if (welcomeMsg && window.i18n && window.i18n[lang]) {
         welcomeMsg.textContent = window.i18n[lang].chatbot_welcome;
       }
+      // Update input placeholder
       const input = document.querySelector('.chatbot-input');
       if (input && window.i18n && window.i18n[lang]) {
         input.placeholder = window.i18n[lang].chatbot_placeholder;
