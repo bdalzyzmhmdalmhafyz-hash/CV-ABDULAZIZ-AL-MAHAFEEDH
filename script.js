@@ -11,7 +11,7 @@ const i18n = {
     section_fcc: 'شهادات و إنجازات FreeCodeCamp', section_coursera: 'شهادات واحترافية Coursera',
     about_name: 'الاسم بالإنجليزية', about_email: 'البريد الإلكتروني',
     about_phone: 'الهاتف', about_birth: 'تاريخ الميلاد',
-    about_address: 'العنوان', about_specialty: 'التخصص',
+    about_address: 'العنوان', about_specialty: 'التخصص', about_linkedin: 'لينكد إن',
     cert_show_issuer: 'عرض الجهة المانحة', cert_back: 'العودة للشهادة',
     orbit_title: 'أقسام الدورات و الدبلومات', orbit_sub: 'اختر القسم الذي تود استعراض شهاداته',
     orbit_accounting: 'قسم المحاسبة', orbit_training: 'قسم التطوير',
@@ -60,7 +60,7 @@ const i18n = {
     section_fcc: 'FreeCodeCamp Certifications', section_coursera: 'Coursera Certifications',
     about_name: 'Full Name (EN)', about_email: 'Email',
     about_phone: 'Phone', about_birth: 'Date of Birth',
-    about_address: 'Address', about_specialty: 'Specialty',
+    about_address: 'Address', about_specialty: 'Specialty', about_linkedin: 'LinkedIn',
     cert_show_issuer: 'View Issuer', cert_back: 'Back to Certificate',
     orbit_title: 'Course Categories', orbit_sub: 'Choose a category to view certificates',
     orbit_accounting: 'Accounting', orbit_training: 'Training',
@@ -100,10 +100,308 @@ const i18n = {
   }
 };
 
+// ── Content Translations (for data-i18n-content elements) ──
+const contentData = {
+  // ── Education ──
+  edu_uni_title: { ar: 'بكالوريوس تخصص محاسبة', en: "Bachelor's Degree in Accounting" },
+  edu_uni_text: { ar: 'جامعة حضرموت', en: 'Hadhramout University' },
+  edu_uni_date: { ar: '2025م - 2026م', en: '2025 - 2026' },
+  edu_high_title: { ar: 'شهادة الثانوية العامة', en: 'High School Diploma' },
+  edu_high_text: { ar: 'ثانوية المكلا النموذجية للبنين', en: 'Al-Mukalla Model Secondary School for Boys' },
+  edu_high_grade: { ar: 'حاصل على تقدير (95.63%)', en: 'Grade: 95.63%' },
+  edu_mid_title: { ar: 'شهادة المرحلة الإعدادية', en: 'Middle School Certificate' },
+  edu_mid_text: { ar: 'مدرسة عثمان بن عفان', en: 'Othman Bin Affan School' },
+  edu_mid_grade: { ar: 'المركز الخامس على مستوى المديرية (99.29%)', en: 'Ranked 5th district-wide (99.29%)' },
+
+  // ── Experience 1: Assistant System Admin ──
+  exp1_title: { ar: 'مساعد مدير النظام', en: 'Assistant System Administrator' },
+  exp1_company: { ar: 'شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة)', en: 'Bin Dowal Trading, Industry & Contracting Co. Ltd. (Holding Group)' },
+  exp1_date: { ar: 'يونيو 2026', en: 'June 2026' },
+  exp1_b1: { ar: 'إدارة بنية وهيكل النظام: إدارة وإعداد الوحدات الإدارية، والفترات المحاسبية، وبيانات الفروع والشركات التابعة للمجموعة على نظام اونكس برو التابع لشركة (يمن سوفت).', en: 'System Architecture & Hierarchy Management: Structured and configured administrative units, accounting periods, and branch data across the Onyx Pro ERP system (YemenSoft).' },
+  exp1_b2: { ar: 'إدارة الصلاحيات وأمن المعلومات: التحكم الكامل في منح وتقييد صلاحيات المستخدمين والمحاسبين، وإدارة الحسابات وكلمات السر لضمان حماية وسرية البيانات المالية الحساسة.', en: 'Access Control & Information Security: Managed user and accountant permissions, user accounts, and password credentials to secure sensitive financial data.' },
+  exp1_b3: { ar: 'إدارة النسخ الاحتياطي والأمان: الإشراف على عمليات النسخ الاحتياطي الدوري لقواعد بيانات الفروع والمركز الرئيسي لضمان سلامة البيانات واستمرار العمل دون فقدان للمعلومات.', en: 'Backup & Disaster Recovery Management: Supervised routine backup processes for central and branch databases to ensure data integrity and business continuity.' },
+  exp1_b4: { ar: 'الرقابة وتعديل العمليات الحساسة: مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية المعقدة على النظام بعد التحقق الإداري لضمان مطابقتها وصحتها المحاسبية.', en: 'Audit & Sensitive Transactions Adjustment: Reviewed and modified purchase/sales invoices and complex financial entries after administrative verification.' },
+  exp1_b5: { ar: 'معالجة الأخطاء التشغيلية للنظام: تقديم الدعم للمستخدمين في حل المشكلات التشغيلية والمحاسبية اليومية ضمن النظام، والرفع بالبلاغات التقنية المعقدة لفريق تقنية المعلومات (IT) أو الشركة المطورة (يمن سوفت) لمتابعة حلها.', en: 'System Troubleshooting & Support: Provided daily operational and accounting tech support to end-users, escalating complex bugs to the IT team or YemenSoft developers.' },
+  exp1_b6: { ar: 'التنسيق مع المطور الخارجي: العمل كحلقة وصل تقنية وفنية مع شركة (يمن سوفت) لرفع المشكلات البرمجية العميقة ومتابعة تحديثات النظام وإصلاح العيوب التقنية المعقدة.', en: 'Vendor & Developer Coordination: Acted as the primary technical liaison with YemenSoft to report core software issues and track patch updates.' },
+
+  // ── Experience 2: Cashier & Payables ──
+  exp2_title: { ar: 'أمين صندوق مالي وإدارة مستحقات', en: 'Cashier & Payables Administrator' },
+  exp2_company: { ar: 'شركة مسلم التجارية', en: 'Moslem Trading Company' },
+  exp2_date: { ar: 'من 25/1/2026 إلى الآن', en: 'Jan 25, 2026 – Present' },
+  exp2_b1: { ar: 'إدارة دورة المقبوضات والمدفوعات: تنفيذ وإصدار سندات القبض والصرف الرسمية، وضمان التوثيق المحاسبي الفوري لكافة الحركات النقدية داخل النظام.', en: 'Cash Flow & Lifecycle Management: Executed official cash receipts and payment vouchers, ensuring immediate ledger entries into the ERP system.' },
+  exp2_b2: { ar: 'ضبط حسابات وسلف الموظفين: إدارة كشوفات الموظفين والعمال، واحتساب المسحوبات الشهرية بدقة، وضمان خصمها من الاستحقاقات النهائية.', en: 'Employee Advances & Payroll Reconciliation: Managed employee ledgers, calculated monthly advances accurately, and reconciled them against final payouts.' },
+  exp2_b3: { ar: 'المطابقة والرقابة اليومية: إجراء المطابقة الدورية عبر "كشف الصناديق" لضمان تطابق الرصيد الدفتري مع النقد الفعلي بالخزينة بنسبة 100%.', en: 'Daily Financial Reconciliation: Conducted routine physical cash counts to guarantee a 100% match between book values and actual vault cash.' },
+  exp2_b4: { ar: 'إدارة التدفقات الخارجة والبنكية: تولي مسؤولية توريد السيولة النقدية والشيكات إلى الحسابات البنكية ومطابقة إشعارات الإيداع.', en: 'Banking Operations & Outflow Management: Handled cash and check deposits to corporate bank accounts and reconciled deposit slips.' },
+  exp2_b5: { ar: 'صرف المصاريف التشغيلية: توثيق وصرف المبالغ المخصصة للمصاريف النثرية وفقاً للاعتمادات المالية المعتمدة.', en: 'Operational Expense Disbursal: Documented and disbursed petty cash funds strictly adhering to approved corporate budgets.' },
+
+  // ── Experience 3: Cashier POS ──
+  exp3_title: { ar: 'كاشير - (نقطة بيع)', en: 'Cashier (Point of Sale)' },
+  exp3_company: { ar: 'مطعم وبروست العمودي', en: 'Al-Amoudi Restaurant & Broast' },
+  exp3_date: { ar: 'من 21/10/2021 إلى 23/1/2026', en: 'Oct 21, 2021 – Jan 23, 2026' },
+  exp3_b1: { ar: 'إدارة العمليات المالية (أكثر من 4 سنوات): مسؤول عن معالجة مئات العمليات النقدية والإلكترونية يومياً بدقة عالية، مع الالتزام بإجراء التصفية الختامية للصندوق ومطابقة الإيرادات مع تقارير نظام -POS.', en: 'High-Volume Financial Operations: Successfully processed hundreds of cash and electronic transactions daily with absolute precision, completing end-of-day cash closeouts against POS reports.' },
+  exp3_b2: { ar: 'العمل تحت ضغط عالٍ: العمل بكفاءة خلال ساعات الذروة بيئة مزدحمة جداً، لمنع حدوث أي عجز مالي أو أخطاء.', en: 'High-Pressure Environments: Maintained focus and accuracy during peak operational hours, ensuring zero financial discrepancies.' },
+  exp3_b3: { ar: 'اللباقة والاحترافية: التميز في التعامل مع شريحة واسعة من العملاء وحل المشكلات المتعلقة بالدفع والاعتراضات بمهنية.', en: 'Customer Relations & Problem Solving: Demonstrated professional tact and exceptional service while managing diverse customer needs and resolving billing disputes.' },
+
+  // ── Freelance Project ──
+  frl_title: { ar: 'تصميم وتطوير الموقع التعريفي', en: 'Web Design & Presentation Platform Development' },
+  frl_company: { ar: 'شركة حضرموت للمحاسبة والمراجعة', en: 'Hadhramaut Accounting and Auditing Company' },
+  frl_date: { ar: 'يونيو 2026', en: 'June 2026' },
+  frl_platform_label: { ar: 'المنصة المستخدمة:', en: 'Platform Used:' },
+  frl_platform: { ar: 'نظام أودو العالمي (Odoo ERP - Website Builder)', en: 'Odoo ERP - Website Builder' },
+  frl_b1: { ar: 'تطوير واجهات الويب الرقمية (Front-End Layout): بناء وتنسيق الواجهة الأمامية للموقع الإلكتروني وهيكلتها باحترافية باستخدام أدوات ومنصات التطوير المرئي في نظام أودو (Odoo CMS).', en: 'Front-End Layout Development: Structured and designed a professional front-end interface using Odoo CMS visual development tools.' },
+  frl_b2: { ar: 'تكامل وهيكلة البيانات: تنظيم طريقة عرض الخدمات المحاسبية والباقات السعرية، وضبط تدفق البيانات لضمان معالجتها برمجياً بشكل صحيح في خلفية النظام وبناء تجربة تصفح سلسة.', en: 'Data Architecture & Integration: Organized the presentation flow for accounting services and pricing tiers, ensuring proper back-end data routing.' },
+  frl_b3: { ar: 'إعداد المحتوى التعريفي والموثوقية: صياغة واستعراض الهيكل الإداري والسير المهنية لكوادر الشركة وخبراتهم لتعزيز الهوية الرقمية والموثوقية للمكتب أمام العملاء.', en: 'Corporate Identity & Content Strategy: Drafted the corporate hierarchy and biographical profiles for the firm\'s executive team.' },
+  frl_b4: { ar: 'تحسين الأداء وتجربة المستخدم (UX/UI): توزيع العناصر المرئية، التبويبات، وقنوات الاتصال المباشرة لضمان سرعة استجابة الموقع وسهولة تصفحه من مختلف الأجهزة.', en: 'UX/UI Optimization: Enhanced responsiveness, navigation menus, and call-to-action communication channels across multiple devices.' },
+
+  // ── Skills ──
+  skill_1: { ar: 'تحمل الضغط العالي (العمل في البيئات المزدحمة)', en: 'High-Stress Tolerance & Fast-Paced Operations' },
+  skill_2: { ar: 'التواصل الفعال (التعامل المهني مع الجمهور والزملاء)', en: 'Effective Communication & Professional Customer Relations' },
+  skill_3: { ar: 'الأمانة والموثوقية (سجل نظيف في التعامل بالأموال)', en: 'Integrity & Reliability (Clean track record handling financial assets)' },
+  skill_4: { ar: 'إجادة التعامل مع أنظمة نقاط البيع (POS Systems)', en: 'Proficient with Point of Sale (POS) Systems' },
+  skill_5: { ar: 'إدارة النقدية والعهد المالية', en: 'Core Cash Management (Receipts, Vouchers, Cash Flow)' },
+  skill_6: { ar: 'المطابقة المالية اليومية', en: 'Daily Financial Reconciliation & Ledger Auditing' },
+  skill_7: { ar: 'إصدار سندات القبض والصرف', en: 'Payment & Receipt Voucher Processing' },
+  skill_8: { ar: 'إدارة السلف ومستحقات الموظفين', en: 'Employee Advances & Accounts Payable Admin' },
+  skill_9: { ar: 'إدارة الإيداعات البنكية والشيكات', en: 'Banking Deposits & Check Reconciliations' },
+  skill_10: { ar: 'استخدام نظام onyx pro', en: 'Expert User of Onyx Pro ERP System' },
+  skill_11: { ar: 'إعداد التقارير والكشوفات المالية', en: 'Financial Reporting & Record Organization' },
+  skill_12: { ar: 'الرقابة المالية وتنظيم السجلات', en: 'Financial Control & Record Organization' },
+  skill_ai_title: { ar: 'خبير لأوامر الذكاء الاصطناعي (AI Prompt Expert)', en: 'AI Prompt Engineering Expert' },
+  skill_ai_b1: { ar: 'إتقان تقنيات هندسة الأوامر (Prompt Engineering) المتقدمة لرفع دقة مخرجات الذكاء الاصطناعي.', en: 'Advanced Prompt Engineering techniques to boost AI accuracy.' },
+  skill_ai_b2: { ar: 'تصميم وتنفيذ استراتيجيات الذكاء الاصطناعي التوليدي (Generative AI) لتحسين كفاءة العمليات.', en: 'Implementing Generative AI strategies to enhance corporate workflows.' },
+  skill_ai_b3: { ar: 'استخدام أدوات الـ AI في حل المشكلات المعقدة وأتمتة المهام الروتينية لزيادة الإنتاجية المؤسسية.', en: 'Utilizing AI tools for routine task automation and complex problem-solving.' },
+  skill_ai_b4: { ar: 'تطبيق أفضل الممارسات العالمية في التفاعل مع نماذج اللغة الكبيرة (LLMs).', en: 'Adapting global best practices for interacting with Large Language Models (LLMs).' },
+
+  // ── Course Section Titles ──
+  courses_accounting_title: { ar: 'قسم الدورات المحاسبية', en: 'Accounting & Financial Systems' },
+  courses_training_title: { ar: 'قسم التطوير والتدريب', en: 'Professional Development & Management' },
+  courses_software_title: { ar: 'قسم الدورات المتعلقة بالبرامج', en: 'Software & Data Analytics' },
+  courses_technical_title: { ar: 'قسم الدورات التقنية والإبداعية', en: 'Technical, Tech-Creative & AI' },
+  courses_languages_title: { ar: 'قسم اللغات', en: 'Language Diplomas' },
+  courses_appreciation_title: { ar: 'شهادات الشكر والتقدير', en: 'Appreciation Certificates & Awards' },
+  courses_achievements_title: { ar: 'الإنجازات والجوائز', en: 'Achievements & Awards' },
+
+  // ── Course Cards: Accounting ──
+  ca_1_title: { ar: 'دبلوم المحاسبة والإدارة المالية', en: 'Diploma in Accounting and Financial Management' },
+  ca_1_grade: { ar: '(تقدير: ممتاز)', en: '(Grade: Excellent)' },
+  ca_1_org: { ar: 'مركز جامعة حضرموت', en: 'Hadhramout University Center' },
+  ca_2_title: { ar: 'دبلوم المحاسبة', en: 'Diploma in Accounting' },
+  ca_2_org: { ar: 'الاكاديمية الدولية للتدريب والتأهيل', en: 'International Academy for Training and Rehabilitation' },
+  ca_3_title: { ar: 'دبلوم النظام المحاسبي المتكامل (يمن سوفت/اونكس برو)', en: 'Integrated Accounting Systems Diploma (YemenSoft / Onyx Pro)' },
+  ca_3_org: { ar: 'الاكاديمية الدولية للتدريب والتأهيل (ممتاز)', en: 'International Academy for Training (Excellent)' },
+  ca_4_title: { ar: 'دورة النظام المحاسبي اونكس برو', en: 'Onyx Pro ERP Accounting Course' },
+  ca_4_org: { ar: 'مركز بحوث حضرموت التابع لجامعة الاحقاف (جيد جداً)', en: 'Hadhramout Research Center - Al-Ahgaaf University (Very Good)' },
+  ca_5_title: { ar: 'دورة نظام Odoo العالمي السحابية', en: 'Global Odoo Cloud System Course' },
+  ca_5_org: { ar: 'شركة سنود للحلول والاعمال التقنية', en: 'Snood for Technical Solutions and Business' },
+  ca_6_title: { ar: 'دورة نظام الميزان للمحاسبة والمستودعات', en: 'Al-Mizan Accounting & Inventory System' },
+  ca_6_org: { ar: 'مركز الأفق للكمبيوتر والأنظمة (ممتاز 90%)', en: 'Al-Afaq Computer & Systems Center (Excellent 90%)' },
+  ca_7_title: { ar: 'دورة نظام الأمين للمحاسبة والمستودعات', en: 'Al-Ameen Accounting & Inventory System' },
+  ca_7_org: { ar: 'شركة الأمين سوفت للحلول الأعمال والأنظمة (جيد جداً)', en: 'Al-Ameen Software for Business Solutions (Very Good)' },
+
+  // ── Course Cards: Training ──
+  ct_1_title: { ar: 'برنامج McKinsey Forward', en: 'McKinsey Forward Program' },
+  ct_1_org: { ar: 'McKinsey.org', en: 'McKinsey.org' },
+  ct_1_desc: { ar: 'برنامج تأهيلي مكثف مقدم من أعرق مؤسسة استشارات إدارية واستراتيجية عالمياً (McKinsey & Company)، يهدف إلى إعداد المهنيين الشباب لقيادة بيئات العمل المستقبلية.', en: 'An intensive leadership accelerator by McKinsey & Company focused on future-of-work skills.' },
+  ct_1_badge: { ar: 'عرض الشارة المعتمدة', en: 'View Verified Badge' },
+  ct_2_title: { ar: 'إدارة السلامة والصحة المهنية (OSHA Standards)', en: 'Occupational Safety and Health Administration (OSHA Standards)' },
+  ct_2_org: { ar: 'مركز نقابة المهندسين حضرموت', en: 'Engineers Syndicate Center, Hadhramaut' },
+  ct_2_grade: { ar: 'التقدير: ممتاز (90%)', en: 'Grade: Excellent (90%)' },
+  ct_3_title: { ar: 'دبلوم إدارة الأعمال', en: 'Diploma in Business Administration' },
+  ct_3_org: { ar: 'الأكاديمية الدولية للتدريب والتأهيل', en: 'International Academy for Training and Rehabilitation' },
+  ct_3_grade: { ar: 'التقدير: ممتاز (96.5%)', en: 'Grade: Excellent (96.5%)' },
+  ct_4_title: { ar: 'دبلوم التنمية البشرية', en: 'Diploma in Human Development' },
+  ct_4_org: { ar: 'مركز جامعة النخبة للتدريب والتنمية', en: 'Al-Nokhbah University Center for Training & Development' },
+  ct_4_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ct_5_title: { ar: 'دورة ريادة الأعمال', en: 'Entrepreneurship Course' },
+  ct_5_org: { ar: 'مركز جامعة النخبة للتدريب والتنمية', en: 'Al-Nokhbah University Center' },
+  ct_6_title: { ar: 'دورة الإدارة الاستراتيجية', en: 'Strategic Management Course' },
+  ct_6_org: { ar: 'مركز جامعة النخبة للتدريب والتنمية', en: 'Al-Nokhbah University Center' },
+  ct_7_title: { ar: 'دورة المراسلات التجارية والتجارة الدولية', en: 'Commercial Correspondence & International Trade' },
+  ct_7_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  ct_8_title: { ar: 'الذكاء العاطفي والاجتماعي', en: 'Emotional and Social Intelligence' },
+  ct_8_org: { ar: 'مركز جامعة حضرموت لتدريب الطلاب', en: 'Hadhramout University Student Training Center' },
+
+  // ── Course Cards: Software ──
+  cs_1_title: { ar: 'دبلوم الرخصة الدولية لقيادة الحاسوب ICDL', en: 'International Computer Driving License (ICDL) Diploma' },
+  cs_1_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  cs_1_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cs_2_title: { ar: 'دورة الباوربوينت المتقدم', en: 'Advanced PowerPoint Course' },
+  cs_2_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  cs_3_title: { ar: 'دبلوم الاكسل المحاسبي المتكامل', en: 'Integrated Accounting Excel Diploma' },
+  cs_3_org: { ar: 'الأكاديمية الدولية للتدريب والتأهيل', en: 'International Academy for Training and Rehabilitation' },
+  cs_4_title: { ar: 'دورة أساسيات الإكسل', en: 'Excel Fundamentals' },
+  cs_4_org: { ar: 'مركز جامعة حضرموت لتدريب الطلاب', en: 'Hadhramout University Student Training Center' },
+  cs_5_title: { ar: 'دورة الإكسل المتقدم', en: 'Advanced Excel Course' },
+  cs_5_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  cs_6_title: { ar: 'دورة الإكسل المحاسبي', en: 'Accounting Excel Course' },
+  cs_6_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  cs_7_title: { ar: 'أساسيات التحليل الإحصائي (SPSS)', en: 'Fundamentals of Statistical Analysis (SPSS)' },
+  cs_7_org: { ar: 'مركز جامعة حضرموت لتدريب الطلاب', en: 'Hadhramout University Student Training Center' },
+  cs_8_title: { ar: 'تحليل البيانات وإعداد التقارير (Power BI)', en: 'Data Analysis & Reporting (Power BI)' },
+  cs_8_org: { ar: 'مركز جامعة حضرموت لتدريب الطلاب', en: 'Hadhramout University Student Training Center' },
+
+  // ── Course Cards: Technical ──
+  ctech_1_title: { ar: 'دبلوم برمجة وتصميم المواقع الإلكترونية', en: 'Web Design & Programming Diploma' },
+  ctech_1_org: { ar: 'الأكاديمية الدولية للتدريب والتأهيل', en: 'International Academy for Training' },
+  ctech_1_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ctech_2_title: { ar: 'دورة أساسيات الشبكات الاحترافية', en: 'Professional Networking Fundamentals' },
+  ctech_2_org: { ar: 'مؤسسة سالم للحلول الذكية', en: 'Salem Foundation for Smart Solutions' },
+  ctech_2_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ctech_3_title: { ar: 'دورة الأمن السيبراني', en: 'Cybersecurity Course' },
+  ctech_3_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  ctech_4_title: { ar: 'الأمن السيبراني وحماية الهواتف الذكية من الاختراق', en: 'Cybersecurity & Smartphone Penetration Protection' },
+  ctech_4_org: { ar: 'المركز العربي الإرشادي ونقابة تكنولوجيا المعلومات والاتصالات اليمنية', en: 'Arab Guidance Center & Yemeni ICT Syndicate' },
+  ctech_5_title: { ar: 'دبلوم الجرافيكس', en: 'Graphic Design Diploma' },
+  ctech_5_org: { ar: 'مركز بحوث حضرموت التابع لجامعة الاحقاف', en: 'Hadhramout Research Center - Al-Ahgaaf University' },
+  ctech_5_grade: { ar: 'التقدير: جيد جداً', en: 'Grade: Very Good' },
+  ctech_6_title: { ar: 'دورة مليون خبير لأوامر الذكاء الاصطناعي', en: 'One Million AI Prompters Course' },
+  ctech_6_org: { ar: 'مؤسسة دبي للمستقبل', en: 'Dubai Future Foundation' },
+  ctech_6_verify: { ar: 'تحقق من الشهادة', en: 'Verify Certificate' },
+
+  // ── Course Cards: Languages ──
+  cl_1_title: { ar: 'دبلوم اللغة الانجليزية', en: 'English Language Diploma' },
+  cl_1_org: { ar: 'الاكاديمية الدولية للتدريب والتأهيل', en: 'International Academy for Training' },
+  cl_1_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cl_2_title: { ar: 'دبلوم اللغة الإنجليزية المتقدم', en: 'Advanced English Language Diploma' },
+  cl_2_org: { ar: 'مركز جامعة النخبة الدولية للتدريب والتنمية', en: 'International Al-Nokhbah University Center' },
+  cl_3_title: { ar: 'دورة اللغة الإنجليزية', en: 'English Language Course' },
+  cl_3_org: { ar: 'المعهد الدولي الحديث', en: 'Modern International Institute' },
+  cl_3_grade: { ar: 'التقدير: جيد جداً', en: 'Grade: Very Good' },
+  cl_4_title: { ar: 'اللغة الإنجليزية (تعلم ذاتي)', en: 'Self-Taught English Proficiency' },
+  cl_4_org: { ar: 'منصة Duolingo', en: 'Duolingo Platform' },
+  cl_4_date: { ar: 'سبتمبر 2022 - يناير 2026 (3 سنوات متصلة)', en: 'Sep 2022 - Jan 2026 (3-Year Continuous Streak)' },
+  cl_4_link: { ar: 'رابط الملف الشخصي', en: 'View Profile' },
+  cl_5_title: { ar: 'طالب في برنامج أسس اللغة الإنجليزية كلغة ثانية', en: 'Foundations of English as a Second Language (ESL)' },
+  cl_5_org: { ar: 'جامعة الشعب الامريكية', en: 'University of the People (UoPeople)' },
+
+  // ── Course Cards: Appreciation ──
+  capp_1_title: { ar: 'شهادة تخرج من ثانوية المكلا النموذجية للبنين', en: 'Graduation Certificate - Mukalla Model Secondary School' },
+  capp_2_title: { ar: 'شهادات تقديرية لحضور دورات متعددة', en: 'Certificates of Recognition for Course Attendance' },
+  capp_2_org: { ar: 'مسجد الإمام أحمد بن حنبل ومسجد الصديق', en: 'Imam Ahmad Bin Hanbal Mosque & Al-Siddiq Mosque' },
+  capp_3_title: { ar: 'شهادة شكر وعرفان', en: 'Certificate of Appreciation' },
+  capp_3_desc: { ar: 'لإنجاح برامج الدورة القرآنية "منزلتك عند آخر آية تقرؤها"', en: 'For successful coordination of the Quranic program "Your Status is with the Last Verse You Recite"' },
+  capp_3_org: { ar: 'مسجد الإمام أحمد بن حنبل', en: 'Imam Ahmad Bin Hanbal Mosque' },
+  capp_3_date: { ar: '27/7 - 15/8/2024', en: 'Jul 27 - Aug 15, 2024' },
+
+  // ── Course Cards: Achievements ──
+  caw_1_title: { ar: 'درع حفظ القرآن الكريم', en: 'Holy Quran Memorization Shield' },
+  caw_1_org: { ar: 'مسجد الإمام أحمد بن حنبل', en: 'Imam Ahmad Bin Hanbal Mosque' },
+  caw_2_title: { ar: 'درع التفوق والنجاح', en: 'Academic Excellence and Success Shield' },
+  caw_2_org: { ar: 'مكتب وزارة التربية والتعليم', en: 'Ministry of Education Office' },
+  caw_2_desc: { ar: 'الصف التاسع - الخامس مكرر بنسبة 99.29%', en: '9th Grade - 5th Place Regionally with 99.29%' },
+
+  // ── Edraak Section ──
+  edr_subtitle: { ar: 'أكبر منصة عربية للمساقات الجماعية مفتوحة المصادر', en: 'The largest Arabic MOOC platform' },
+  edr_stat_spec: { ar: 'تخصص كامل', en: 'Specializations' },
+  edr_stat_courses: { ar: 'مساقات منجزة', en: 'Courses Completed' },
+  edr_stat_partners: { ar: 'شركاء معتمدون', en: 'Certified Partners' },
+  edr_stat_hours: { ar: 'ساعة تعلم', en: 'Learning Hours' },
+  edr_spec_title: { ar: 'التخصصات المعتمدة', en: 'Certified Specializations' },
+  edr_icdl_title: { ar: 'الرخصة الدولية لقيادة الحاسوب', en: 'ICDL Base Specialization' },
+  edr_icdl_verified: { ar: 'تخصص معتمد', en: 'Certified Specialization' },
+  edr_icdl_click: { ar: 'اضغط لعرض المساقات', en: 'Click to view courses' },
+  edr_icdl_count: { ar: '4 مساقات', en: '4 Courses' },
+  edr_ei_title: { ar: 'الذكاء العاطفي', en: 'Emotional Intelligence Specialization' },
+  edr_ei_count: { ar: '3 مساقات', en: '3 Courses' },
+  edr_training_title: { ar: 'الدورات التدريبية', en: 'Training Courses' },
+  edr_verify: { ar: 'تحقق', en: 'Verify' },
+
+  // ── Satar Section ──
+  satar_subtitle: { ar: 'صناع النجاح المعتمدون لمنصة سطر أكاديمية طويق', en: 'Certified Success Partners of Satr Platform - Tuwaiq Academy' },
+  satar_learned_title: { ar: 'مجالات التعلم المنجزة في المنصة', en: 'Completed Learning Areas' },
+  satar_tracks_title: { ar: 'المسارات', en: 'Tracks' },
+  satar_tracks_desc: { ar: 'رحلات تعليمية متكاملة لامتلاك مهارات احترافية.', en: 'Integrated educational journeys to acquire professional skills.' },
+  satar_courses_title: { ar: 'الدورات التعليمية', en: 'Courses' },
+  satar_courses_desc: { ar: 'برامج مكثفة في مختلف لغات البرمجة والتقنيات.', en: 'Intensive programs in various programming languages and technologies.' },
+  satar_completed_title: { ar: 'الدورات التعليمية المنجزة', en: 'Completed Training Courses' },
+  satar_completed_desc: { ar: 'شهادات من دورات تدريبية متخصصة في البرمجة والأمن السيبراني.', en: 'Certificates from specialized training courses in programming and cybersecurity.' },
+  satar_uxui_title: { ar: 'مسار تصميم الواجهات وتجربة المستخدم UX/UI', en: 'UX/UI Design Path' },
+  satar_uxui_desc: { ar: 'رحلة تعليمية متكاملة لاحتراف تصميم واجهات المستخدِم وتحسين تجربتهم.', en: 'A comprehensive learning journey to master user interface design and user experience.' },
+
+  // ── FreeCodeCamp Section ──
+  fcc_section_title: { ar: 'شهادات و إنجازات FreeCodeCamp', en: 'FreeCodeCamp Certifications & Achievements' },
+  fcc_subtitle: { ar: 'المسارات التعليمية المنجزة والشهادات المُكتسبة', en: 'Completed Learning Paths & Earned Certifications' },
+  fcc_stat_certs: { ar: 'شهادات', en: 'Certifications' },
+  fcc_stat_projects: { ar: 'مشروع منجز', en: 'Projects Completed' },
+  fcc_stat_challenges: { ar: 'تحدي برمجي', en: 'Coding Challenges' },
+  fcc_stat_hours: { ar: 'ساعة تعلم', en: 'Learning Hours' },
+  fcc_cert_title_ar: { ar: 'تصميم مواقع الويب المتجاوبة', en: 'Responsive Web Design' },
+  fcc_cert_desc: { ar: 'تعلم أساسيات HTML5 و CSS3 لبناء صفحات ويب حديثة ومتجاوبة مع جميع الأجهزة. يشمل تقنيات Flexbox و CSS Grid والتصميم المتكيف (Responsive Design) بالإضافة إلى معايير إمكانية الوصول (Accessibility) وأفضل ممارسات الويب الحديثة.', en: 'Learn HTML5 and CSS3 fundamentals to build modern, responsive websites. Covers Flexbox, CSS Grid, Responsive Design, Accessibility standards, and modern web best practices.' },
+  fcc_badge_complete: { ar: 'مكتمل', en: 'Completed' },
+  fcc_locked: { ar: 'قيد الدراسة حاليا', en: 'Currently Studying' },
+  fcc_achievements: { ar: 'الأوسمة والإنجازات', en: 'Achievements & Badges' },
+
+  // ── Coursera Section ──
+  cour_section_title: { ar: 'شهادات واحترافية Coursera', en: 'Coursera Certifications & Specializations' },
+  cour_subtitle: { ar: 'تعلم من أفضل 350+ جامعة وشركة عالمية', en: 'Learn from 350+ top universities and companies worldwide' },
+  cour_stat_hours: { ar: 'ساعة مذاكرة', en: 'Study Hours' },
+  cour_stat_partners: { ar: 'شركة شريكة', en: 'Partner Companies' },
+  cour_stat_specs: { ar: 'تخصصات', en: 'Specializations' },
+  cour_stat_certs: { ar: 'احترافية', en: 'Certificates' },
+  cour_specs_title: { ar: 'التخصصات (Specializations)', en: 'Specializations' },
+  cour_google_title: { ar: 'شهادة جوجل الاحترافية في تحليل البيانات', en: 'Google Data Analytics Professional Certificate' },
+  cour_google_desc: { ar: 'برنامج تدريبي مكثف مصمم لإعداد المتخصصين في تحليل البيانات. يركز على الممارسات الواقعية التي تمكّن المحلل من استخراج رؤى قيمة من البيانات المعقدة لدعم اتخاذ القرارات الإستراتيجية في المؤسسات.', en: 'An intensive training program designed to prepare data analytics professionals. Focuses on real-world practices that enable analysts to extract valuable insights from complex data.' },
+  cour_courses_title: { ar: 'دورات التخصص', en: 'Specialization Courses' },
+  cour_verify_btn: { ar: 'تحقق من الشهادة', en: 'Verify Certificate' },
+  cour_ibm_title: { ar: 'أساسيات هندسة البرمجيات التطبيقية من IBM', en: 'Applied Software Engineering Fundamentals - IBM' },
+  cour_ibm_desc: { ar: 'تخصص متكامل يغطي دورة حياة تطوير البرمجيات (SDLC)، منهجيات Agile و Scrum، وأساسيات بنية البرامج وتقنياتها المعمارية.', en: 'A comprehensive specialization covering SDLC, Agile & Scrum methodologies, and software architecture fundamentals.' },
+  cour_partner_title: { ar: 'تعلم من الأفضل', en: 'Learn from the Best' },
+
+  // ── FCC Badges ──
+  fcc_badge_fullstack: { ar: 'مطوّر Full-Stack', en: 'Full-Stack Developer' },
+  fcc_badge_streak: { ar: 'سلسلة 365 يوم', en: '365-Day Streak' },
+  fcc_badge_challenges: { ar: '+300 تحدي', en: '+300 Challenges' },
+  fcc_badge_projects: { ar: '35 مشروع', en: '35 Projects' },
+  fcc_badge_certs: { ar: '7 شهادات', en: '7 Certifications' },
+  fcc_badge_graduate: { ar: 'خريج FCC', en: 'FCC Graduate' },
+  fcc_cert_projects: { ar: '5 مشاريع تطبيقية', en: '5 Applied Projects' },
+  fcc_cert_challenges: { ar: '196 تحدي برمجي', en: '196 Coding Challenges' },
+  fcc_cert_hours: { ar: '~300 ساعة', en: '~300 Hours' },
+
+  // ── Action Buttons ──
+  whatsapp_title: { ar: 'تواصل عبر واتساب', en: 'Contact via WhatsApp' },
+  linkedin_title: { ar: 'LinkedIn', en: 'LinkedIn' },
+
+  // ── Coursera sub-cards ──
+  cour_gdata_c1_desc: { ar: 'الأسس: البيانات، البيانات، في كل مكان', en: 'Foundations: Data, Data, Everywhere' },
+  cour_gdata_c2_desc: { ar: 'طرح الأسئلة لاتخاذ قرارات مبنية على البيانات', en: 'Ask Questions to Make Data-Driven Decisions' },
+  cour_ibm_c1_desc: { ar: 'مقدمة في هندسة البرمجيات', en: 'Introduction to Software Engineering' },
+
+  // ── Additional Course Grades ──
+  ct_5_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ct_6_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ct_7_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cs_2_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cs_5_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cs_6_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  ctech_3_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+  cl_2_grade: { ar: 'التقدير: ممتاز', en: 'Grade: Excellent' },
+
+  // ── Edraak ICDL Course Titles ──
+  edr_icdl_ce_title: { ar: 'أساسيات الحاسوب', en: 'Computer Essentials' },
+  edr_icdl_oe_title: { ar: 'أساسيات الإنترنت', en: 'Online Essentials' },
+  edr_icdl_wp_title: { ar: 'معالجة النصوص (Word)', en: 'Word Processing' },
+  edr_icdl_ex_title: { ar: 'الجداول الإلكترونية (Excel)', en: 'Spreadsheets (Excel)' },
+
+  // ── Edraak EI Course Titles ──
+  edr_ei_self_title: { ar: 'الذكاء العاطفي و الذات', en: 'Emotional Intelligence and Self' },
+  edr_ei_lead_title: { ar: 'الذكاء العاطفي و القيادة', en: 'Emotional Intelligence and Leadership' },
+  edr_ei_soc_title: { ar: 'الذكاء العاطفي و المجتمع', en: 'Emotional Intelligence and Society' },
+
+  // ── Edraak Training Cards ──
+  edr_train_listen_title: { ar: 'فن الاستماع الفعال', en: 'Effective Listening Skills' },
+  edr_train_listen_desc: { ar: 'تطوير مهارات التواصل الشخصي وفهم لغة الجسد وتحليل الرسائل الصوتية.', en: 'Developing interpersonal communication, decoding body language, and auditory communication analysis.' },
+  edr_train_creative_title: { ar: 'المهارات الإبداعية في حل المشاكل', en: 'Creative Problem-Solving Skills' },
+  edr_train_creative_desc: { ar: 'استخدام التفكير الإبداعي والمنهجي لحل التحديات المعقدة في بيئة الأعمال.', en: 'Deploying systematic and creative framework strategies for complex corporate challenges.' },
+  edr_train_net_title: { ar: 'مقدمة في عالم الشبكات', en: 'Introduction to Networking' },
+  edr_train_net_desc: { ar: 'فهم أساسيات شبكات الحاسوب، البروتوكولات، وطرق توصيل الأجهزة المختلفة.', en: 'Mastery of computer network basics, infrastructure protocols, and device configurations.' },
+};
+
 let currentLang = localStorage.getItem('lang') || 'ar';
 
 // Expose i18n globally for other scripts
 window.i18n = i18n;
+window.contentData = contentData;
 window.currentLang = currentLang;
 
 function switchLanguage(lang) {
@@ -139,6 +437,13 @@ function switchLanguage(lang) {
     if (span) span.textContent = newLang === 'ar' ? 'EN' : 'AR';
     circleBtn.title = newLang === 'ar' ? 'English' : 'العربية';
     circleBtn.setAttribute('aria-label', newLang === 'ar' ? 'تبديل إلى الإنجليزية' : 'Switch to Arabic');
+    // Red for English, blue for Arabic (transparent like floating action buttons)
+    const isAr = newLang === 'ar';
+    circleBtn.style.setProperty('--btn-bg', isAr ? 'rgba(59,130,246,0.12)' : 'rgba(239,68,68,0.12)');
+    circleBtn.style.setProperty('--btn-border', isAr ? 'rgba(59,130,246,0.3)' : 'rgba(239,68,68,0.3)');
+    circleBtn.style.setProperty('--btn-color', isAr ? '#60a5fa' : '#f87171');
+    circleBtn.style.setProperty('--btn-bg-hover', isAr ? 'rgba(59,130,246,0.25)' : 'rgba(239,68,68,0.25)');
+    circleBtn.style.setProperty('--btn-border-hover', isAr ? 'rgba(59,130,246,0.5)' : 'rgba(239,68,68,0.5)');
   }
 
   // Update chatbot placeholder
@@ -152,6 +457,24 @@ function switchLanguage(lang) {
       ? 'عبد العزيز المحافيظ | السيرة الذاتية'
       : 'Abdulaziz Al-Mahafeedh | Resume';
   }
+
+  // Update data-i18n-content elements (preserves child elements like icons)
+  document.querySelectorAll('[data-i18n-content]').forEach(el => {
+    const key = el.getAttribute('data-i18n-content');
+    if (contentData[key] && contentData[key][newLang]) {
+      const text = contentData[key][newLang];
+      let hasTextNode = false;
+      el.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+          node.textContent = text;
+          hasTextNode = true;
+        }
+      });
+      if (!hasTextNode) {
+        el.textContent = text;
+      }
+    }
+  });
 
   // Update typewriter text
   nameText = newLang === 'ar' ? 'عبد العزيز محمد المحافيظ' : 'Abdulaziz M. Al-Mahafeedh';

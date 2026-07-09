@@ -1355,6 +1355,18 @@ nav {
   color: #fff;
 }
 
+.action-btn.linkedin {
+  background: rgba(10, 102, 194, 0.15);
+  border-color: rgba(10, 102, 194, 0.3);
+  color: #0A66C2;
+}
+
+.action-btn.linkedin:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  color: #fff;
+}
+
 .action-btn.email {
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid transparent;
