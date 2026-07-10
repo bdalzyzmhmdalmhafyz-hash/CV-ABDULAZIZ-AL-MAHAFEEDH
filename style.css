@@ -4301,7 +4301,7 @@ nav {
 }
 
 .modal-slider.show-issuer {
-  transform: translateX(50%);
+  transform: translateX(-50%);
 }
 
 .cert-preview-wrapper {

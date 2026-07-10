@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="assets/primary_image/Gemini_Generated_Image_3osoi73osoi73oso.png">
     <title>عبد العزيز المحافيظ | السيرة الذاتية</title>
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=9">
     <link rel="stylesheet" href="chatbot.css?v=8">
 
     <!-- Google Generative AI will be loaded via standard ES Module directly -->
@@ -110,14 +110,14 @@
                 <i class="fas fa-map-marker-alt info-icon"></i>
                 <div>
                     <strong data-i18n="about_address">العنوان</strong><br>
-                    فوه - المتضررين (حي المستقبل)
+                    <span data-i18n-content="about_address_val">فوه - المتضررين (حي المستقبل)</span>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-briefcase info-icon"></i>
                 <div>
                     <strong data-i18n="about_specialty">التخصص</strong><br>
-                    محاسب
+                    <span data-i18n-content="about_specialty_val">محاسب</span>
                 </div>
             </div>
             <div class="info-item">
@@ -141,7 +141,7 @@
                     <h4 id="university-text" data-i18n-content="edu_uni_text">جامعة حضرموت</h4>
                     <div class="external-issuer-actions">
                         <button class="btn-open-issuer" data-issuer="hadhramout" data-title="بكالوريوس محاسبة"
-                            data-src="">
+                            data-src="" data-i18n-content="edu_uni_btn">
                             <i class="fas fa-scroll"></i> جامعة حضرموت
                         </button>
                     </div>
@@ -169,7 +169,7 @@
 
                     <div class="external-issuer-actions">
                         <button class="btn-open-issuer" data-issuer="mukalla_model" data-title="شهادة الثانوية العامة"
-                            data-src="assets/education/high-school-diploma.jpg.jpg">
+                            data-src="assets/education/high-school-diploma.jpg.jpg" data-i18n-content="edu_high_btn">
                             <i class="fas fa-scroll"></i> ثانوية المكلا النموذجية
                         </button>
                     </div>
@@ -1597,7 +1597,7 @@
                         <i class="fas fa-exchange-alt carousel-hint"></i>
                     </div>
                     <a href="https://programs.edraak.org/learn/verify-certificate/b8665383cee24ae6a0461eee0914fdc5/?lang=ar"
-                        target="_blank" class="edr2-verify-btn">تحقق <i class="fas fa-external-link-alt"></i></a>
+                        target="_blank" class="edr2-verify-btn" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="edr2-spec-body">
                     <div class="edr2-courses-grid">
@@ -1634,7 +1634,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/f80c41d8678243f4aebdc6e00c3f1152/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <!-- Course 2: Online Essentials -->
                         <div class="edr2-course-card" style="--course-accent: #28C76F;">
@@ -1669,7 +1669,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/b3d1c95094ed4ad28d21f32e3e3fef51/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <!-- Course 3: Word Processing -->
                         <div class="edr2-course-card" style="--course-accent: #a78bfa;">
@@ -1704,7 +1704,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/d7fc44f552e346bbb301712baedd0eef/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <!-- Course 4: Excel -->
                         <div class="edr2-course-card" style="--course-accent: #ffd700;">
@@ -1739,7 +1739,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/78b44bc58fd84891984ffd742339a877/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1754,8 +1754,8 @@
                         <span>Emotional Intelligence Specialization</span>
                     </div>
                     <div class="edr2-spec-meta">
-                        <span class="edr2-badge-verified"><i class="fas fa-check-double"></i> تخصص معتمد</span>
-                        <span class="edr2-meta-tag"
+                        <span class="edr2-badge-verified" data-i18n-content="edr_icdl_verified"><i class="fas fa-check-double"></i> تخصص معتمد</span>
+                        <span class="edr2-meta-tag" data-i18n-content="edr_icdl_click"
                             style="background: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.2);"><i
                                 class="fas fa-mouse-pointer"></i> اضغط لعرض المساقات</span>
                         <span class="edr2-meta-tag" data-i18n-content="edr_ei_count"><i class="fas fa-layer-group"></i> 3 مساقات</span>
@@ -1790,7 +1790,7 @@
                         <i class="fas fa-exchange-alt carousel-hint"></i>
                     </div>
                     <a href="https://programs.edraak.org/learn/verify-certificate/ca7b7392d0994a899134c14cd8d0876f/?lang=ar"
-                        target="_blank" class="edr2-verify-btn">تحقق <i class="fas fa-external-link-alt"></i></a>
+                        target="_blank" class="edr2-verify-btn" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
                 <div class="edr2-spec-body">
                     <div class="edr2-courses-grid">
@@ -1827,7 +1827,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/55d7dc7040054027bdb3251584d8cf86/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <!-- EI Course 2: Leadership -->
                         <div class="edr2-course-card" style="--course-accent: #34d399;">
@@ -1862,7 +1862,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/440ff7ff911947a4acafbf609e39ef4b/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                         <!-- EI Course 3: Society -->
                         <div class="edr2-course-card" style="--course-accent: #fbbf24;">
@@ -1897,7 +1897,7 @@
                                 <i class="fas fa-exchange-alt carousel-hint"></i>
                             </div>
                             <a href="https://programs.edraak.org/learn/verify-certificate/47337b8b020f4df1b0ab41734dc2ae86/?lang=ar"
-                                target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                                target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1941,7 +1941,7 @@
                         <i class="fas fa-exchange-alt carousel-hint"></i>
                     </div>
                     <a href="https://programs.edraak.org/learn/verify-certificate/6a41cc7283a445d785d29bdaaeb0c3bf/?lang=ar"
-                        target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                        target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
                 <!-- Training 2: Creative Skills -->
@@ -1977,7 +1977,7 @@
                         <i class="fas fa-exchange-alt carousel-hint"></i>
                     </div>
                     <a href="https://programs.edraak.org/learn/verify-certificate/840e84fe14a14afaa317d08e37d50c12/?lang=ar"
-                        target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                        target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
 
                 <!-- Training 3: Networking -->
@@ -2013,7 +2013,7 @@
                         <i class="fas fa-exchange-alt carousel-hint"></i>
                     </div>
                     <a href="https://programs.edraak.org/learn/verify-certificate/0a9153c84eea43239fcf270836b4fee9/?lang=ar"
-                        target="_blank" class="edr2-verify-sm">تحقق <i class="fas fa-external-link-alt"></i></a>
+                        target="_blank" class="edr2-verify-sm" data-i18n-content="edr_verify">تحقق <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -2029,15 +2029,15 @@
             <div class="satar-text-logo-container">
                 <img src="assets/primary_image/منصة سطر.png" alt="Satar Logo" class="satar-main-logo-new"
                     onerror="this.style.display='none'">
-                <span class="satar-text-logo">منصة سطر</span>
+                <span class="satar-text-logo" data-i18n-content="satar_platform_name">منصة سطر</span>
             </div>
             <h3 class="satar-subtitle" style="margin-top: 15px;" data-i18n-content="satar_subtitle">صناع النجاح المعتمدون لمنصة سطر أكاديمية طويق</h3>
             <div class="satar-logos">
-                <div class="satar-logo-item">الاتحاد السعودي للأمن السيبراني والبرمجة والدرونز</div>
+                <div class="satar-logo-item" data-i18n-content="satar_partner_saudi_fed">الاتحاد السعودي للأمن السيبراني والبرمجة والدرونز</div>
                 <div class="satar-logo-item">Google</div>
                 <div class="satar-logo-item">Microsoft</div>
                 <div class="satar-logo-item">IBM</div>
-                <div class="satar-logo-item">شركة الاتصالات السعودية</div>
+                <div class="satar-logo-item" data-i18n-content="satar_partner_stc">شركة الاتصالات السعودية</div>
             </div>
 
             <!-- Satar Categories -->
@@ -2054,9 +2054,9 @@
                     <h4 data-i18n-content="satar_tracks_title">المسارات</h4>
                     <p data-i18n-content="satar_tracks_desc">رحلات تعليمية متكاملة لامتلاك مهارات احترافية.</p>
                     <ul class="satar-inner-list">
-                        <li>مسار الخبير السحابي (Cloud Expert)</li>
-                        <li>مسار تطوير تطبيقات الويب</li>
-                        <li>مسار علم البيانات والذكاء الاصطناعي</li>
+                        <li data-i18n-content="satar_track_cloud">مسار الخبير السحابي (Cloud Expert)</li>
+                        <li data-i18n-content="satar_track_web">مسار تطوير تطبيقات الويب</li>
+                        <li data-i18n-content="satar_track_data_ai">مسار علم البيانات والذكاء الاصطناعي</li>
                     </ul>
                 </div>
 
@@ -2069,10 +2069,10 @@
                     <h4 data-i18n-content="satar_courses_title">الدورات التعليمية</h4>
                     <p data-i18n-content="satar_courses_desc">برامج مكثفة في مختلف لغات البرمجة والتقنيات.</p>
                     <ul class="satar-inner-list">
-                        <li>لغة بايثون (Python) - الأساسيات والمتقدم</li>
-                        <li>هياكل البيانات والخوارزميات</li>
-                        <li>تطوير الواجهات الأمامية (Frontend)</li>
-                        <li>التهديدات والثغرات والهجمات في الأمن السيبراني</li>
+                        <li data-i18n-content="satar_course_python">لغة بايثون (Python) - الأساسيات والمتقدم</li>
+                        <li data-i18n-content="satar_course_dsa">هياكل البيانات والخوارزميات</li>
+                        <li data-i18n-content="satar_course_frontend">تطوير الواجهات الأمامية (Frontend)</li>
+                        <li data-i18n-content="satar_course_cyber">التهديدات والثغرات والهجمات في الأمن السيبراني</li>
                     </ul>
                 </div>
 
@@ -2109,7 +2109,7 @@
                                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                             </a>
                         </div>
-                        <h5 style="color: #fff; font-size: 1rem; margin: 0;"><i class="fas fa-shield-virus"
+                        <h5 style="color: #fff; font-size: 1rem; margin: 0;" data-i18n-content="satar_course_cyber_short"><i class="fas fa-shield-virus"
                                 style="color: #22c55e; margin-left: 5px;"></i>التهديدات والثغرات والهجمات</h5>
                     </div>
                 </div>
@@ -2146,7 +2146,7 @@
                                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                             </a>
                         </div>
-                        <h5 style="color: #fff; font-size: 1rem; margin: 0;">دورة UX/UI</h5>
+                        <h5 style="color: #fff; font-size: 1rem; margin: 0;" data-i18n-content="satar_uxui_course">دورة UX/UI</h5>
                     </div>
 
                     <!-- Course 2 -->
@@ -2161,7 +2161,7 @@
                                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                             </a>
                         </div>
-                        <h5 style="color: #fff; font-size: 1rem; margin: 0;">البحث والتخطيط</h5>
+                        <h5 style="color: #fff; font-size: 1rem; margin: 0;" data-i18n-content="satar_uxui_research">البحث والتخطيط</h5>
                     </div>
 
                     <!-- Course 3 -->
@@ -2176,7 +2176,7 @@
                                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                             </a>
                         </div>
-                        <h5 style="color: #fff; font-size: 1rem; margin: 0;">تصميم النماذج الأولية</h5>
+                        <h5 style="color: #fff; font-size: 1rem; margin: 0;" data-i18n-content="satar_uxui_prototyping">تصميم النماذج الأولية</h5>
                     </div>
 
                     <!-- Course 4 -->
@@ -2191,7 +2191,7 @@
                                 <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                             </a>
                         </div>
-                        <h5 style="color: #fff; font-size: 1rem; margin: 0;">مشروع تطبيقي</h5>
+                        <h5 style="color: #fff; font-size: 1rem; margin: 0;" data-i18n-content="satar_uxui_project">مشروع تطبيقي</h5>
                     </div>
                 </div>
             </div>
@@ -2851,7 +2851,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=9"></script>
 
     <!-- Chatbot Floating Button & Popup Script (JSON Keyword Based) -->
     <script>
@@ -2888,7 +2888,7 @@
             responseEn: "💼 I have three experiences:\n1️⃣ Assistant System Manager - Bin Dol Group Holding - June 2026\n2️⃣ Financial Treasurer - Muslim Trading (2026-Present)\n3️⃣ Cashier/POS - Amoudi Restaurants (2021-2026) for 4+ years\nAsk me about any for details!"
         },
         {
-            keywords: ["مساعد مدير", "بن دول", "مدير النظام", "اونكس برو", "يمن سوفت", "نسخ احتياطي", "المجموعة القابضة", "assistant manager", "bin dol", "system manager", "bindol"],
+            keywords: ["مساعد مدير", "بن دول", "مدير النظام", "اونكس برو", "يمن سوفت", "نسخ احتياطي", "المجموعة القابضة", "assistant manager", "bin dol", "system manager", "bindol", "onyx pro", "yemensoft"],
             sectionId: "experience",
             response: "⚙️ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:\n• إدارة بنية وهيكل النظام على نظام اونكس برو (يمن سوفت)\n• إدارة صلاحيات المستخدمين وأمن المعلومات\n• الإشراف على النسخ الاحتياطي الدوري لقواعد البيانات\n• مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية\n• دعم المستخدمين في حل المشكلات التشغيلية والمحاسبية\n• التنسيق مع المطور الخارجي (يمن سوفت) لمتابعة التحديثات وحل المشكلات البرمجية",
             responseEn: "⚙️ Assistant System Manager - Bin Dol Group Holding - June 2026:\n• Managed system structure on Onyx Pro (YemenSoft)\n• Managed user permissions and information security\n• Supervised periodic database backups\n• Reviewed purchase/sales invoices and financial operations\n• Supported users with operational and accounting issues\n• Coordinated with external developer (YemenSoft) for updates"
@@ -2918,19 +2918,19 @@
             responseEn: "📊 Accounting Courses:\n• Diploma in Accounting & Financial Management - Hadhramout Univ. (Excellent)\n• Diploma in Accounting - International Academy\n• Integrated Accounting System Diploma (YemenSoft/Onyx Pro) - Excellent\n• Onyx Pro System Course - Hadhramout Research Center (Very Good)\n• Odoo Cloud System Course - Snow Company\n• Al-Meezan System Course (Excellent 90%)\n• Al-Ameen System Course (Very Good)"
         },
         {
-            keywords: ["تطوير", "نجاح", "تنمية", "ريادة", "اعمال", "إدارة", "استراتيجية", "osha", "سلامة", "مراسلات", "عاطفي", "mckinsey", "forward", "training", "development"],
+            keywords: ["تطوير", "نجاح", "تنمية", "ريادة", "اعمال", "إدارة", "استراتيجية", "osha", "سلامة", "مراسلات", "عاطفي", "mckinsey", "forward", "training", "development", "training courses"],
             sectionId: "courses-training",
             response: "🌱 دورات التطوير والتدريب:\n• برنامج McKinsey Forward - McKinsey.org (يونيو 2026)\n• إدارة السلامة والصحة المهنية OSHA - نقابة المهندسين (ممتاز 90%)\n• دبلوم إدارة الأعمال - الأكاديمية الدولية (ممتاز 96.5%)\n• دبلوم التنمية البشرية - جامعة النخبة (ممتاز)\n• دورة ريادة الأعمال - جامعة النخبة (ممتاز)\n• دورة الإدارة الاستراتيجية (ممتاز)\n• دورة المراسلات التجارية والتجارة الدولية (ممتاز)\n• الذكاء العاطفي والاجتماعي - جامعة حضرموت",
             responseEn: "🌱 Training & Development:\n• McKinsey Forward Program - McKinsey.org (June 2026)\n• OSHA Occupational Safety & Health - Engineers Syndicate (Excellent 90%)\n• Business Administration Diploma - International Academy (Excellent 96.5%)\n• Human Development Diploma - Elite University (Excellent)\n• Entrepreneurship Course - Elite University (Excellent)\n• Strategic Management Course (Excellent)\n• Business Correspondence & International Trade (Excellent)\n• Emotional & Social Intelligence - Hadhramout Univ."
         },
         {
-            keywords: ["برامج", "حاسوب", "كمبيوتر", "icdl", "اكسل", "excel", "باوربوينت", "spss", "احصائي", "power bi", "تحليل بيانات", "software", "computer"],
+            keywords: ["برامج", "حاسوب", "كمبيوتر", "icdl", "اكسل", "excel", "باوربوينت", "spss", "احصائي", "power bi", "تحليل بيانات", "software", "computer", "software courses"],
             sectionId: "courses-software",
             response: "💻 دورات البرامج:\n• دبلوم ICDL الرخصة الدولية لقيادة الحاسوب - جامعة النخبة (ممتاز)\n• دورة الباوربوينت المتقدم (ممتاز)\n• دورة أساسيات الإكسل - جامعة حضرموت\n• دورة الإكسل المتقدم - جامعة النخبة (ممتاز)\n• دورة الإكسل المحاسبي (ممتاز)\n• أساسيات التحليل الإحصائي SPSS - جامعة حضرموت\n• تحليل البيانات وإعداد التقارير Power BI - جامعة حضرموت",
             responseEn: "💻 Software Courses:\n• ICDL Diploma - Elite University (Excellent)\n• Advanced PowerPoint Course (Excellent)\n• Excel Basics - Hadhramout Univ.\n• Advanced Excel - Elite University (Excellent)\n• Accounting Excel (Excellent)\n• SPSS Statistical Analysis Basics - Hadhramout Univ.\n• Power BI Data Analysis & Reporting - Hadhramout Univ."
         },
         {
-            keywords: ["تقنية", "تقنيه", "برمجة", "أمن", "سيبراني", "شبكات", "جرافيك", "جرافكس", "تصميم مواقع", "إبداعية", "technical", "programming", "cyber", "network"],
+            keywords: ["تقنية", "تقنيه", "برمجة", "أمن", "سيبراني", "شبكات", "جرافيك", "جرافكس", "تصميم مواقع", "إبداعية", "technical", "programming", "cyber", "network", "technical courses"],
             sectionId: "courses-technical",
             response: "🔧 الدورات التقنية والإبداعية:\n• دبلوم برمجة وتصميم المواقع الإلكترونية - الأكاديمية الدولية (ممتاز)\n• دورة أساسيات الشبكات الاحترافية - مؤسسة سالم (ممتاز)\n• دورة الأمن السيبراني - جامعة النخبة (ممتاز)\n• دورة الأمن السيبراني وحماية الهواتف الذكية من الاختراق - المركز العربي الإرشادي ونقابة تكنولوجيا المعلومات والاتصالات اليمنية\n• دبلوم الجرافيكس - مركز بحوث حضرموت (جيد جداً)\n• دورة مليون خبير لأوامر الذكاء الاصطناعي - مؤسسة دبي للمستقبل",
             responseEn: "🔧 Technical & Creative Courses:\n• Web Programming & Design Diploma - International Academy (Excellent)\n• Professional Networking Basics - Salim Foundation (Excellent)\n• Cybersecurity Course - Elite University (Excellent)\n• Cybersecurity & Smart Phone Protection - Arab Guidance Center & Yemen ICT Union\n• Graphics Diploma - Hadhramout Research Center (Very Good)\n• Million AI Prompt Expert - Dubai Future Foundation"
@@ -2948,7 +2948,7 @@
             responseEn: "📘 Edraak Platform - 10 courses, 2 specializations, 80 learning hours:\n\n🏆 Certified Specializations:\n1️⃣ ICDL (4 courses): Computer Basics, Internet Basics, Word Processing, Excel\n2️⃣ Emotional Intelligence (3 courses): EI & Self, EI & Leadership, EI & Society\n\n📚 Training Courses:\n• The Art of Effective Listening\n• Creative Problem Solving Skills\n• Introduction to Networking"
         },
         {
-            keywords: ["سطر", "satr", "طويق", "منصة سطر"],
+            keywords: ["سطر", "satr", "satar", "طويق", "منصة سطر", "منصة سطر"],
             sectionId: "satar",
             response: "💜 منصة سطر (أكاديمية طويق):\n\n🔐 التهديدات والثغرات في الأمن السيبراني\n\n🎨 مسار تصميم UX/UI:\n• دورة تصميم تجربة واجهة المستخدم\n• البحث والتخطيط في UX\n• تصميم النماذج الأولية UI Prototyping\n• مشروع تطبيقي",
             responseEn: "💜 Satr Platform (Tuwaiq Academy):\n\n🔐 Cyber Security Threats & Vulnerabilities\n\n🎨 UX/UI Design Path:\n• User Experience Design Course\n• UX Research & Planning\n• UI Prototyping\n• Practical Project"
@@ -2985,15 +2985,25 @@
 
     function getBotResponse(userText) {
         const text = userText.toLowerCase();
-        const lang = (typeof currentLang !== 'undefined' ? currentLang : 'ar') || 'ar';
+        const lang = (typeof window.currentLang !== 'undefined' ? window.currentLang : 'ar') || 'ar';
+        let best = null, bestScore = 0;
         
         for (let item of botKnowledge) {
-            if (item.keywords.some(kw => text.includes(kw))) {
-                return {
-                    text: lang === 'en' && item.responseEn ? item.responseEn : item.response,
-                    sectionId: item.sectionId || null
-                };
+            let score = 0;
+            for (let kw of item.keywords) {
+                if (text.includes(kw)) score++;
             }
+            if (score > bestScore) {
+                bestScore = score;
+                best = item;
+            }
+        }
+        
+        if (best) {
+            return {
+                text: lang === 'en' && best.responseEn ? best.responseEn : best.response,
+                sectionId: best.sectionId || null
+            };
         }
         
         return {
@@ -3121,7 +3131,7 @@
             const botDiv = document.createElement('div');
             botDiv.className = 'msg msg-bot';
             const result = getBotResponse(text);
-            const lang = (typeof currentLang !== 'undefined' ? currentLang : 'ar') || 'ar';
+        const lang = (typeof window.currentLang !== 'undefined' ? window.currentLang : 'ar') || 'ar';
             let html = result.text.replace(/\n/g, '<br>');
             if (result.sectionId) {
                 const linkText = lang === 'en' ? '🔗 Go to section' : '🔗 الذهاب إلى القسم';

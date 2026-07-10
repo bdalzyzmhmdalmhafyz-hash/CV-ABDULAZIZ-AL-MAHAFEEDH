@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز تدريب الطلاب | جامعة حضرموت</title>
+    <title data-i18n-content="husa_title">مركز تدريب الطلاب | جامعة حضرموت</title>
     <meta name="description" content="مركز تدريب الطلاب بجمعة حضرموت هو جهة تدريبية أكاديمية معتمدة تابعة للجامعة، تُعنى بتطوير قدرات الطلاب والخريجين.">
     <link rel="stylesheet" href="husa_center.css">
+    <link rel="stylesheet" href="chatbot.css?v=8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -23,13 +24,13 @@
                 <div class="logo-wrapper">
                     <img src="assets/organization_logos/hadhramout_university_student_training_center_logo.jpg" alt="Logo" class="logo-img">
                 </div>
-                <h1>مركز جامعة حضرموت لتدريب الطلاب</h1>
+                <h1 data-i18n-content="husa_h1">مركز جامعة حضرموت لتدريب الطلاب</h1>
                 <h2>Hadhramout University Center for Students Training</h2>
             </header>
 
             <main>
                 <section class="description">
-                    <p>
+                    <p id="husa-desc">
                         مركز تدريب الطلاب في <strong>Hadhramout University</strong> هو جهة تدريبية أكاديمية معتمدة تابعة للجامعة، تُعنى بتطوير قدرات الطلاب والخريجين من خلال برامج تدريبية متخصصة وورش عمل تطبيقية. يسهم المركز في ربط الجانب الأكاديمي بالمهارات العملية المطلوبة في سوق العمل، ويقدم شهادات تدريبية معتمدة تعكس اكتساب المشاركين لمهارات مهنية وتقنية تدعم جاهزيتهم المهنية.
                     </p>
                 </section>
@@ -43,46 +44,48 @@
                 <div class="cta-group">
                     <a href="https://hu.edu.ye/" target="_blank" class="btn btn-primary" onclick="window.open(this.href, '_blank'); return false;">
                         <i class="fas fa-external-link-alt"></i>
-                        زيارة الموقع الرسمي للجامعة
+                        <span data-i18n-content="husa_cta_website">زيارة الموقع الرسمي للجامعة</span>
                     </a>
                     <a href="index.html" class="btn btn-outline">
                         <i class="fas fa-arrow-right"></i>
-                        العودة للملف الشخصي
+                        <span data-i18n-content="husa_cta_back">العودة للملف الشخصي</span>
                     </a>
                 </div>
             </main>
 
             <footer>
-                <p>&copy; 2026 مركز جامعة حضرموت لتدريب الطلاب. جميع الحقوق محفوظة.</p>
+                <p data-i18n-content="husa_footer">&copy; 2026 مركز جامعة حضرموت لتدريب الطلاب. جميع الحقوق محفوظة.</p>
             </footer>
 
         </div>
     </div>
 
+    <!-- Lang Switcher -->
+    <button class="lang-circle-btn" id="lang-circle-btn" onclick="switchLanguage()" aria-label="تبديل اللغة" title="English">
+        <span>EN</span>
+    </button>
+
+    <script src="script.js?v=9"></script>
     <script>
         const coursesData = {
             'ei': {
-                title: 'الذكاء العاطفي والاجتماعي',
-                desc: 'تطوير مهارات التفاعل الإيجابي وفهم الذات لتعزيز التواصل.',
-                date: 'يوليو - أغسطس 2025',
+                ar: { title: 'الذكاء العاطفي والاجتماعي', desc: 'تطوير مهارات التفاعل الإيجابي وفهم الذات لتعزيز التواصل.', date: 'يوليو - أغسطس 2025' },
+                en: { title: 'Emotional and Social Intelligence', desc: 'Developing positive interaction skills and self-awareness to enhance communication.', date: 'July - August 2025' },
                 icon: 'fa-brain'
             },
             'spss': {
-                title: 'أساسيات التحليل الإحصائي (SPSS)',
-                desc: 'إتقان مهارات معالجة البيانات الإحصائية باستخدام أدوات احترافية.',
-                date: 'نوفمبر 2025',
+                ar: { title: 'أساسيات التحليل الإحصائي (SPSS)', desc: 'إتقان مهارات معالجة البيانات الإحصائية باستخدام أدوات احترافية.', date: 'نوفمبر 2025' },
+                en: { title: 'Fundamentals of Statistical Analysis (SPSS)', desc: 'Master statistical data processing skills using professional tools.', date: 'November 2025' },
                 icon: 'fa-chart-pie'
             },
             'pbi': {
-                title: 'تحليل البيانات (Power BI)',
-                desc: 'تحويل البيانات الخام إلى تقارير تفاعلية ذكية لدعم القرار.',
-                date: 'فبراير 2026',
+                ar: { title: 'تحليل البيانات (Power BI)', desc: 'تحويل البيانات الخام إلى تقارير تفاعلية ذكية لدعم القرار.', date: 'فبراير 2026' },
+                en: { title: 'Data Analysis (Power BI)', desc: 'Transform raw data into smart interactive reports to support decision-making.', date: 'February 2026' },
                 icon: 'fa-database'
             },
             'excel': {
-                title: 'أساسيات برنامج الإكسل',
-                desc: 'اكتساب المهارات الأساسية للتعامل مع الجداول والبيانات الحسابية بفعالية.',
-                date: '28 يونيو - 3 يوليو 2025',
+                ar: { title: 'أساسيات برنامج الإكسل', desc: 'اكتساب المهارات الأساسية للتعامل مع الجداول والبيانات الحسابية بفعالية.', date: '28 يونيو - 3 يوليو 2025' },
+                en: { title: 'Excel Fundamentals', desc: 'Acquire basic skills for effectively handling spreadsheets and computational data.', date: 'June 28 - July 3, 2025' },
                 icon: 'fa-file-excel'
             }
         };
@@ -90,21 +93,27 @@
         function loadCourse() {
             const urlParams = new URLSearchParams(window.location.search);
             const courseKey = urlParams.get('course');
+            const lang = window.currentLang || 'ar';
             const data = coursesData[courseKey] || coursesData['ei'];
+            const localized = data[lang];
+            const badgeText = (window.contentData && window.contentData.husa_badge)
+                ? window.contentData.husa_badge[lang]
+                : 'تفاصيل البرنامج التدريبي';
 
             const contentDiv = document.getElementById('course-content');
             contentDiv.innerHTML = `
-                <div class="section-badge">تفاصيل البرنامج التدريبي</div>
+                <div class="section-badge">${badgeText}</div>
                 <div class="program-card single-focus">
                     <div class="card-icon"><i class="fas ${data.icon}"></i></div>
-                    <h3>${data.title}</h3>
-                    <p>${data.desc}</p>
-                    <div class="date-badge">${data.date}</div>
+                    <h3>${localized.title}</h3>
+                    <p>${localized.desc}</p>
+                    <div class="date-badge">${localized.date}</div>
                 </div>
             `;
         }
 
         window.onload = loadCourse;
+        document.addEventListener('languageChanged', loadCourse);
     </script>
 </body>
 </html>

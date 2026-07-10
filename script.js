@@ -58,9 +58,10 @@ const i18n = {
     section_skills: 'Skills & Abilities', section_courses: 'Courses & Diplomas',
     section_edraak: 'Edraak Platform', section_satar: 'Satar Platform',
     section_fcc: 'FreeCodeCamp Certifications', section_coursera: 'Coursera Certifications',
-    about_name: 'Full Name (EN)', about_email: 'Email',
-    about_phone: 'Phone', about_birth: 'Date of Birth',
-    about_address: 'Address', about_specialty: 'Specialty', about_linkedin: 'LinkedIn',
+  about_name: 'Full Name (EN)', about_email: 'Email',
+  about_phone: 'Phone', about_birth: 'Date of Birth',
+  about_address: 'Address', about_specialty: 'Specialty', about_linkedin: 'LinkedIn',
+
     cert_show_issuer: 'View Issuer', cert_back: 'Back to Certificate',
     orbit_title: 'Course Categories', orbit_sub: 'Choose a category to view certificates',
     orbit_accounting: 'Accounting', orbit_training: 'Training',
@@ -102,6 +103,10 @@ const i18n = {
 
 // ── Content Translations (for data-i18n-content elements) ──
 const contentData = {
+  // ── About ──
+  about_address_val: { ar: 'فوه - المتضررين (حي المستقبل)', en: 'Fuwah - Al-Mutadarririn (Future Neighborhood)' },
+  about_specialty_val: { ar: 'محاسب', en: 'Accountant' },
+
   // ── Education ──
   edu_uni_title: { ar: 'بكالوريوس تخصص محاسبة', en: "Bachelor's Degree in Accounting" },
   edu_uni_text: { ar: 'جامعة حضرموت', en: 'Hadhramout University' },
@@ -109,6 +114,8 @@ const contentData = {
   edu_high_title: { ar: 'شهادة الثانوية العامة', en: 'High School Diploma' },
   edu_high_text: { ar: 'ثانوية المكلا النموذجية للبنين', en: 'Al-Mukalla Model Secondary School for Boys' },
   edu_high_grade: { ar: 'حاصل على تقدير (95.63%)', en: 'Grade: 95.63%' },
+  edu_uni_btn: { ar: 'جامعة حضرموت', en: 'Hadhramout University' },
+  edu_high_btn: { ar: 'ثانوية المكلا النموذجية', en: 'Al-Mukalla Model Secondary School' },
   edu_mid_title: { ar: 'شهادة المرحلة الإعدادية', en: 'Middle School Certificate' },
   edu_mid_text: { ar: 'مدرسة عثمان بن عفان', en: 'Othman Bin Affan School' },
   edu_mid_grade: { ar: 'المركز الخامس على مستوى المديرية (99.29%)', en: 'Ranked 5th district-wide (99.29%)' },
@@ -306,6 +313,27 @@ const contentData = {
   edr_training_title: { ar: 'الدورات التدريبية', en: 'Training Courses' },
   edr_verify: { ar: 'تحقق', en: 'Verify' },
 
+  // ── HUSA Center Page ──
+  husa_title: { ar: 'مركز تدريب الطلاب | جامعة حضرموت', en: 'Student Training Center | Hadhramout University' },
+  husa_h1: { ar: 'مركز جامعة حضرموت لتدريب الطلاب', en: 'Hadhramout University Center for Students Training' },
+  husa_desc: { ar: 'مركز تدريب الطلاب في <strong>Hadhramout University</strong> هو جهة تدريبية أكاديمية معتمدة تابعة للجامعة، تُعنى بتطوير قدرات الطلاب والخريجين من خلال برامج تدريبية متخصصة وورش عمل تطبيقية. يسهم المركز في ربط الجانب الأكاديمي بالمهارات العملية المطلوبة في سوق العمل، ويقدم شهادات تدريبية معتمدة تعكس اكتساب المشاركين لمهارات مهنية وتقنية تدعم جاهزيتهم المهنية.', en: 'The Student Training Center at <strong>Hadhramout University</strong> is an accredited academic training body affiliated with the university, dedicated to developing the skills of students and graduates through specialized training programs and applied workshops. The center bridges the gap between academic knowledge and practical skills required in the job market, offering accredited training certificates that reflect participants\' acquisition of professional and technical skills.' },
+  husa_cta_website: { ar: 'زيارة الموقع الرسمي للجامعة', en: 'Visit University Website' },
+  husa_cta_back: { ar: 'العودة للملف الشخصي', en: 'Back to CV' },
+  husa_footer: { ar: '&copy; 2026 مركز جامعة حضرموت لتدريب الطلاب. جميع الحقوق محفوظة.', en: '&copy; 2026 Hadhramout University Center for Students Training. All rights reserved.' },
+  husa_badge: { ar: 'تفاصيل البرنامج التدريبي', en: 'Training Program Details' },
+  husa_course_ei: { ar: 'الذكاء العاطفي والاجتماعي', en: 'Emotional and Social Intelligence' },
+  husa_course_ei_desc: { ar: 'تطوير مهارات التفاعل الإيجابي وفهم الذات لتعزيز التواصل.', en: 'Developing positive interaction skills and self-awareness to enhance communication.' },
+  husa_course_ei_date: { ar: 'يوليو - أغسطس 2025', en: 'July - August 2025' },
+  husa_course_spss: { ar: 'أساسيات التحليل الإحصائي (SPSS)', en: 'Fundamentals of Statistical Analysis (SPSS)' },
+  husa_course_spss_desc: { ar: 'إتقان مهارات معالجة البيانات الإحصائية باستخدام أدوات احترافية.', en: 'Master statistical data processing skills using professional tools.' },
+  husa_course_spss_date: { ar: 'نوفمبر 2025', en: 'November 2025' },
+  husa_course_pbi: { ar: 'تحليل البيانات (Power BI)', en: 'Data Analysis (Power BI)' },
+  husa_course_pbi_desc: { ar: 'تحويل البيانات الخام إلى تقارير تفاعلية ذكية لدعم القرار.', en: 'Transform raw data into smart interactive reports to support decision-making.' },
+  husa_course_pbi_date: { ar: 'فبراير 2026', en: 'February 2026' },
+  husa_course_excel: { ar: 'أساسيات برنامج الإكسل', en: 'Excel Fundamentals' },
+  husa_course_excel_desc: { ar: 'اكتساب المهارات الأساسية للتعامل مع الجداول والبيانات الحسابية بفعالية.', en: 'Acquire basic skills for effectively handling spreadsheets and computational data.' },
+  husa_course_excel_date: { ar: '28 يونيو - 3 يوليو 2025', en: 'June 28 - July 3, 2025' },
+
   // ── Satar Section ──
   satar_subtitle: { ar: 'صناع النجاح المعتمدون لمنصة سطر أكاديمية طويق', en: 'Certified Success Partners of Satr Platform - Tuwaiq Academy' },
   satar_learned_title: { ar: 'مجالات التعلم المنجزة في المنصة', en: 'Completed Learning Areas' },
@@ -315,6 +343,21 @@ const contentData = {
   satar_courses_desc: { ar: 'برامج مكثفة في مختلف لغات البرمجة والتقنيات.', en: 'Intensive programs in various programming languages and technologies.' },
   satar_completed_title: { ar: 'الدورات التعليمية المنجزة', en: 'Completed Training Courses' },
   satar_completed_desc: { ar: 'شهادات من دورات تدريبية متخصصة في البرمجة والأمن السيبراني.', en: 'Certificates from specialized training courses in programming and cybersecurity.' },
+  satar_platform_name: { ar: 'منصة سطر', en: 'Satar Platform' },
+  satar_partner_saudi_fed: { ar: 'الاتحاد السعودي للأمن السيبراني والبرمجة والدرونز', en: 'Saudi Federation for Cybersecurity, Programming and Drones' },
+  satar_partner_stc: { ar: 'شركة الاتصالات السعودية', en: 'Saudi Telecom Company (STC)' },
+  satar_track_cloud: { ar: 'مسار الخبير السحابي (Cloud Expert)', en: 'Cloud Expert Track' },
+  satar_track_web: { ar: 'مسار تطوير تطبيقات الويب', en: 'Web Applications Development Track' },
+  satar_track_data_ai: { ar: 'مسار علم البيانات والذكاء الاصطناعي', en: 'Data Science & AI Track' },
+  satar_course_python: { ar: 'لغة بايثون (Python) - الأساسيات والمتقدم', en: 'Python - Basics to Advanced' },
+  satar_course_dsa: { ar: 'هياكل البيانات والخوارزميات', en: 'Data Structures & Algorithms' },
+  satar_course_frontend: { ar: 'تطوير الواجهات الأمامية (Frontend)', en: 'Frontend Development' },
+  satar_course_cyber: { ar: 'التهديدات والثغرات والهجمات في الأمن السيبراني', en: 'Cybersecurity Threats, Vulnerabilities & Attacks' },
+  satar_course_cyber_short: { ar: 'التهديدات والثغرات والهجمات', en: 'Cybersecurity Threats & Attacks' },
+  satar_uxui_course: { ar: 'دورة UX/UI', en: 'UX/UI Course' },
+  satar_uxui_research: { ar: 'البحث والتخطيط', en: 'UX Research & Planning' },
+  satar_uxui_prototyping: { ar: 'تصميم النماذج الأولية', en: 'UI Prototyping' },
+  satar_uxui_project: { ar: 'مشروع تطبيقي', en: 'Applied Project' },
   satar_uxui_title: { ar: 'مسار تصميم الواجهات وتجربة المستخدم UX/UI', en: 'UX/UI Design Path' },
   satar_uxui_desc: { ar: 'رحلة تعليمية متكاملة لاحتراف تصميم واجهات المستخدِم وتحسين تجربتهم.', en: 'A comprehensive learning journey to master user interface design and user experience.' },
 
@@ -475,6 +518,40 @@ function switchLanguage(lang) {
       }
     }
   });
+
+  // Swap certificate slides in Edraak carousels
+  document.querySelectorAll('#edraak .cert-carousel-inner').forEach(inner => {
+    if (inner.children.length === 2) {
+      const firstSlide = inner.children[0];
+      const secondSlide = inner.children[1];
+      const firstImg = firstSlide.querySelector('img');
+      if (firstImg) {
+        const src = firstImg.getAttribute('src') || firstImg.src || '';
+        const shouldSwap =
+          (newLang === 'en' && src.includes('_front')) ||
+          (newLang === 'ar' && src.includes('_back'));
+        if (shouldSwap) {
+          inner.insertBefore(secondSlide, firstSlide);
+          secondSlide.classList.add('active');
+          firstSlide.classList.remove('active');
+          const carousel = inner.closest('.cert-carousel');
+          if (carousel) {
+            const dots = carousel.querySelectorAll('.carousel-nav .dot');
+            if (dots.length >= 2) {
+              dots[0].classList.add('active');
+              dots[1].classList.remove('active');
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // Update HUSA center description (has inner HTML)
+  const husaDesc = document.getElementById('husa-desc');
+  if (husaDesc && contentData.husa_desc) {
+    husaDesc.innerHTML = contentData.husa_desc[newLang];
+  }
 
   // Update typewriter text
   nameText = newLang === 'ar' ? 'عبد العزيز محمد المحافيظ' : 'Abdulaziz M. Al-Mahafeedh';
@@ -884,27 +961,39 @@ document.addEventListener("DOMContentLoaded", () => {
 const certificateIssuers = {
   hadhramout: {
     name: "جامعة حضرموت",
+    nameEn: "Hadhramout University",
+    titleAr: "جامعة حضرموت",
     title: "Hadhramout University",
     badge: "صرح أكاديمي رائد",
+    badgeEn: "Leading Academic Institution",
     description: "تعد جامعة حضرموت صرحاً أكاديمياً رائعاً في الجمهورية اليمنية، تأسست عام 1993 في مدينة المكلا. تعتبر الجامعة من المؤسسات التعليمية الرائدة التي تلتزم بتقديم برامج بكالوريوس ودراسات عليا معتمدة في تخصصات الهندسة، الحاسوب، والطب. تركز الجامعة على ربط المناهج العلمية باحتياجات سوق العمل والتنمية المستدامة، وهي الجهة التي صقلت خلفيتي العلمية والتقنية.",
+    descriptionEn: "Hadhramout University is a distinguished academic institution in the Republic of Yemen, established in 1993 in Mukalla. It is a leading educational institution committed to providing accredited bachelor's and postgraduate programs in engineering, computer science, and medicine. The university focuses on bridging academic curricula with labor market needs and sustainable development, and is the institution that refined my scientific and technical background.",
     logo: "assets/organization_logos/hadhramout_university_logo_result.webp",
     fullLogo: true,
     officialLink: "https://hu.edu.ye",
     btnText: "زيارة الموقع الرسمي للجامعة",
-    mainColor: "#007bff", // Standard Blue
-    address: "جامعة حضرموت - Hadhramout University"
+    btnTextEn: "Visit University Website",
+    mainColor: "#007bff",
+    address: "جامعة حضرموت - Hadhramout University",
+    addressEn: "Hadhramout University - Mukalla, Yemen"
   },
   mukalla_model: {
     name: "ثانوية المكلا النموذجية",
+    nameEn: "Mukalla Model Secondary School",
+    titleAr: "ثانوية المكلا النموذجية",
     title: "Mukalla Model Secondary School",
     badge: "نخبة الطلاب المتفوقين",
+    badgeEn: "Elite Outstanding Students",
     description: "ثانوية المكلا النموذجية هي صرح تعليمي رائد متخصص في رعاية وتأهيل الطلاب المتفوقين في حضرموت. تأسست بمبادرة نوعية من مجموعة من رجال الأعمال الداعمين للعلم، وفي مقدمتهم الشيخ المهندس عبدالله أحمد بقشان عبر مؤسسة حضرموت للتنمية البشرية. تهدف المدرسة إلى صناعة جيل قيادي متسلح بالعلم والابتكار، وتعتبر من أكثر المدارس تنافسية على مستوى الوطن.",
+    descriptionEn: "Mukalla Model Secondary School is a leading educational institution specialized in nurturing outstanding students in Hadhramout. It was established through a quality initiative by a group of education-supporting businessmen, led by Sheikh Engineer Abdullah Ahmed Baqshan through the Hadhramout Foundation for Human Development. The school aims to create a leadership generation armed with knowledge and innovation, and is considered one of the most competitive schools nationwide.",
     logo: "assets/organization_logos/mukalla_model_boys_secondary_logo.png.jpg",
     fullLogo: true,
     officialLink: "https://hadhramout-foundation.org",
     btnText: "زيارة الموقع الرسمي للمؤسسة الراعية",
-    mainColor: "#A67B5B", // Light Brown / Cinnamon
+    btnTextEn: "Visit Sponsor Foundation Website",
+    mainColor: "#A67B5B",
     address: "ثانوية المكلا النموذجية - Mukalla Model Secondary School",
+    addressEn: "Mukalla Model Secondary School - Mukalla, Yemen",
     social: [
       { icon: "fab fa-facebook", link: "https://www.facebook.com/mmss.mukalla" }
     ]
@@ -942,19 +1031,22 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
   currentModalNoCert = startAtIssuer || (!certSrc || certSrc === '');
   const issuer = certificateIssuers[issuerKey];
   if (!issuer) return;
+  const lang = window.currentLang || 'ar';
+  const isEn = lang === 'en';
 
   // Set Theme Color
   document.documentElement.style.setProperty('--issuer-main-color', issuer.mainColor);
 
   // Inject Content
-  document.getElementById('modal-issuer-name').textContent = issuer.name;
-  document.getElementById('modal-badge').textContent = issuer.badge;
+  document.getElementById('modal-issuer-name').textContent = isEn ? (issuer.nameEn || issuer.name) : issuer.name;
+  document.getElementById('modal-badge').textContent = isEn ? (issuer.badgeEn || issuer.badge) : issuer.badge;
   document.getElementById('modal-cert-img').src = certSrc;
 
   // Update internal button text
   const internalAboutBtn = document.getElementById('btn-show-issuer');
   if (internalAboutBtn) {
-    internalAboutBtn.innerHTML = `<i class="fas fa-scroll"></i> ${issuer.name}`;
+    const btnName = isEn ? (issuer.nameEn || issuer.name) : issuer.name;
+    internalAboutBtn.innerHTML = `<i class="fas fa-scroll"></i> ${btnName}`;
   }
 
   const logoImg = document.getElementById('modal-issuer-logo');
@@ -967,9 +1059,9 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
     logoWrapper.classList.remove('full-width-logo');
   }
 
-  document.getElementById('modal-issuer-title').textContent = issuer.title;
-  document.getElementById('modal-issuer-desc').textContent = issuer.description;
-  document.getElementById('modal-issuer-address').textContent = issuer.address;
+  document.getElementById('modal-issuer-title').textContent = isEn ? issuer.title : (issuer.titleAr || issuer.name);
+  document.getElementById('modal-issuer-desc').textContent = isEn ? (issuer.descriptionEn || issuer.description) : issuer.description;
+  document.getElementById('modal-issuer-address').textContent = isEn ? (issuer.addressEn || issuer.address) : issuer.address;
 
   const officialBtn = document.getElementById('modal-official-link');
   officialBtn.href = issuer.officialLink;
@@ -977,7 +1069,7 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
     e.preventDefault();
     window.open(issuer.officialLink, '_blank');
   };
-  officialBtn.querySelector('span').textContent = issuer.btnText;
+  officialBtn.querySelector('span').textContent = isEn ? (issuer.btnTextEn || issuer.btnText) : issuer.btnText;
 
   // Handle Social Links
   const socialContainer = document.getElementById('modal-social-links');
@@ -1011,38 +1103,48 @@ function openCertModal(issuerKey, certSrc, certTitle, startAtIssuer = false) {
 
   // Show Modal
   const backBtn = document.getElementById('btn-back-to-cert');
-  if (currentModalNoCert) {
-    backBtn.innerHTML = '<i class="fas fa-times"></i> إغلاق النافذة';
-  } else {
-    backBtn.innerHTML = '<i class="fas fa-arrow-right"></i> العودة للشهادة';
+  if (backBtn) {
+    if (currentModalNoCert) {
+      backBtn.innerHTML = '<i class="fas fa-times"></i> ' + (isEn ? 'Close' : 'إغلاق النافذة');
+    } else {
+      backBtn.innerHTML = '<i class="fas fa-arrow-right"></i> ' + (isEn ? 'Back to Certificate' : 'العودة للشهادة');
+    }
   }
 
   modalOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Prevent scroll
+  document.body.style.overflow = 'hidden';
 }
 
 function closeCertModal() {
+  if (!modalOverlay) return;
   modalOverlay.classList.remove('active');
-  document.body.style.overflow = ''; // Restore scroll
+  document.body.style.overflow = '';
 }
 
 // Event Listeners for Slider Toggle
-document.getElementById('btn-show-issuer').addEventListener('click', () => {
-  modalSlider.classList.add('show-issuer');
-});
-
-document.getElementById('btn-back-to-cert').addEventListener('click', () => {
-  if (currentModalNoCert) {
-    closeCertModal();
-  } else {
-    modalSlider.classList.remove('show-issuer');
-  }
-});
+const btnShowIssuer = document.getElementById('btn-show-issuer');
+const btnBackToCert = document.getElementById('btn-back-to-cert');
+if (btnShowIssuer) {
+  btnShowIssuer.addEventListener('click', () => {
+    modalSlider.classList.add('show-issuer');
+  });
+}
+if (btnBackToCert) {
+  btnBackToCert.addEventListener('click', () => {
+    if (currentModalNoCert) {
+      closeCertModal();
+    } else {
+      modalSlider.classList.remove('show-issuer');
+    }
+  });
+}
 
 // Close modal on overlay click
-modalOverlay.addEventListener('click', (e) => {
-  if (e.target === modalOverlay) closeCertModal();
-});
+if (modalOverlay) {
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeCertModal();
+  });
+}
 
 // Update Certificate Link Click Handler
 document.addEventListener('click', (e) => {
