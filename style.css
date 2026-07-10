@@ -4304,6 +4304,10 @@ nav {
   transform: translateX(-50%);
 }
 
+[dir="rtl"] .modal-slider.show-issuer {
+  transform: translateX(50%);
+}
+
 .cert-preview-wrapper {
   width: 100%;
   max-height: 450px;

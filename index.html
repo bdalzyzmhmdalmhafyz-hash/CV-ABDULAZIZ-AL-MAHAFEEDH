@@ -206,7 +206,7 @@
         <h2 class="section-title fade-in" data-i18n="section_experience">الخبرات العملية</h2>
         <div class="timeline">
             <!-- Experience - مساعد مدير النظام -->
-            <div class="timeline-item fade-in">
+            <div id="system-manager" class="timeline-item fade-in">
                 <div class="timeline-content">
                     <span class="timeline-date" data-i18n-content="exp1_date">يونيو 2026</span>
                     <h3 data-i18n-content="exp1_title">مساعد مدير النظام</h3>
@@ -2790,24 +2790,24 @@
 
         <!-- Quick Replies -->
         <div class="quick-replies" id="quick-replies">
-            <button class="quick-btn" data-i18n="quick_intro">من أنت؟ 👋</button>
-            <button class="quick-btn" data-i18n="quick_education">المؤهلات العلمية 🎓</button>
-            <button class="quick-btn" data-i18n="quick_experience">الخبرات العملية 💼</button>
-            <button class="quick-btn" data-i18n="quick_system_mgr">مساعد مدير النظام ⚙️</button>
-            <button class="quick-btn" data-i18n="quick_freelance">المشاريع المستقلة 🚀</button>
-            <button class="quick-btn" data-i18n="quick_skills">المهارات 💪</button>
-            <button class="quick-btn" data-i18n="quick_accounting">الدورات المحاسبية 📊</button>
-            <button class="quick-btn" data-i18n="quick_training">دورات التطوير 🌱</button>
-            <button class="quick-btn" data-i18n="quick_software">دورات البرامج 💻</button>
-            <button class="quick-btn" data-i18n="quick_technical">الدورات التقنية 🔧</button>
-            <button class="quick-btn" data-i18n="quick_languages">اللغات 🌍</button>
-            <button class="quick-btn" data-i18n="quick_edraak">منصة إدراك 📘</button>
-            <button class="quick-btn" data-i18n="quick_satar">منصة سطر 💜</button>
-            <button class="quick-btn">FreeCodeCamp 🔥</button>
-            <button class="quick-btn">Coursera 🎯</button>
-            <button class="quick-btn" data-i18n="quick_ai">خبير الذكاء الاصطناعي 🤖</button>
-            <button class="quick-btn" data-i18n="quick_achievements">الإنجازات 🏆</button>
-            <button class="quick-btn" data-i18n="quick_contact">التواصل 📞</button>
+            <button class="quick-btn" data-i18n="quick_intro" data-kw="من أنت,who are you,hello,hi">من أنت؟ 👋</button>
+            <button class="quick-btn" data-i18n="quick_education" data-kw="مؤهلات,تعليم,جامعة,education,university">المؤهلات العلمية 🎓</button>
+            <button class="quick-btn" data-i18n="quick_experience" data-kw="خبرة,وظيفة,experience,job,work">الخبرات العملية 💼</button>
+            <button class="quick-btn" data-i18n="quick_system_mgr" data-kw="مساعد مدير,بن دول,system manager,bin dol">مساعد مدير النظام ⚙️</button>
+            <button class="quick-btn" data-i18n="quick_freelance" data-kw="مشاريع مستقلة,freelance,project">المشاريع المستقلة 🚀</button>
+            <button class="quick-btn" data-i18n="quick_skills" data-kw="مهارة,مهارات,skills,abilities">المهارات 💪</button>
+            <button class="quick-btn" data-i18n="quick_accounting" data-kw="محاسبة,دورات محاسب,accounting,courses">الدورات المحاسبية 📊</button>
+            <button class="quick-btn" data-i18n="quick_training" data-kw="تطوير,training,development">دورات التطوير 🌱</button>
+            <button class="quick-btn" data-i18n="quick_software" data-kw="برامج,software,computer">دورات البرامج 💻</button>
+            <button class="quick-btn" data-i18n="quick_technical" data-kw="تقنية,برمجة,technical,programming">الدورات التقنية 🔧</button>
+            <button class="quick-btn" data-i18n="quick_languages" data-kw="لغة,انجليزي,language,english,duolingo">اللغات 🌍</button>
+            <button class="quick-btn" data-i18n="quick_edraak" data-kw="إدراك,edraak,منصة إدراك">منصة إدراك 📘</button>
+            <button class="quick-btn" data-i18n="quick_satar" data-kw="سطر,satar,طويق">منصة سطر 💜</button>
+            <button class="quick-btn" data-kw="freecodecamp,fcc,fri code">FreeCodeCamp 🔥</button>
+            <button class="quick-btn" data-kw="coursera,coursera,johnle">Coursera 🎯</button>
+            <button class="quick-btn" data-i18n="quick_ai" data-kw="ذكاء,اصطناعي,ai,prompt">خبير الذكاء الاصطناعي 🤖</button>
+            <button class="quick-btn" data-i18n="quick_achievements" data-kw="إنجاز,جوائز,تكريم,achievements,awards">الإنجازات 🏆</button>
+            <button class="quick-btn" data-i18n="quick_contact" data-kw="تواصل,رقم,هاتف,contact,phone,whatsapp">التواصل 📞</button>
         </div>
 
         <!-- Input Area -->
@@ -2889,9 +2889,9 @@
         },
         {
             keywords: ["مساعد مدير", "بن دول", "مدير النظام", "اونكس برو", "يمن سوفت", "نسخ احتياطي", "المجموعة القابضة", "assistant manager", "bin dol", "system manager", "bindol", "onyx pro", "yemensoft"],
-            sectionId: "experience",
-            response: "⚙️ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:\n• إدارة بنية وهيكل النظام على نظام اونكس برو (يمن سوفت)\n• إدارة صلاحيات المستخدمين وأمن المعلومات\n• الإشراف على النسخ الاحتياطي الدوري لقواعد البيانات\n• مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية\n• دعم المستخدمين في حل المشكلات التشغيلية والمحاسبية\n• التنسيق مع المطور الخارجي (يمن سوفت) لمتابعة التحديثات وحل المشكلات البرمجية",
-            responseEn: "⚙️ Assistant System Manager - Bin Dol Group Holding - June 2026:\n• Managed system structure on Onyx Pro (YemenSoft)\n• Managed user permissions and information security\n• Supervised periodic database backups\n• Reviewed purchase/sales invoices and financial operations\n• Supported users with operational and accounting issues\n• Coordinated with external developer (YemenSoft) for updates"
+            sectionId: "system-manager",
+            response: "⚙️ مساعد مدير النظام - شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة) - يونيو 2026:\n\n• إدارة بنية وهيكل النظام: إدارة وإعداد الوحدات الإدارية، والفترات المحاسبية، وبيانات الفروع والشركات التابعة للمجموعة على نظام اونكس برو (يمن سوفت)\n• إدارة الصلاحيات وأمن المعلومات: التحكم الكامل في منح وتقييد صلاحيات المستخدمين والمحاسبين، وإدارة الحسابات وكلمات السر لضمان حماية وسرية البيانات المالية الحساسة\n• إدارة النسخ الاحتياطي والأمان: الإشراف على عمليات النسخ الاحتياطي الدوري لقواعد بيانات الفروع والمركز الرئيسي لضمان سلامة البيانات واستمرار العمل\n• الرقابة وتعديل العمليات الحساسة: مراجعة وتعديل فواتير المشتريات والمبيعات والعمليات المالية المعقدة على النظام بعد التحقق الإداري\n• معالجة الأخطاء التشغيلية للنظام: تقديم الدعم للمستخدمين في حل المشكلات التشغيلية والمحاسبية اليومية، والرفع بالبلاغات التقنية المعقدة لفريق IT أو يمن سوفت\n• التنسيق مع المطور الخارجي: العمل كحلقة وصل تقنية وفنية مع شركة يمن سوفت لرفع المشكلات البرمجية العميقة ومتابعة تحديثات النظام وإصلاح العيوب التقنية",
+            responseEn: "⚙️ Assistant System Administrator - Bin Dowal Trading, Industry & Contracting Co. Ltd. (Holding Group) - June 2026:\n\n• System Architecture & Hierarchy Management: Structured and configured administrative units, accounting periods, and branch data across the Onyx Pro ERP system (YemenSoft)\n• Access Control & Information Security: Managed user and accountant permissions, user accounts, and password credentials to secure sensitive financial data\n• Backup & Disaster Recovery Management: Supervised routine backup processes for central and branch databases to ensure data integrity and business continuity\n• Audit & Sensitive Transactions Adjustment: Reviewed and modified purchase/sales invoices and complex financial entries after administrative verification\n• System Troubleshooting & Support: Provided daily operational and accounting tech support to end-users, escalating complex bugs to the IT team or YemenSoft developers\n• Vendor & Developer Coordination: Acted as the primary technical liaison with YemenSoft to report core software issues and track patch updates"
         },
         {
             keywords: ["مشاريع مستقلة", "مشروع مستقل", "المشاريع المستقلة", "المشروع المستقل", "حضرموت للمحاسبة", "حضرموت للمراجعة", "odoo", "أودو", "موقع تعريفي", "تصميم مواقع", "freelance", "project"],
@@ -3098,11 +3098,16 @@
     }
 
     /* ── CHAT LOGIC ── */
+    let _quickKeyword = null;
+
     window.sendMessage = function() {
         const input = document.querySelector('.chatbot-input');
         const chatMessages = document.querySelector('.chatbot-messages');
         const text = input.value.trim();
         if (!text) return;
+
+        const matchText = _quickKeyword || text;
+        _quickKeyword = null;
 
         // 1. إضافة رسالة المستخدم
         const userDiv = document.createElement('div');
@@ -3130,7 +3135,7 @@
             // إضافة رد البوت
             const botDiv = document.createElement('div');
             botDiv.className = 'msg msg-bot';
-            const result = getBotResponse(text);
+            const result = getBotResponse(matchText);
         const lang = (typeof window.currentLang !== 'undefined' ? window.currentLang : 'ar') || 'ar';
             let html = result.text.replace(/\n/g, '<br>');
             if (result.sectionId) {
@@ -3144,9 +3149,10 @@
         }, 1000 + Math.random() * 800); // تأخير بين 1 إلى 1.8 ثانية
     };
 
-    window.sendQuickReply = function(text) {
+    window.sendQuickReply = function(text, keyword) {
         const input = document.querySelector('.chatbot-input');
         if (input) input.value = text;
+        _quickKeyword = keyword || null;
         window.sendMessage();
     };
 
@@ -3165,7 +3171,8 @@
         const quickBtns = document.querySelectorAll('.quick-btn');
         quickBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                window.sendQuickReply(this.textContent.trim());
+                const kw = this.getAttribute('data-kw');
+                window.sendQuickReply(this.textContent.trim(), kw);
             });
         });
 
