@@ -3080,6 +3080,8 @@
     const chatbotFab = document.getElementById('chatbot-fab');
     const chatbotPopup = document.getElementById('chatbot-popup');
     const closePopupBtn = document.getElementById('popup-close-btn');
+    const floatingActions = document.querySelector('.floating-actions');
+    const bubbleDock = document.getElementById('bubble-dock-container');
 
     if (chatbotFab) {
         chatbotFab.addEventListener('click', function() {
@@ -3087,12 +3089,16 @@
             setTimeout(() => chatbotFab.classList.remove('chatbot-clicked'), 600);
             if(chatbotBubble) chatbotBubble.style.display = 'none';
             if(chatbotPopup) chatbotPopup.classList.add('open');
+            if(floatingActions && window.innerWidth <= 600) floatingActions.style.display = 'none';
+            if(bubbleDock && window.innerWidth <= 600) bubbleDock.style.display = 'none';
         });
     }
 
     if (closePopupBtn) {
         closePopupBtn.addEventListener('click', function() {
             if(chatbotPopup) chatbotPopup.classList.remove('open');
+            if(floatingActions) floatingActions.style.display = '';
+            if(bubbleDock) bubbleDock.style.display = '';
             setTimeout(() => { if(chatbotBubble) chatbotBubble.style.display = 'block'; }, 1000);
         });
     }
@@ -3188,6 +3194,10 @@
                     // Close chatbot popup
                     const popup = document.getElementById('chatbot-popup');
                     if (popup) popup.classList.remove('open');
+                    const fa = document.querySelector('.floating-actions');
+                    if (fa) fa.style.display = '';
+                    const bd = document.getElementById('bubble-dock-container');
+                    if (bd) bd.style.display = '';
                     setTimeout(() => {
                         const bubble = document.getElementById('chatbot-bubble');
                         if (bubble) bubble.style.display = 'block';
