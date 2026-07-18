@@ -48,6 +48,11 @@ const i18n = {
     quick_ai: 'خبير الذكاء الاصطناعي 🤖',
     quick_achievements: 'الإنجازات 🏆',
     quick_contact: 'التواصل 📞',
+    main_menu_title: 'الازرار الرئيسية',
+    cat_cv: 'السيرة الذاتية',
+    cat_courses: 'الدورات والشهادات',
+    cat_platforms: 'المنصات التعليمية',
+    cat_other: 'أخرى',
   },
   en: {
     nav_home: 'Home', nav_about: 'About', nav_education: 'Education',
@@ -98,6 +103,11 @@ const i18n = {
     quick_ai: 'AI Expert 🤖',
     quick_achievements: 'Achievements 🏆',
     quick_contact: 'Contact 📞',
+    main_menu_title: 'Main Menu',
+    cat_cv: 'CV & Resume',
+    cat_courses: 'Courses & Certificates',
+    cat_platforms: 'Learning Platforms',
+    cat_other: 'Other',
   }
 };
 
@@ -123,7 +133,7 @@ const contentData = {
   // ── Experience 1: Assistant System Admin ──
   exp1_title: { ar: 'مساعد مدير النظام', en: 'Assistant System Administrator' },
   exp1_company: { ar: 'شركة بن دول للتجارة والصناعة والمقاولات المحدودة (المجموعة القابضة)', en: 'Bin Dowal Trading, Industry & Contracting Co. Ltd. (Holding Group)' },
-  exp1_date: { ar: 'يونيو 2026', en: 'June 2026' },
+  exp1_date: { ar: 'يونيو 2026 - لمدة وجيزة', en: 'June 2026 - Brief' },
   exp1_b1: { ar: 'إدارة بنية وهيكل النظام: إدارة وإعداد الوحدات الإدارية، والفترات المحاسبية، وبيانات الفروع والشركات التابعة للمجموعة على نظام اونكس برو التابع لشركة (يمن سوفت).', en: 'System Architecture & Hierarchy Management: Structured and configured administrative units, accounting periods, and branch data across the Onyx Pro ERP system (YemenSoft).' },
   exp1_b2: { ar: 'إدارة الصلاحيات وأمن المعلومات: التحكم الكامل في منح وتقييد صلاحيات المستخدمين والمحاسبين، وإدارة الحسابات وكلمات السر لضمان حماية وسرية البيانات المالية الحساسة.', en: 'Access Control & Information Security: Managed user and accountant permissions, user accounts, and password credentials to secure sensitive financial data.' },
   exp1_b3: { ar: 'إدارة النسخ الاحتياطي والأمان: الإشراف على عمليات النسخ الاحتياطي الدوري لقواعد بيانات الفروع والمركز الرئيسي لضمان سلامة البيانات واستمرار العمل دون فقدان للمعلومات.', en: 'Backup & Disaster Recovery Management: Supervised routine backup processes for central and branch databases to ensure data integrity and business continuity.' },
